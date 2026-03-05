@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dwxgilxi3wpwp"]
+
+[ext_resource type="Script" uid="uid://dmxkos5lvq6ve" path="res://global.gd" id="1_6q3x5"]
+
+[node name="Global" type="Node" unique_id=93899564]
+script = ExtResource("1_6q3x5")
+
+[node name="TickTimer" type="Timer" parent="." unique_id=1691012407]
+wait_time = 0.063
+
+[connection signal="timeout" from="TickTimer" to="." method="_on_tick"]

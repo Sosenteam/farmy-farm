@@ -1,11 +1,16 @@
 extends Node2D
 
+var tiles_resource = preload("res://tile_managing/tiles.tres")
+var tiles = tiles_resource.tiles
+
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	Global.on_tick.connect(on_tick)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+
+func on_tick():
+	for tile in tiles:
+		tile.tick()

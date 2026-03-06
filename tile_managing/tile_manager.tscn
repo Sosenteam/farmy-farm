@@ -1,3 +1,6 @@
 [gd_scene format=3 uid="uid://c6qcddfe0an4p"]
 
+[ext_resource type="Script" uid="uid://vbhpu3e6vcne" path="res://tile_managing/tile_manager.gd" id="1_ndy0f"]
+
 [node name="TileManager" type="Node2D" unique_id=1968677421]
+script = ExtResource("1_ndy0f")

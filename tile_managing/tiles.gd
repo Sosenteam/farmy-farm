@@ -1,6 +1,7 @@
 extends Resource
 
-@export var tiles = [] # Main Tile Array
+var tiles: Array[Tile] # Main Tile Array
+
 @export var width :int = 5 # Width of Tile Array
 @export var height :int = 5 # Height of Tile Array
 

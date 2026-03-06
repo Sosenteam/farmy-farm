@@ -1,0 +1,184 @@
+[gd_scene format=3 uid="uid://dps8b56cns3i5"]
+
+[ext_resource type="Texture2D" uid="uid://bgatqhsayc0n4" path="res://Assets/sell_truck/opened_truck.png" id="1_atso4"]
+[ext_resource type="Script" uid="uid://42skqp3xie4n" path="res://sell_truck.gd" id="1_h7rmg"]
+
+[sub_resource type="Animation" id="Animation_h7rmg"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Truck:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Truck:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Truck:scale:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Truck:scale:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_qsht3"]
+resource_name = "truck_leaving"
+length = 6.266667
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Truck:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 220, -0.8333334, -36.666668, 0, 0),
+"times": PackedFloat32Array(0, 5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Truck:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2),
+"points": PackedFloat32Array(0, -0.24999999, 0, 0.25, 0, 0.5, -0.033333335, 0, 0.8000001, 0, -0.5, -0.06666666, 2.5, 0.73333496, -0.1527781, 0.5, -0.033333335, 0, 0.8, 0, -0.5, -0.06666668, 0.013888891, 0.73333496, -0.1527781, 0.5, -0.033333335, 0, 0.8, 0, -0.5, -0.06666668, 0.013888891, 0.73333496, -0.1527781, 0.5, -0.033333335, 0, 0.8, 0, -0.5, -0.06666668, 0.013888891, 0.73333496, -0.1527781, 0.5, -0.033333335, 0, 0.8000001, 0, -0.5, -0.06666666, 2.5, 0.73333496, -0.1527781, 0.5, -0.033333335, 0, 0.8, 0, -0.5, -0.06666668, 0.013888891, 0.73333496, -0.1527781, 0.5, -0.033333335, 0, 0.8, 0, -0.5, -0.06666668, 0.013888891, 0.73333496, -0.1527781, 0.5, -0.033333335, 0, 0.8, 0, -0.5, -0.06666668, 0.013888891, 0.73333496, -0.1527781, 0.5, -0.033333335, 0, 0.8000001, 0, -0.5, -0.06666666, 2.5, 0.73333496, -0.1527781, 0.5, -0.033333335, 0, 0.8, 0, -0.5, -0.06666668, 0.013888891, 0.73333496, -0.1527781, 0.5, -0.033333335, 0, 0.8, 0, -0.5, -0.06666668, 0.013888891, 0.73333496, -0.1527781, 0.5, -0.033333335, 0, 0.8, 0, -0.5, -0.06666668, 0.013888891, 0.73333496, -0.1527781, 0.5, -0.033333335, 0, 0.8000001, 0, -0.5, -0.06666666, 2.5, 0.73333496, -0.1527781, 0.5, -0.033333335, 0, 0.8, 0, -0.5, -0.06666668, 0.013888891, 0.73333496, -0.1527781, 0.5, -0.033333335, 0, 0.8, 0, 0, -0.8333334, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.2, 0.36666667, 0.53333336, 0.7000001, 0.8666667, 1.0333333, 1.1999998, 1.3666667, 1.4881582, 1.6548249, 1.8214916, 1.9881583, 2.154825, 2.3214915, 2.488158, 2.6548247, 2.7943785, 2.9610453, 3.1277118, 3.2943788, 3.4610453, 3.6277118, 3.7943783, 3.9610453, 4.100599, 4.2672653, 4.4339323, 4.600599, 4.7672653, 5)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Truck:scale:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Truck:scale:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_eknyx"]
+resource_name = "truck_returning"
+length = 5.4
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Truck:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(220, -0.8333334, -36.666668, 0, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.03333336, 4.9666667)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Truck:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.8333334, 0, 0, 0, 0.5, -0.033333335, 0, 0.8000001, 0, -0.5, -0.06666666, 2.5, 0.73333496, -0.1527781, 0.5, -0.033333335, 0, 0.8, 0, -0.5, -0.06666668, 0.013888891, 0.73333496, -0.1527781, 0.5, -0.033333335, 0, 0.8, 0, -0.5, -0.06666668, 0.013888891, 0.73333496, -0.1527781, 0.5, -0.033333335, 0, 0.8, 0, -0.5, -0.06666668, 0.013888891, 0.73333496, -0.1527781, 0.5, -0.033333335, 0, 0.8000001, 0, -0.5, -0.06666666, 2.5, 0.73333496, -0.1527781, 0.5, -0.033333335, 0, 0.8, 0, -0.5, -0.06666668, 0.013888891, 0.73333496, -0.1527781, 0.5, -0.033333335, 0, 0.8, 0, -0.5, -0.06666668, 0.013888891, 0.73333496, -0.1527781, 0.5, -0.033333335, 0, 0.8, 0, -0.5, -0.06666668, 0.013888891, 0.73333496, -0.1527781, 0.5, -0.033333335, 0, 0.8000001, 0, -0.5, -0.06666666, 2.5, 0.73333496, -0.1527781, 0.5, -0.033333335, 0, 0.8, 0, -0.5, -0.06666668, 0.013888891, 0.73333496, -0.1527781, 0.5, -0.033333335, 0, 0.8, 0, -0.5, -0.06666668, 0.013888891, 0.73333496, -0.1527781, 0.5, -0.033333335, 0, 0.8, 0, -0.5, -0.06666668, 0.013888891, 0.73333496, -0.1527781, 0.5, -0.033333335, 0, 0.8000001, 0, -0.5, -0.06666666, 2.5, 0.73333496, -0.1527781, 0.5, -0.033333335, 0, 0.8, 0, -0.5, -0.06666668, 0.013888891, 0.73333496, -0.1527781, 0.5, -0.033333335, 0, 0.8, 0, 0, -0.24999999, 0, 0.25, 0),
+"times": PackedFloat32Array(-0.13333334, 0.0333333, 0.23333353, 0.4000002, 0.5666669, 0.73333365, 0.9000002, 1.0666668, 1.2333333, 1.4000002, 1.5214918, 1.6881584, 1.854825, 2.0214918, 2.1881585, 2.354825, 2.5214915, 2.6881583, 2.827712, 2.9943788, 3.1610453, 3.3277123, 3.4943788, 3.6610453, 3.8277116, 3.9943786, 4.133932, 4.3005986, 4.4672656, 4.633932, 4.8005986, 4.9666667)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Truck:scale:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(-1, -0.25, 0, 0.25, 0, -1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(-0.13333334, 4.9333334, 4.9666667)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Truck:scale:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(-0.13333334, 4.9333334, 4.9666667)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_eknyx"]
+_data = {
+&"RESET": SubResource("Animation_h7rmg"),
+&"truck_leaving": SubResource("Animation_qsht3"),
+&"truck_returning": SubResource("Animation_eknyx")
+}
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_h7rmg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c576l"]
+size = Vector2(59, 22)
+
+[node name="Sell Truck" type="Node2D" unique_id=1943514205]
+script = ExtResource("1_h7rmg")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=204578635]
+libraries/ = SubResource("AnimationLibrary_eknyx")
+autoplay = &"truck_returning"
+
+[node name="Truck" type="Node2D" parent="." unique_id=770053347]
+
+[node name="Truck" type="Sprite2D" parent="Truck" unique_id=948144414]
+texture = ExtResource("1_atso4")
+
+[node name="Boxes" type="Sprite2D" parent="Truck" unique_id=278350467]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Truck" unique_id=1722859427]
+input_pickable = true
+physics_material_override = SubResource("PhysicsMaterial_h7rmg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Truck/StaticBody2D" unique_id=1773151133]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_c576l")
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="input_event" from="Truck/StaticBody2D" to="." method="_on_static_body_2d_input_event"]

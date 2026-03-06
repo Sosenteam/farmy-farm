@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bgatqhsayc0n4" path="res://Assets/sell_truck/opened_truck.png" id="1_atso4"]
 [ext_resource type="Script" uid="uid://42skqp3xie4n" path="res://sell_truck.gd" id="1_h7rmg"]
+[ext_resource type="Texture2D" uid="uid://e22gdrfjn72p" path="res://Assets/sell_truck/smoke.png" id="3_qsht3"]
 
 [sub_resource type="Animation" id="Animation_h7rmg"]
 length = 0.001
@@ -153,6 +154,18 @@ _data = {
 &"truck_returning": SubResource("Animation_eknyx")
 }
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_eknyx"]
+lifetime_randomness = 0.46
+particle_flag_disable_z = true
+angle_min = -88.59999
+angle_max = 376.6
+spread = 91.588
+flatness = 0.269
+initial_velocity_min = -5.0
+initial_velocity_max = -2.0
+gravity = Vector3(-55.92, -58.08, 0)
+scale_min = 0.39999998
+
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_h7rmg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c576l"]
@@ -171,6 +184,20 @@ autoplay = &"truck_returning"
 texture = ExtResource("1_atso4")
 
 [node name="Boxes" type="Sprite2D" parent="Truck" unique_id=278350467]
+
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="Truck" unique_id=1606982918]
+position = Vector2(-26.48148, -5.1851835)
+emitting = false
+texture = ExtResource("3_qsht3")
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_eknyx")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Truck" unique_id=2091784868]
+position = Vector2(-26, 8)
+emitting = false
+texture = ExtResource("3_qsht3")
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_eknyx")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Truck" unique_id=1722859427]
 input_pickable = true

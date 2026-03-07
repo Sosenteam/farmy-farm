@@ -8,7 +8,8 @@ var map = tiles.map
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Global.on_tick.connect(on_tick)
-
+	for i in tiles.cells:
+		map.append(Tile.new())
 
 func on_tick():
 	for tile in map:

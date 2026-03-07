@@ -1,4 +1,4 @@
-extends Occupant
+class_name Plant extends Occupant
 
 var growthPercentage:float = 0.0;
 

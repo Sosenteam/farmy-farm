@@ -4,7 +4,3 @@
 
 [node name="TileManager" type="Node2D" unique_id=1968677421]
 script = ExtResource("1_ndy0f")
-
-[node name="GroundLayer" type="TileMapLayer" parent="." unique_id=259521545]
-
-[node name="OccupantLayer" type="TileMapLayer" parent="." unique_id=1049314530]

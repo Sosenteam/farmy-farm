@@ -1,10 +1,13 @@
 [gd_scene format=3 uid="uid://c6qcddfe0an4p"]
 
 [ext_resource type="Script" uid="uid://vbhpu3e6vcne" path="res://tile_managing/tile_manager.gd" id="1_ndy0f"]
+[ext_resource type="TileSet" uid="uid://olashrag6hn7" path="res://tilemaps/tile_ground.tres" id="2_l6mec"]
 
 [node name="TileManager" type="Node2D" unique_id=1968677421]
 script = ExtResource("1_ndy0f")
+metadata/_edit_group_ = true
 
 [node name="GroundLayer" type="TileMapLayer" parent="." unique_id=259521545]
+tile_set = ExtResource("2_l6mec")
 
 [node name="OccupantLayer" type="TileMapLayer" parent="." unique_id=1049314530]

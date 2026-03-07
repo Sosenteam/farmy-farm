@@ -1,7 +1,7 @@
 extends Node2D
 
-var tiles_resource = preload("res://tile_managing/tiles.tres")
-var tiles = tiles_resource.tiles
+var tiles = preload("res://tile_managing/tiles.tres")
+var map = tiles.map
 
 
 
@@ -12,5 +12,5 @@ func _ready() -> void:
 
 
 func on_tick():
-	for tile in tiles:
+	for tile in map:
 		tile.tick()

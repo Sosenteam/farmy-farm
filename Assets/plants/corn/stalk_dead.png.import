@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://jyya22ac33ia"
-path="res://.godot/imported/stalk_dead.png-f268f388421dd2451948696da0a8eaf9.ctex"
+path="res://.godot/imported/stalk_dead.png-3fdcf47218522be9df25a79d02e9df39.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/plants/corn/stalk_dead.png"
-dest_files=["res://.godot/imported/stalk_dead.png-f268f388421dd2451948696da0a8eaf9.ctex"]
+source_file="res://assets/plants/corn/stalk_dead.png"
+dest_files=["res://.godot/imported/stalk_dead.png-3fdcf47218522be9df25a79d02e9df39.ctex"]
 
 [params]
 

@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://dps8b56cns3i5"]
 
-[ext_resource type="Texture2D" uid="uid://bgatqhsayc0n4" path="res://Assets/sell_truck/opened_truck.png" id="1_atso4"]
+[ext_resource type="Texture2D" uid="uid://bgatqhsayc0n4" path="res://assets/sell_truck/opened_truck.png" id="1_atso4"]
 [ext_resource type="Script" uid="uid://42skqp3xie4n" path="res://sell_truck.gd" id="1_h7rmg"]
-[ext_resource type="Texture2D" uid="uid://e22gdrfjn72p" path="res://Assets/sell_truck/smoke.png" id="3_qsht3"]
+[ext_resource type="Texture2D" uid="uid://e22gdrfjn72p" path="res://assets/sell_truck/smoke.png" id="3_qsht3"]
 
 [sub_resource type="Animation" id="Animation_h7rmg"]
 length = 0.001

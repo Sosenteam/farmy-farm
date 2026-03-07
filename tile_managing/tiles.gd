@@ -13,9 +13,34 @@ var length := 0:
 		return map.size()
 
 func set_tile(pos:Vector2i,data:Tile):
-	if length > cells:   #Prevent Overflowing
+	if pos.y*pos.x > cells:   #Prevent Overflowing
 		map[(pos.y * width) + (pos.x)] = data
 
 func get_tile(pos:Vector2i):
-	if length > cells:   #Prevent Overflowing
+	if pos.y*pos.x > cells:   #Prevent Overflowing
 		return map[(pos.y * width) + (pos.x)]
+
+## Negative adds size to left, up | Positive adds size to right, down
+func add_size(width_change: int,height_change: int):
+	#Vertical Change
+	if height_change > 0:
+		for j in range(0,height_change):
+			for i in range(0,width):
+				map.push_back(Tile.new())
+		height+=height_change
+	elif height_change <0:
+		for j in range(0,abs(height_change)):
+			for i in range(0,width):
+				map.push_front(Tile.new())
+		height+=abs(height_change)
+	# Horizontal Change
+	if width_change > 0:
+		for j in abs(width_change):
+			for row in height:
+				map.insert((row*width)+width+row,Tile.new())
+			width+=1
+	elif width_change < 0:
+		for j in abs(width_change):
+			for row in height:
+				map.insert((row*width)+row,Tile.new())
+			width+=1

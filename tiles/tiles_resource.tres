@@ -1,0 +1,6 @@
+[gd_resource type="Resource" format=3 uid="uid://6b2p77rscjuh"]
+
+[ext_resource type="Script" uid="uid://b0f67qit3eh84" path="res://tiles/tile_constants.gd" id="1_k84i1"]
+
+[resource]
+script = ExtResource("1_k84i1")

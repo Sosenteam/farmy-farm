@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b5ewx577hpr68"
-path="res://.godot/imported/4.png-530013615b66eef3e01dcbc3b4a2eac4.ctex"
+path="res://.godot/imported/4.png-3cc74f11243704edf8be8975c1ba7521.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sell_truck/boxes/4.png"
-dest_files=["res://.godot/imported/4.png-530013615b66eef3e01dcbc3b4a2eac4.ctex"]
+source_file="res://Assets/sell_truck/boxes/4.png"
+dest_files=["res://.godot/imported/4.png-3cc74f11243704edf8be8975c1ba7521.ctex"]
 
 [params]
 

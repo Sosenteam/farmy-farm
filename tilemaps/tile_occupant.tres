@@ -1,0 +1,32 @@
+[gd_resource type="TileSet" format=3 uid="uid://qjjupentu0ds"]
+
+[ext_resource type="Texture2D" uid="uid://4wrn3rccs4if" path="res://assets/plants/carrot.png" id="1_2r3ew"]
+[ext_resource type="Texture2D" uid="uid://dpqvw0yrqdxh" path="res://assets/plants/corn/stalk_spritesheet.png" id="2_mphft"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v826q"]
+texture = ExtResource("1_2r3ew")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jvcuk"]
+texture = ExtResource("2_mphft")
+texture_region_size = Vector2i(16, 32)
+0:0/next_alternative_id = 2
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, 8)
+1:0/0 = 0
+1:0/0/texture_origin = Vector2i(0, 8)
+2:0/0 = 0
+2:0/0/texture_origin = Vector2i(0, 8)
+3:0/0 = 0
+3:0/0/texture_origin = Vector2i(0, 8)
+4:0/0 = 0
+4:0/0/texture_origin = Vector2i(0, 8)
+5:0/0 = 0
+5:0/0/texture_origin = Vector2i(0, 8)
+
+[resource]
+sources/1 = SubResource("TileSetAtlasSource_v826q")
+sources/2 = SubResource("TileSetAtlasSource_jvcuk")

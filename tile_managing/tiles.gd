@@ -20,6 +20,15 @@ func get_tile(pos:Vector2i):
 	if pos.y*pos.x > cells:   #Prevent Overflowing
 		return map[(pos.y * width) + (pos.x)]
 
+func vector_to_index(vector:Vector2i):
+	return (vector.y * width) + (vector.x)
+
+func index_to_vector(index:int):
+	var vect: Vector2i
+	vect.x = index % width 
+	vect.y = (index-vect.x) / width
+	return vect
+
 ## Negative adds size to left, up | Positive adds size to right, down
 func add_size(width_change: int,height_change: int):
 	#Vertical Change

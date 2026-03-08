@@ -12,22 +12,30 @@ var length := 0:
 	get:
 		return map.size()
 
-func set_tile(pos:Vector2i,data:Tile):
-	if pos.y*pos.x > cells:   #Prevent Overflowing
+func set_tile(pos:Vector2i,data:Tile) -> void:
+	if pos.y*pos.x < cells:   #Prevent Overflowing
 		map[(pos.y * width) + (pos.x)] = data
 
-func get_tile(pos:Vector2i):
-	if pos.y*pos.x > cells:   #Prevent Overflowing
+func get_tile(pos:Vector2i) -> Tile:
+	if pos.y*pos.x < cells:   #Prevent Overflowing
 		return map[(pos.y * width) + (pos.x)]
+	else:
+		return null
 
-func vector_to_index(vector:Vector2i):
+func vector_to_index(vector:Vector2i) -> int:
 	return (vector.y * width) + (vector.x)
 
-func index_to_vector(index:int):
+func index_to_vector(index:int)-> Vector2i:
 	var vect: Vector2i
 	vect.x = index % width 
 	vect.y = (index-vect.x) / width
 	return vect
+
+func is_in(vector:Vector2i) -> bool:
+	if(vector.x>width-1||vector.y>height-1):
+		return false
+	else:
+		return true
 
 ## Negative adds size to left, up | Positive adds size to right, down
 func add_size(width_change: int,height_change: int):

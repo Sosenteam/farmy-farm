@@ -25,3 +25,8 @@ func render():
 			ground_layer.set_cells_terrain_connect([tiles.index_to_vector(i)],0,0)
 	#Renders OccupantLayer 
 	
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseButton:
+		var tilemap_pos = ground_layer.local_to_map(event.position)
+		if(tiles.is_in(tilemap_pos)):
+			print(tiles.get_tile(tilemap_pos).ground.get_script().get_global_name())

@@ -2,25 +2,6 @@
 
 [ext_resource type="Script" uid="uid://vbhpu3e6vcne" path="res://tile_managing/tile_manager.gd" id="1_ndy0f"]
 [ext_resource type="TileSet" uid="uid://olashrag6hn7" path="res://tilemaps/tile_ground.tres" id="2_l6mec"]
-[ext_resource type="Texture2D" uid="uid://bq8irojr1k5j" path="res://temp_assets/Basic Plants.png" id="3_1lfs6"]
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cdvg4"]
-texture = ExtResource("3_1lfs6")
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-3:0/0 = 0
-4:0/0 = 0
-5:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-3:1/0 = 0
-4:1/0 = 0
-5:1/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_j6bsc"]
-sources/0 = SubResource("TileSetAtlasSource_cdvg4")
 
 [node name="TileManager" type="Node2D" unique_id=1968677421]
 script = ExtResource("1_ndy0f")
@@ -30,4 +11,3 @@ metadata/_edit_group_ = true
 tile_set = ExtResource("2_l6mec")
 
 [node name="OccupantLayer" type="TileMapLayer" parent="." unique_id=1049314530]
-tile_set = SubResource("TileSet_j6bsc")

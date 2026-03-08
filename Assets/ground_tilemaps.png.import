@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3ghuuq87s5hk"
-path="res://.godot/imported/stalk_3.png-1cdad9d4db9f45b85be9714b728955f8.ctex"
+uid="uid://c40h6txkejjdm"
+path="res://.godot/imported/ground_tilemaps.png-0cba339196ccd94f742319e1d48ed156.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/plants/corn/stalk_3.png"
-dest_files=["res://.godot/imported/stalk_3.png-1cdad9d4db9f45b85be9714b728955f8.ctex"]
+source_file="res://assets/ground_tilemaps.png"
+dest_files=["res://.godot/imported/ground_tilemaps.png-0cba339196ccd94f742319e1d48ed156.ctex"]
 
 [params]
 

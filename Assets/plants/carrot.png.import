@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cvhiv7cn1ei2r"
-path="res://.godot/imported/stalk_0.png-24c45f34640c716e9a1bc7aa77a79dba.ctex"
+uid="uid://4wrn3rccs4if"
+path="res://.godot/imported/carrot.png-af0f4f1978e37dc87d5c92f58ea90064.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/plants/corn/stalk_0.png"
-dest_files=["res://.godot/imported/stalk_0.png-24c45f34640c716e9a1bc7aa77a79dba.ctex"]
+source_file="res://assets/plants/carrot.png"
+dest_files=["res://.godot/imported/carrot.png-af0f4f1978e37dc87d5c92f58ea90064.ctex"]
 
 [params]
 

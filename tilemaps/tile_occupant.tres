@@ -10,23 +10,27 @@ texture = ExtResource("1_mphft")
 texture_region_size = Vector2i(16, 32)
 0:0/next_alternative_id = 2
 0:0/0 = 0
-0:0/0/texture_origin = Vector2i(0, 8)
+0:0/0/texture_origin = Vector2i(0, 16)
 1:0/0 = 0
-1:0/0/texture_origin = Vector2i(0, 8)
+1:0/0/texture_origin = Vector2i(0, 16)
 2:0/0 = 0
-2:0/0/texture_origin = Vector2i(0, 8)
+2:0/0/texture_origin = Vector2i(0, 16)
 3:0/0 = 0
-3:0/0/texture_origin = Vector2i(0, 8)
+3:0/0/texture_origin = Vector2i(0, 16)
 4:0/0 = 0
-4:0/0/texture_origin = Vector2i(0, 8)
+4:0/0/texture_origin = Vector2i(0, 16)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v826q"]
 resource_name = "Carrot"
 texture = ExtResource("1_2r3ew")
 0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, 7)
 1:0/0 = 0
+1:0/0/texture_origin = Vector2i(0, 7)
 2:0/0 = 0
+2:0/0/texture_origin = Vector2i(0, 7)
 3:0/0 = 0
+3:0/0/texture_origin = Vector2i(0, 7)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jvcuk"]
 resource_name = "Corn"
@@ -34,17 +38,17 @@ texture = ExtResource("2_mphft")
 texture_region_size = Vector2i(16, 32)
 0:0/next_alternative_id = 2
 0:0/0 = 0
-0:0/0/texture_origin = Vector2i(0, 8)
+0:0/0/texture_origin = Vector2i(0, 15)
 1:0/0 = 0
-1:0/0/texture_origin = Vector2i(0, 8)
+1:0/0/texture_origin = Vector2i(0, 15)
 2:0/0 = 0
-2:0/0/texture_origin = Vector2i(0, 8)
+2:0/0/texture_origin = Vector2i(0, 15)
 3:0/0 = 0
-3:0/0/texture_origin = Vector2i(0, 8)
+3:0/0/texture_origin = Vector2i(0, 15)
 4:0/0 = 0
-4:0/0/texture_origin = Vector2i(0, 8)
+4:0/0/texture_origin = Vector2i(0, 15)
 5:0/0 = 0
-5:0/0/texture_origin = Vector2i(0, 8)
+5:0/0/texture_origin = Vector2i(0, 15)
 
 [resource]
 sources/1 = SubResource("TileSetAtlasSource_v826q")

@@ -13,12 +13,13 @@ func _ready() -> void:
 	Global.on_tick.connect(on_tick)
 	for i in tiles.cells:
 		map.append(Tile.new(Dirt,[Corn,Wheat,Carrot].pick_random()))
+		#map.append(Tile.new(Dirt,Wheat))
 	render()
 
 func on_tick():
-	for i in map.size():
-		map[i].tick()
-		
+	#for i in map.size():
+		#map[i].tick()
+	pass
 	
 ## Renders tile array to tilemaps 
 func render():

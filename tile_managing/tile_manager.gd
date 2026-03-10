@@ -17,9 +17,9 @@ func _ready() -> void:
 	render()
 
 func on_tick():
-	for i in map.size():
-		map[i].tick()
-		
+	#for i in map.size():
+		#map[i].tick()
+	pass
 	
 ## Renders tile array to tilemaps 
 func render():

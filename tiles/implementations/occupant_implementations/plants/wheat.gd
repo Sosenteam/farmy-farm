@@ -2,17 +2,10 @@ class_name Wheat extends Plant
 static var stages = constants.wheat_grow_stages
 
 func tick() -> void:
-
-	# PLEASE MAKE A FASTER WAY OF DOING THIS (if possible w/o for loops)
-	if(is_equal_approx(growthPercentage,stages[0])):
-		change_growth_stage.emit("wheat",0)
-	if(is_equal_approx(growthPercentage,stages[1])):
-		change_growth_stage.emit("wheat",1)
-	if(is_equal_approx(growthPercentage,stages[2])):
-		change_growth_stage.emit("wheat",2)
-	if(is_equal_approx(growthPercentage,stages[3])):
-		change_growth_stage.emit("wheat",3)
-	if(is_equal_approx(growthPercentage,stages[4])):
-		change_growth_stage.emit("wheat",4)
-	# Increase the growth percent
+	
+	for i in stages.size():
+		if is_equal_approx(growthPercentage, stages[i]):
+			change_growth_stage.emit("wheat", i)
+			break 
+			
 	growthPercentage+=constants.wheat_grow_speed

@@ -40,5 +40,5 @@ func _get_nutrient_multiplier(soil_has:float, plant_wants:float):
 	return 1.25
 
 func harvest(plant_name,yield_count) -> Yield:
-	return Yield.new()
+	return Yield.new(plant_name,yield_count)
 	

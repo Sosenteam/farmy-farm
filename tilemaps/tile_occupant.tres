@@ -1,8 +1,8 @@
 [gd_resource type="TileSet" format=3 uid="uid://c5lvj7sg6yo7x"]
 
-[ext_resource type="Texture2D" uid="uid://4wrn3rccs4if" path="res://Assets/plants/carrot.png" id="1_2r3ew"]
-[ext_resource type="Texture2D" uid="uid://s5b8s7kn7ku2" path="res://Assets/plants/wheat.png" id="1_mphft"]
-[ext_resource type="Texture2D" uid="uid://dpqvw0yrqdxh" path="res://Assets/plants/corn/stalk_spritesheet.png" id="2_mphft"]
+[ext_resource type="Texture2D" uid="uid://4wrn3rccs4if" path="res://assets/plants/carrot.png" id="1_2r3ew"]
+[ext_resource type="Texture2D" uid="uid://s5b8s7kn7ku2" path="res://assets/plants/wheat.png" id="1_mphft"]
+[ext_resource type="Texture2D" uid="uid://dpqvw0yrqdxh" path="res://assets/plants/corn/stalk_spritesheet.png" id="2_mphft"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5riq7"]
 resource_name = "Wheat"

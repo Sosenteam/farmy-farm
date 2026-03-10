@@ -8,6 +8,7 @@ const ticks_per_day:int = ticks_per_second * 90
 @export var BASE_GROWTH_RATE:float = 1.0/480.0 # 0.00208333333
 #@export var BASE_NUTRIENT_UPTAKE:float = 0.25/ticks_per_day
 @export var BASE_NUTRIENT_UPTAKE:float = 0
+@export var BASE_YIELD_COUNT = 1
 
 @export_category("Crop Constants")
 

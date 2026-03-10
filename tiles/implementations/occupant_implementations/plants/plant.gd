@@ -8,6 +8,8 @@ var base_growth_rate:float = Tile.constants.BASE_GROWTH_RATE
 var phosphorus_uptake:float = Tile.constants.BASE_NUTRIENT_UPTAKE
 var potassium_uptake:float = Tile.constants.BASE_NUTRIENT_UPTAKE
 var nitrogen_uptake:float = Tile.constants.BASE_NUTRIENT_UPTAKE
+var harvestable:bool = false
+var yield_count = Tile.constants.BASE_YIELD_COUNT
 
 signal change_growth_stage(stage:int)
 
@@ -35,3 +37,7 @@ func _get_nutrient_multiplier(soil_has:float, plant_wants:float):
 	if soil_has / plant_wants < 1.25:
 		return 1.0
 	return 1.25
+
+func harvest(plant_name,yield_count) -> Yield:
+	return Yield.new()
+	

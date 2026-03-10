@@ -1,5 +1,6 @@
 class_name Plant extends Occupant
 
+var crop_name:StringName = ""
 var growth_percentage:float = 0.0;
 var growth_stages:Array
 var current_growth_stage:int = 0
@@ -26,7 +27,7 @@ func tick() -> void:
 		if growth_stages.size() + 1 > current_growth_stage: # not at max
 			if growth_percentage >= growth_stages[current_growth_stage + 1]:
 				current_growth_stage += 1
-				change_growth_stage.emit(current_growth_stage)
+				change_growth_stage.emit(crop_name, current_growth_stage)
 
 func _get_nutrient_multiplier(soil_has:float, plant_wants:float):
 	if soil_has < plant_wants:

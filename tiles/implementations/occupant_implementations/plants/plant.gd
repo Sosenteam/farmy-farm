@@ -25,6 +25,7 @@ func tick() -> void:
 			dirt_tile.growth_rate_multiplier
 		
 		growth_percentage += effectiveGrowthRate;
+		#print(str(base_growth_rate) + " " + str(effectiveGrowthRate))
 		
 		if growth_stages.size() - 1 > current_growth_stage: # not at max
 			if growth_percentage >= growth_stages[current_growth_stage + 1]:
@@ -34,7 +35,7 @@ func tick() -> void:
 func _get_nutrient_multiplier(soil_has:float, plant_wants:float):
 	if soil_has < plant_wants:
 		return 0.6
-	if soil_has / plant_wants < 1.25:
+	if (plant_wants == 0) or (soil_has / plant_wants < 1.25):
 		return 1.0
 	return 1.25
 

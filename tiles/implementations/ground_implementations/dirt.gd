@@ -1,11 +1,14 @@
 class_name Dirt extends Ground
 
-var moisturePercent:float
+var moisture_percent:float
 
 # buffs
-var fertilizationMultiplier:float
-var yieldMultiplier:float
-var waterRetainingMultiplier:float
+var nitrogen:float
+var phosphorus:float
+var potassium:float
+var growth_rate_multiplier:float
+var yield_multiplier:float
+var water_loss_multiplier:float
 
 func tick() -> void:
-	moisturePercent
+	pass

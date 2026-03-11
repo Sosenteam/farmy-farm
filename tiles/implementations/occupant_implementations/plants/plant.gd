@@ -14,8 +14,8 @@ var yield_count = Tile.constants.BASE_YIELD_COUNT
 signal change_growth_stage(stage:int)
 
 func tick() -> void:
-	if tile.ground is Dirt: # You never know
-		var dirt_tile = tile.ground as Dirt
+	if tile.ground is TilledDirt: # You never know
+		var dirt_tile = tile.ground as TilledDirt
 		
 		var effectiveGrowthRate = \
 			base_growth_rate * \

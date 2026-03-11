@@ -12,3 +12,8 @@ var water_loss_multiplier:float = 1
 
 func tick() -> void:
 	pass
+
+func change_nutrients(n:float, p:float, k:float):
+	nitrogen = clampf(nitrogen + n, 0, Tile.constants.nutrient_capacity)
+	phosphorus = clampf(phosphorus + p, 0, Tile.constants.nutrient_capacity)
+	potassium = clampf(potassium + k, 0, Tile.constants.nutrient_capacity)

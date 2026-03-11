@@ -37,7 +37,7 @@ func tick() -> void:
 				change_growth_stage.emit(crop_name, current_growth_stage)
 				
 		# ==== Nutrients ==== #
-		dirt_tile.change_nutrients(-n_per_yield, -p_per_yield, -k_per_yield)
+		dirt_tile.change_nutrients(-n_per_yield * effectiveGrowthRate, -p_per_yield * effectiveGrowthRate, -k_per_yield * effectiveGrowthRate)
 		
 
 func _get_nutrient_multiplier(soil_has:float, plant_wants:float):

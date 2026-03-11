@@ -9,7 +9,7 @@
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -6.0
+offset_left = -20.0
 offset_top = -9.0
 offset_right = 30.0
 offset_bottom = 13.6
@@ -25,17 +25,15 @@ axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="NinePatchRect" unique_id=650608925]
-layout_mode = 1
+[node name="Label" type="Label" parent="." unique_id=650608925]
 anchors_preset = -1
-anchor_left = -0.6388889
+anchor_left = -0.54108894
 anchor_top = 0.26548672
 anchor_right = -1.2777778
 anchor_bottom = 0.81248677
-offset_left = 25.0
-offset_top = 3.0
-offset_right = 80.0
-offset_bottom = 6.247999
+offset_left = -23.0
+offset_right = 32.0
+offset_bottom = 12.0
 theme_override_colors/font_color = Color(0.22296365, 0.15070091, 0.09420124, 1)
 theme_override_fonts/font = ExtResource("2_uw0kl")
 theme_override_font_sizes/font_size = 6

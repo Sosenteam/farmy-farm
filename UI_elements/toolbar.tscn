@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dh75pvvm575r5"]
+
+[ext_resource type="Script" uid="uid://bcfpeg2qkqoet" path="res://UI_elements/toolbar_logic.gd" id="1_har8n"]
+
+[node name="Toolbar" type="CanvasLayer" unique_id=314159]
+
+[node name="Background#ToolsContainer" type="HBoxContainer" parent="." unique_id=393909142]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -960.0
+offset_top = -460.0
+offset_right = -785.0
+offset_bottom = -438.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 4
+alignment = 1
+script = ExtResource("1_har8n")

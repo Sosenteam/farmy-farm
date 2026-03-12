@@ -3,16 +3,27 @@
 [ext_resource type="Texture2D" uid="uid://dbf2ncasdyqy3" path="res://assets/rect.png" id="1_ulapv"]
 [ext_resource type="FontFile" uid="uid://cp7khvcr6ixv" path="res://assets/Font.ttf" id="2_uw0kl"]
 
-[node name="Time Corner" type="Node2D" unique_id=1733088923]
+[node name="CanvasLayer" type="CanvasLayer" unique_id=503905675]
+scale = Vector2(4, 4)
+transform = Transform2D(4, 0, 0, 4, 0, 0)
 
-[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=799430136]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -20.0
-offset_top = -9.0
-offset_right = 30.0
-offset_bottom = 13.6
+[node name="Control" type="Control" parent="." unique_id=501971773]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 43.5
+offset_top = 16.75
+offset_right = 83.5
+offset_bottom = 56.75
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Control" unique_id=799430136]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 9.6375
+anchor_top = -0.4125
+anchor_right = 9.6375
+anchor_bottom = 0.8162506
+offset_right = 50.0
+offset_bottom = 22.599976
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_ulapv")
@@ -25,15 +36,39 @@ axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="." unique_id=650608925]
+[node name="NinePatchRect3" type="NinePatchRect" parent="Control" unique_id=1360548696]
+layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.54108894
-anchor_top = 0.26548672
-anchor_right = -1.2777778
-anchor_bottom = 0.81248677
-offset_left = -23.0
-offset_right = 32.0
-offset_bottom = 12.0
+anchor_left = 9.6375
+anchor_top = -0.4125
+anchor_right = 9.6375
+anchor_bottom = -0.10874939
+offset_right = 50.0
+offset_bottom = 22.599976
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ulapv")
+region_rect = Rect2(0, 0, 32, 32)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Control" unique_id=650608925]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 8.4284725
+anchor_top = -0.09701328
+anchor_right = 8.4284725
+anchor_bottom = 0.44998676
+offset_left = 48.11111
+offset_top = -1.6194687
+offset_right = 103.111115
+offset_bottom = 10.380562
 theme_override_colors/font_color = Color(0.22296365, 0.15070091, 0.09420124, 1)
 theme_override_fonts/font = ExtResource("2_uw0kl")
 theme_override_font_sizes/font_size = 6
@@ -42,15 +77,57 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="NinePatchRect2" type="NinePatchRect" parent="." unique_id=1664192158]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -54.0
-offset_top = -20.0
-offset_right = 30.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Label3" type="Label" parent="Control" unique_id=2078947754]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 9.678
+anchor_top = 0.49673596
+anchor_right = 10.6310005
+anchor_bottom = 0.49673596
+offset_left = 13.879944
+offset_top = -1.6194382
+offset_right = 0.009918213
+offset_bottom = 10.380562
+theme_override_colors/font_color = Color(0.22296365, 0.15070091, 0.09420124, 1)
+theme_override_fonts/font = ExtResource("2_uw0kl")
+theme_override_font_sizes/font_size = 6
+text = "QUOTA"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label4" type="Label" parent="Control" unique_id=839782932]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 9.737
+anchor_top = 0.512
+anchor_right = 10.887
+anchor_bottom = 0.95298594
+offset_left = 0.019989014
+offset_top = 0.01999855
+offset_right = -0.7300415
+offset_bottom = 10.380562
+theme_override_colors/font_color = Color(0.22296365, 0.15070091, 0.09420124, 1)
+theme_override_fonts/font = ExtResource("2_uw0kl")
+theme_override_font_sizes/font_size = 4
+text = "insert quota"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="Control" unique_id=1664192158]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 9.7375
+anchor_top = -0.1375
+anchor_right = 9.6375
+anchor_bottom = -0.1375
+offset_left = -34.0
+offset_top = -11.0
+offset_right = 50.0
+offset_bottom = 9.0
 texture = ExtResource("1_ulapv")
 region_rect = Rect2(0, 0, 32, 32)
 patch_margin_left = 4
@@ -61,12 +138,18 @@ axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="NinePatchRect2" unique_id=173559039]
-layout_mode = 0
-offset_left = 4.0
-offset_top = 3.0
-offset_right = 80.0
-offset_bottom = 18.0
+[node name="Label2" type="Label" parent="Control" unique_id=173559039]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 9.7375
+anchor_top = -0.13125
+anchor_right = 9.7375
+anchor_bottom = -0.13125
+offset_left = -30.0
+offset_top = -8.0
+offset_right = 46.0
+offset_bottom = 7.0
 theme_override_colors/font_color = Color(0.22296365, 0.15070091, 0.09420124, 1)
 theme_override_fonts/font = ExtResource("2_uw0kl")
 theme_override_font_sizes/font_size = 8

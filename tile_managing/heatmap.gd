@@ -16,8 +16,8 @@ func _draw() -> void:
 		#var b:float = tile.ground.potassium
 		#draw_rect(Rect2(x*16,y*16,16,16),Color(r,g,b,0.1))
 		
-		var a:float = tile.ground.nitrogen
-		draw_rect(Rect2(x*16,y*16,16,16),Color(1,0,0,remap(a,0,200,0,0.25)))
+		var a:float = tile.ground.moisture_percent
+		draw_rect(Rect2(x*16,y*16,16,16),Color(1,0,0,remap(a,0,1,0,0.25)))
 
 func _process(delta: float) -> void:
 	queue_redraw()

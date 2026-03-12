@@ -32,7 +32,7 @@ func index_to_vector(index:int)-> Vector2i:
 	return vect
 
 func is_in(vector:Vector2i) -> bool:
-	if(vector.x>width-1||vector.y>height-1):
+	if(vector.x>width-1||vector.y>height-1||vector.x<0||vector.y<0):
 		return false
 	else:
 		return true

@@ -17,7 +17,7 @@ func _ready() -> void:
 		map[i].ground.change_nutrients(randf_range(0,200),randf_range(0,200),randf_range(0,200))
 		#map.append(Tile.new(Dirt,Wheat))
 		map[i].occupant.change_growth_stage.connect(on_change_growth_stage.bind(i)) # Bind growthstage changes to function
-
+		map[i].index = i
 	render()
 
 func on_tick():
@@ -44,6 +44,7 @@ func _input(event: InputEvent) -> void:
 			if(map[tiles.vector_to_index(tilemap_pos)].ground is Dirt):
 				map[tiles.vector_to_index(tilemap_pos)].ground = TilledDirt.new()
 				render()
+				print(tiles.get_surrounding_tiles(tiles.vector_to_index(tilemap_pos)))
 			#print(tiles.get_tile(tilemap_pos).occupant.get_script().get_global_name())
 
 func on_change_growth_stage(crop,stage: int, index: int) -> void:

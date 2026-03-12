@@ -29,7 +29,7 @@ func tick() -> void:
 			dirt_tile.growth_rate_multiplier
 		
 		growth_percentage += effectiveGrowthRate;
-		print(str(base_growth_rate) + " " + str(effectiveGrowthRate))
+		#print(str(base_growth_rate) + " " + str(effectiveGrowthRate))
 		
 		if growth_stages.size() - 1 > current_growth_stage: # not at max
 			if growth_percentage >= growth_stages[current_growth_stage + 1]:

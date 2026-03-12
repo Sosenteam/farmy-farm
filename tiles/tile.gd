@@ -2,6 +2,7 @@ class_name Tile
 
 var ground:Ground
 var occupant:Occupant
+var index: int
 
 func _init(new_ground = Dirt,new_occupant = null) -> void:
 	if(new_ground):

@@ -19,4 +19,7 @@ tile_set = ExtResource("2_l6mec")
 tile_set = ExtResource("3_1lfs6")
 
 [node name="Heatmap" type="Node2D" parent="." unique_id=1343265419]
+visible = false
+z_index = 200
+z_as_relative = false
 script = ExtResource("4_cdvg4")

@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://4wrn3rccs4if" path="res://assets/plants/carrot.png" id="1_2r3ew"]
 [ext_resource type="Texture2D" uid="uid://s5b8s7kn7ku2" path="res://assets/plants/wheat.png" id="1_mphft"]
-[ext_resource type="Texture2D" uid="uid://dpqvw0yrqdxh" path="res://assets/plants/corn/stalk_spritesheet.png" id="2_mphft"]
+[ext_resource type="Texture2D" uid="uid://cau7o1kef41cd" path="res://assets/plants/corn.png" id="3_mphft"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5riq7"]
 resource_name = "Wheat"
@@ -34,9 +34,8 @@ texture = ExtResource("1_2r3ew")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jvcuk"]
 resource_name = "Corn"
-texture = ExtResource("2_mphft")
+texture = ExtResource("3_mphft")
 texture_region_size = Vector2i(16, 32)
-0:0/next_alternative_id = 2
 0:0/0 = 0
 0:0/0/texture_origin = Vector2i(0, 15)
 1:0/0 = 0
@@ -49,6 +48,10 @@ texture_region_size = Vector2i(16, 32)
 4:0/0/texture_origin = Vector2i(0, 15)
 5:0/0 = 0
 5:0/0/texture_origin = Vector2i(0, 15)
+6:0/0 = 0
+6:0/0/texture_origin = Vector2i(0, 15)
+7:0/0 = 0
+7:0/0/texture_origin = Vector2i(0, 15)
 
 [resource]
 sources/1 = SubResource("TileSetAtlasSource_v826q")

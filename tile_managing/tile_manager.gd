@@ -14,6 +14,7 @@ func _ready() -> void:
 	Global.on_tick.connect(on_tick)
 	for i in tiles.cells:
 		map.append(Tile.new([Dirt].pick_random(),[Corn,Wheat,Carrot].pick_random()))
+		map[i].ground.change_nutrients(randf_range(0,200),randf_range(0,200),randf_range(0,200))
 		#map.append(Tile.new(Dirt,Wheat))
 		map[i].occupant.change_growth_stage.connect(on_change_growth_stage.bind(i)) # Bind growthstage changes to function
 

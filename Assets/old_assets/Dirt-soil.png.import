@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bfj0057rr05wk"
-path="res://.godot/imported/Dirt-soil.png-a9900cef401a6b6582f6485219b31e29.ctex"
+path="res://.godot/imported/Dirt-soil.png-538ac541b2803f17c8045286a6e983dd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Dirt-soil.png"
-dest_files=["res://.godot/imported/Dirt-soil.png-a9900cef401a6b6582f6485219b31e29.ctex"]
+source_file="res://assets/old_assets/Dirt-soil.png"
+dest_files=["res://.godot/imported/Dirt-soil.png-538ac541b2803f17c8045286a6e983dd.ctex"]
 
 [params]
 

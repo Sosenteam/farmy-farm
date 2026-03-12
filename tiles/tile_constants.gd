@@ -4,7 +4,7 @@ extends Resource
 @export var TEST:float = 10
 const ticks_per_second:int = 16
 const ticks_per_day:int = ticks_per_second * 90
-@export var BASE_WATER_LOSS:float = 1.0/ticks_per_day
+@export var BASE_WATER_LOSS_PER_TICK:float = 1.0/ticks_per_day
 @export var BASE_GROWTH_RATE:float = 1.0/480.0 # 0.00208333333
 @export var BASE_NUTRIENT_PER_YIELD:float = 0
 @export var BASE_NUTRIENT_HAPPY_AMOUNT:float = 0

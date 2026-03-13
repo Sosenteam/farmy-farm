@@ -32,7 +32,7 @@ func index_to_vector(index:int)-> Vector2i:
 	return vect
 
 func is_in(vector:Vector2i) -> bool:
-	if(vector.x>width-1||vector.y>height-1):
+	if(vector.x>width-1||vector.y>height-1||vector.x<0||vector.y<0):
 		return false
 	else:
 		return true
@@ -61,3 +61,28 @@ func add_size(width_change: int,height_change: int):
 			for row in height:
 				map.insert((row*width)+row,Tile.new())
 			width+=1
+	## STUFF
+	for t in map.size():
+		map[t].index = t
+	
+	
+func get_surrounding_tiles(index) -> Array[Tile]:
+	var return_array:Array[Tile] = []
+	return_array.resize(8)
+	var position = index_to_vector(index)
+	var has_top = position.y > 0
+	var has_bottom = position.y < height - 1
+	var has_left = position.x > 0
+	var has_right = position.x < width - 1
+
+	# SIDES
+	return_array[0] = map[index-width] if has_top else null
+	return_array[1] = map[index+1] if has_right else null
+	return_array[2] = map[index+width] if has_bottom else null
+	return_array[3] = map[index-1] if has_left else null
+	# CORNERS
+	return_array[4] = map[index - width - 1] if has_top and has_left else null
+	return_array[5] = map[index - width + 1] if has_top and has_right else null
+	return_array[6] = map[index + width + 1] if has_bottom and has_right else null
+	return_array[7] = map[index + width - 1] if has_bottom and has_left else null
+	return return_array

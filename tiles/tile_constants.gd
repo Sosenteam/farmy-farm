@@ -10,7 +10,7 @@ const ticks_per_day:int = ticks_per_second * 90
 @export var BASE_NUTRIENT_HAPPY_AMOUNT:float = 0
 @export var BASE_YIELD_COUNT = 1
 
-@export var nutrient_capacity:float = 200
+@export var nutrient_capacity:float = 100
 
 @export_category("Crop Constants")
 
@@ -30,7 +30,7 @@ const ticks_per_day:int = ticks_per_second * 90
 @export var carrot_n_per_yield = 10
 @export var carrot_p_per_yield = 40
 @export var carrot_k_per_yield = 10
-@export var carrot_n_happy_amount = 5
+@export var carrot_n_happy_amount = 99
 @export var carrot_p_happy_amount = 25
 @export var carrot_k_happy_amount = 5
 

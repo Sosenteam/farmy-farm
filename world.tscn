@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://c6qcddfe0an4p" path="res://tile_managing/tile_manager.tscn" id="1_f3sb7"]
 [ext_resource type="Texture2D" uid="uid://pplano3pr864" path="res://assets/GrassBigTilemap.png" id="1_tlwt5"]
-[ext_resource type="PackedScene" uid="uid://bjdqclm1chc36" path="res://ui.tscn" id="3_tlwt5"]
+[ext_resource type="PackedScene" uid="uid://bjdqclm1chc36" path="res://UI_elements/ui.tscn" id="3_tlwt5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aqk2v"]
 texture = ExtResource("1_tlwt5")

@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://dxor2flf7t3dd"]
 
 [ext_resource type="Texture2D" uid="uid://dbf2ncasdyqy3" path="res://assets/rect.png" id="1_ulapv"]
+[ext_resource type="Script" uid="uid://dyokra4g4dst0" path="res://UI_elements/time_corner.gd" id="1_uw0kl"]
 [ext_resource type="FontFile" uid="uid://cp7khvcr6ixv" path="res://assets/Font.ttf" id="2_uw0kl"]
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=503905675]
 scale = Vector2(4, 4)
 transform = Transform2D(4, 0, 0, 4, 0, 0)
+script = ExtResource("1_uw0kl")
 
 [node name="Control" type="Control" parent="." unique_id=501971773]
 layout_mode = 3
@@ -57,7 +59,7 @@ axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="Control" unique_id=650608925]
+[node name="Time" type="Label" parent="Control" unique_id=650608925]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
@@ -77,7 +79,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Label3" type="Label" parent="Control" unique_id=2078947754]
+[node name="Quote Title" type="Label" parent="Control" unique_id=2078947754]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
@@ -97,7 +99,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Label4" type="Label" parent="Control" unique_id=839782932]
+[node name="Quote Data" type="Label" parent="Control" unique_id=839782932]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
@@ -138,7 +140,7 @@ axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Label2" type="Label" parent="Control" unique_id=173559039]
+[node name="Date" type="Label" parent="Control" unique_id=173559039]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = -1

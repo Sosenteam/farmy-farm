@@ -1,7 +1,5 @@
 extends HBoxContainer
 
-@onready var TweenNode = get_node("Tween")
-
 const ICON_SHEET = preload("res://assets/ui_elements.png")
 
 # Enum to match the 5 icons in the sheet (from left to right)

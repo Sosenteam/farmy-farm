@@ -5,12 +5,14 @@ signal on_tool_changed(tool_type: int)
 
 var tick: int = 0
 var current_tool: int = 0: set = _set_tool
+var current_selected_tile: Tile
 
 @onready var tick_timer = $TickTimer
 
 func _set_tool(new_tool: int) -> void:
 	current_tool = new_tool
 	on_tool_changed.emit(new_tool)
+	
 
 func _on_tick() -> void:
 	tick += 1

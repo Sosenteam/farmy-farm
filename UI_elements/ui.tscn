@@ -1,9 +1,12 @@
 [gd_scene format=3 uid="uid://bjdqclm1chc36"]
 
+[ext_resource type="PackedScene" uid="uid://2vpjr3eug8tp" path="res://UI_elements/inspector_bars.tscn" id="1_27fn8"]
 [ext_resource type="PackedScene" uid="uid://dh75pvvm575r5" path="res://UI_elements/toolbar.tscn" id="1_m6e0p"]
 [ext_resource type="PackedScene" uid="uid://dxor2flf7t3dd" path="res://UI_elements/time_corner.tscn" id="2_27fn8"]
 
 [node name="UI" type="CanvasLayer" unique_id=22193431]
+
+[node name="Inspector Bars" parent="." unique_id=1895069543 instance=ExtResource("1_27fn8")]
 
 [node name="Toolbar" parent="." unique_id=314159 instance=ExtResource("1_m6e0p")]
 

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="FarmyFarm"
-run/main_scene="uid://f22n8up8a2mh"
+run/main_scene="uid://bsfp7wi46l0cd"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 
 [autoload]

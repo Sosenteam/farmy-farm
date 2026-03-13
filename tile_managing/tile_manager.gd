@@ -14,7 +14,7 @@ func _ready() -> void:
 	Global.on_tick.connect(on_tick)
 	for i in tiles.cells:
 		map.append(Tile.new([Dirt].pick_random(),[Corn,Wheat,Carrot].pick_random()))
-		map[i].ground.moisture_percent = randf()
+		#map[i].ground.moisture_percent = randf()
 		#map.append(Tile.new(Dirt,Wheat))
 		map[i].occupant.change_growth_stage.connect(on_change_growth_stage.bind(i)) # Bind growthstage changes to function
 		map[i].index = i
@@ -38,20 +38,10 @@ func render():
 
 	#Renders OccupantLayer 
 	
-func _input(event: InputEvent) -> void:
-	if event is InputEventMouseButton:
-		var tilemap_pos = ground_layer.local_to_map(get_local_mouse_position())
-		if(tiles.is_in(tilemap_pos)):
-			if(map[tiles.vector_to_index(tilemap_pos)].ground is Dirt):
-				map[tiles.vector_to_index(tilemap_pos)].ground = TilledDirt.new(map[tiles.vector_to_index(tilemap_pos)].ground)
-				render()
-				#print(tiles.get_surrounding_tiles(tiles.vector_to_index(tilemap_pos)))
-			if(Global.current_tool == 3):
-				Global.current_selected_tile = map[tiles.vector_to_index(tilemap_pos)]
-			#print(tiles.get_tile(tilemap_pos).occupant.get_script().get_global_name())
+
 
 func on_change_growth_stage(crop,stage: int, index: int) -> void:
-	print("Stage: ",stage,"  Index: ",index)
+	#print("Stage: ",stage,"  Index: ",index)
 	var tiles_to_access
 	match crop:
 		"wheat":

@@ -13,7 +13,7 @@ func _ready():
 	_add_tool_button(Global.Tool.TILL, "Till")
 	_add_tool_button(Global.Tool.PLANT, "Plant")
 	_add_tool_button(Global.Tool.INSPECT, "Inspect")
-	_add_tool_button(Global.Tool.HARVEST, "Harvest")
+	#_add_tool_button(Global.Tool.NONE, "None")
 
 	#signal globally so the whole game and keep track? Lmk if you think otherwise
 	Global.on_tool_changed.connect(_update_selection_visuals)
@@ -44,7 +44,12 @@ func _add_tool_button(tool_type: Global.Tool, tool_name: String):
 		
 	
 	# Connect the signal
-	btn.pressed.connect(func(): Global.current_tool = tool_type)
+	btn.pressed.connect(func(): 
+		if (Global.current_tool == tool_type):
+			Global.current_tool = Global.Tool.NONE
+		else:
+			Global.current_tool = tool_type
+		)
 	
 	add_child(btn)
 
@@ -52,7 +57,7 @@ func _add_tool_button(tool_type: Global.Tool, tool_name: String):
 func _update_selection_visuals(_tool: int):
 	for i in get_child_count():
 		var child = get_child(i)
-		if i == Global.current_tool:
+		if i == Global.current_tool || Global.current_tool == Global.Tool.NONE:
 			child.modulate = Color.WHITE
 		else:
 			child.modulate = Color(0.897, 0.897, 0.897, 0.453)

@@ -6,7 +6,7 @@ signal on_tool_changed(tool_type: int)
 var tick: int = 0
 var current_tool: int = 0: set = _set_tool
 var current_selected_tile: Tile
-enum Tool { WATER, TILL, PLANT, INSPECT, HARVEST }
+enum Tool { WATER, TILL, PLANT, INSPECT, NONE }
 
 @onready var tick_timer = $TickTimer
 

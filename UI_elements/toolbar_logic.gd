@@ -3,24 +3,22 @@ extends HBoxContainer
 const ICON_SHEET = preload("res://assets/ui_elements.png")
 
 # Enum to match the 5 icons in the sheet (from left to right)
-enum Tool { WATER, TILL, PLANT, INSPECT, HARVEST }
-
 func _ready():
 	# Clear any placeholders from the editor
 	for child in get_children():
 		child.queue_free()
 
 	# add thingd to the tool bar
-	_add_tool_button(Tool.WATER, "Water")
-	_add_tool_button(Tool.TILL, "Till")
-	_add_tool_button(Tool.PLANT, "Plant")
-	_add_tool_button(Tool.INSPECT, "Inspect")
-	_add_tool_button(Tool.HARVEST, "Harvest")
+	_add_tool_button(Global.Tool.WATER, "Water")
+	_add_tool_button(Global.Tool.TILL, "Till")
+	_add_tool_button(Global.Tool.PLANT, "Plant")
+	_add_tool_button(Global.Tool.INSPECT, "Inspect")
+	_add_tool_button(Global.Tool.HARVEST, "Harvest")
 
 	#signal globally so the whole game and keep track? Lmk if you think otherwise
 	Global.on_tool_changed.connect(_update_selection_visuals)
 
-func _add_tool_button(tool_type: Tool, tool_name: String):
+func _add_tool_button(tool_type: Global.Tool, tool_name: String):
 	var btn = TextureButton.new()
 	btn.name = tool_name
 	btn.tooltip_text = tool_name

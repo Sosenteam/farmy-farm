@@ -29,7 +29,8 @@ func on_tick():
 func render():
 	#Renders GroundLayer
 	for i in map.size():
-		dirt_layer.set_cells_terrain_connect([tiles.index_to_vector(i)],0,1)
+		# FIX THIS PLEASE
+		dirt_layer.set_cells_terrain_connect([tiles.index_to_vector(i)],0,1) # THIS IS A PROBLEM
 		if(map[i].ground is Dirt): # Changes Terrain to Dirt
 			ground_layer.erase_cell(tiles.index_to_vector(i))	
 		if(map[i].ground is TilledDirt): # Changes Terrain to Dirt
@@ -42,9 +43,9 @@ func _input(event: InputEvent) -> void:
 		var tilemap_pos = ground_layer.local_to_map(get_local_mouse_position())
 		if(tiles.is_in(tilemap_pos)):
 			if(map[tiles.vector_to_index(tilemap_pos)].ground is Dirt):
-				map[tiles.vector_to_index(tilemap_pos)].ground = TilledDirt.new()
+				map[tiles.vector_to_index(tilemap_pos)].ground = TilledDirt.new(map[tiles.vector_to_index(tilemap_pos)].ground)
 				render()
-				print(tiles.get_surrounding_tiles(tiles.vector_to_index(tilemap_pos)))
+				#print(tiles.get_surrounding_tiles(tiles.vector_to_index(tilemap_pos)))
 			if(Global.current_tool == 3):
 				Global.current_selected_tile = map[tiles.vector_to_index(tilemap_pos)]
 			#print(tiles.get_tile(tilemap_pos).occupant.get_script().get_global_name())

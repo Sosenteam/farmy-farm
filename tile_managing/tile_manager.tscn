@@ -5,6 +5,7 @@
 [ext_resource type="TileSet" uid="uid://c5lvj7sg6yo7x" path="res://tilemaps/tile_occupant.tres" id="3_1lfs6"]
 [ext_resource type="Script" uid="uid://0i8l4i7sa6qf" path="res://tile_managing/ground_layer.gd" id="3_j6bsc"]
 [ext_resource type="Script" uid="uid://bmx0n51xcw06h" path="res://tile_managing/heatmap.gd" id="4_cdvg4"]
+[ext_resource type="Script" uid="uid://cjnnf0b4avj5l" path="res://tile_managing/input_manager.gd" id="6_55ekq"]
 
 [node name="TileManager" type="Node2D" unique_id=1968677421]
 script = ExtResource("1_ndy0f")
@@ -21,6 +22,10 @@ script = ExtResource("3_j6bsc")
 tile_set = ExtResource("3_1lfs6")
 
 [node name="Heatmap" type="Node2D" parent="." unique_id=1343265419]
+visible = false
 z_index = 200
 z_as_relative = false
 script = ExtResource("4_cdvg4")
+
+[node name="InputManager" type="Node" parent="." unique_id=1681204502]
+script = ExtResource("6_55ekq")

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" format=3 uid="uid://bii5dojvpfppv"]
+
+[ext_resource type="Texture2D" uid="uid://djvok483l3m2x" path="res://assets/items/carrot.png" id="1_t8u84"]
+[ext_resource type="Texture2D" uid="uid://cplyghx5wiidn" path="res://assets/items/corn.png" id="2_wdl6i"]
+[ext_resource type="Script" uid="uid://bx42syormp3rp" path="res://item_manager/item_constants.gd" id="3_vh5rn"]
+[ext_resource type="Texture2D" uid="uid://cxkjojns7rxuv" path="res://assets/items/wheat.png" id="4_hoo0y"]
+
+[resource]
+script = ExtResource("3_vh5rn")

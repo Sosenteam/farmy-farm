@@ -10,9 +10,6 @@
 atlas = ExtResource("2_osjua")
 region = Rect2(100, 0, 6, 6)
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_a7ecf"]
-load_path = "res://.godot/imported/bat1.png-2a6e039804e3d76516d55a3428dc7a2b.ctex"
-
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fm8x5"]
 load_path = "res://.godot/imported/bat2.png-16cc91ac27b713445d12b52148823931.ctex"
 
@@ -87,8 +84,8 @@ offset_left = 2.0
 offset_right = 102.0
 offset_bottom = 6.0
 value = 48.0
-texture_under = SubResource("CompressedTexture2D_a7ecf")
-texture_progress = SubResource("CompressedTexture2D_fm8x5")
+texture_under = SubResource("CompressedTexture2D_fm8x5")
+texture_progress = ExtResource("3_ijb2h")
 tint_under = Color(0.34237343, 0.6484081, 0.12835406, 1)
 tint_progress = Color(0.34117648, 0.64705884, 0.12941177, 1)
 
@@ -117,8 +114,8 @@ offset_left = 2.0
 offset_right = 102.0
 offset_bottom = 6.0
 value = 48.0
-texture_under = ExtResource("3_ijb2h")
-texture_progress = ExtResource("4_astnl")
+texture_under = ExtResource("4_astnl")
+texture_progress = ExtResource("3_ijb2h")
 tint_under = Color(1, 0.99470645, 0.22658296, 1)
 tint_progress = Color(1, 0.99607843, 0.22745098, 1)
 
@@ -147,8 +144,8 @@ offset_left = 2.0
 offset_right = 102.0
 offset_bottom = 7.0
 value = 48.0
-texture_under = ExtResource("3_ijb2h")
-texture_progress = ExtResource("4_astnl")
+texture_under = ExtResource("4_astnl")
+texture_progress = ExtResource("3_ijb2h")
 tint_under = Color(0.758602, 0, 0, 1)
 tint_progress = Color(0.75686276, 0, 0, 1)
 
@@ -177,15 +174,7 @@ offset_left = 2.0
 offset_right = 102.0
 offset_bottom = 6.0
 value = 48.0
-texture_under = ExtResource("3_ijb2h")
-texture_progress = ExtResource("4_astnl")
+texture_under = ExtResource("4_astnl")
+texture_progress = ExtResource("3_ijb2h")
 tint_under = Color(0.34117648, 0.64705884, 1, 1)
 tint_progress = Color(0.34117648, 0.64705884, 1, 1)
-
-[node name="happy" type="TextureRect" parent="Control2/VBoxContainer/HBoxContainer3/Control" unique_id=1766446948]
-layout_mode = 0
-offset_top = -1.0
-offset_right = 3.0
-offset_bottom = 7.0
-tooltip_text = "Happy Level For Plant"
-texture = SubResource("AtlasTexture_a7ecf")

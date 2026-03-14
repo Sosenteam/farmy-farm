@@ -21,12 +21,12 @@ func toggle(tool):
 func _process(delta: float) -> void:
 	if (Global.current_selected_tile != null):
 		if typeof(Global.current_selected_tile.occupant.n_happy_amount != null):
-			print(Global.current_selected_tile.occupant.n_happy_amount)
+			#print(Global.current_selected_tile.occupant.n_happy_amount)
 			n.get_parent_control().get_child(1).position.x = Global.current_selected_tile.occupant.n_happy_amount
 			p.get_parent_control().get_child(1).position.x = Global.current_selected_tile.occupant.p_happy_amount
 			k.get_parent_control().get_child(1).position.x = Global.current_selected_tile.occupant.k_happy_amount
 		n.value = Global.current_selected_tile.ground.nitrogen
 		p.value = Global.current_selected_tile.ground.phosphorus
 		k.value = Global.current_selected_tile.ground.potassium
-		w.value = Global.current_selected_tile.ground.moisture_percent
+		w.value = Global.current_selected_tile.ground.moisture_percent * 100
 	

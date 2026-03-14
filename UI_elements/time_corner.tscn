@@ -122,7 +122,7 @@ metadata/_edit_use_anchors_ = true
 [node name="NinePatchRect2" type="NinePatchRect" parent="Control" unique_id=1664192158]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 9.7375
+anchor_left = 9.6375
 anchor_top = -0.1375
 anchor_right = 9.6375
 anchor_bottom = -0.1375

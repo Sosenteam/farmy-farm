@@ -5,6 +5,8 @@ const ICON_SHEET = preload("res://assets/ui_elements.png")
 # Enum to match the 5 icons in the sheet (from left to right)
 func _ready():
 	# Clear any placeholders from the editor
+	Global.current_tool = Global.Tool.NONE
+	
 	for child in get_children():
 		child.queue_free()
 
@@ -30,7 +32,7 @@ func _add_tool_button(tool_type: Global.Tool, tool_name: String):
 	btn.texture_normal = atlas
 	
 	# click mouse look
-	btn.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
+	#btn.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
 	btn.mouse_entered.connect(func():
 		var tween = btn.create_tween()
 		tween.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BACK)
@@ -61,3 +63,6 @@ func _update_selection_visuals(_tool: int):
 			child.modulate = Color.WHITE
 		else:
 			child.modulate = Color(0.897, 0.897, 0.897, 0.453)
+
+#func _process(delta: float) -> void:
+	

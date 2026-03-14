@@ -86,10 +86,10 @@ tile_set = SubResource("TileSet_036b0")
 visible = false
 zoom = Vector2(4, 4)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1918348282]
+[node name="MouseLayer" type="CanvasLayer" parent="." unique_id=1918348282]
 layer = 2
 
-[node name="CursorSprite" type="Sprite2D" parent="CanvasLayer" unique_id=1843853415]
+[node name="CursorSprite" type="Sprite2D" parent="MouseLayer" unique_id=1843853415]
 top_level = true
 visibility_layer = 1023
 z_index = 1000

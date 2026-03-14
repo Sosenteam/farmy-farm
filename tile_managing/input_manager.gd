@@ -24,12 +24,10 @@ func _input(event: InputEvent) -> void:
 					water(index)
 				Global.Tool.INSPECT:
 					Global.current_selected_tile = tile
-					#print(tiles.get_tile(tilemap_pos).occupant.get_script().get_global_name())
 					
 			if(tile.occupant != null && tile.occupant.growth_stages.size()-1 == tile.occupant.current_growth_stage):
-				print("HEREASD")
+				print("Creating yield")
 				Yield.new(tile.occupant.crop_name,tile.occupant.yield_count)
-					#print(tiles.get_surrounding_tiles(tiles.vector_to_index(tilemap_pos)))
 
 
 

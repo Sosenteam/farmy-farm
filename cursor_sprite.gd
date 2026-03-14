@@ -8,36 +8,34 @@ func _ready() -> void:
 
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	Global.on_tool_changed.connect(set_cursor_from_atlas)
-	set_cursor_from_atlas()
+	set_cursor_from_atlas(Global.current_tool)
 
 func _on_mouse_entered_window():
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
-	show() # Show your custom sprite
+	show() 
 
 func _on_mouse_exited_window():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	hide() # Hide your custom sprite so it doesn't "stick" to the edge
+	hide() 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	global_position = get_global_mouse_position()
 
-func set_cursor_from_atlas():
+func set_cursor_from_atlas(tool):
 	
 	var sheet_image = full_sheet.get_image()
 	var region
-	if Global.current_tool == Global.Tool.WATER:
-		print("Cursoring")
+	if tool == Global.Tool.WATER:
 		region = Rect2i(0, 0, 17, 14)
-	elif Global.current_tool == Global.Tool.TILL:
+	elif tool == Global.Tool.TILL:
 		region = Rect2i(17, 0, 17, 14)
-	elif Global.current_tool == Global.Tool.INSPECT:
+	elif tool == Global.Tool.INSPECT:
 		region = Rect2i(34, 0, 14, 14)
 	else:
 		region = Rect2i(48, 0, 9, 14)
 	var cursor_img = sheet_image.get_region(region)
-	# In software, you don't even need to resize! 
-	# You can just set the Sprite's scale to 4.0
+
 	var final_tex = ImageTexture.create_from_image(cursor_img)
 	texture = final_tex
-	centered = true # Or adjust offset for your hotspot
+	centered = true 

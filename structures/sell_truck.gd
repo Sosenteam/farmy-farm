@@ -20,7 +20,6 @@ func _process(delta: float) -> void:
 	
 # Adding an item to sell
 func add_item(item):
-	# item should be an item class so we can reference image, price, amount, etc.
 	items_in_truck.append(item)
 	
 func set_box_profile():

@@ -3,8 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://bjdqclm1chc36" path="res://UI_elements/ui.tscn" id="1_aqk2v"]
 [ext_resource type="PackedScene" uid="uid://c6qcddfe0an4p" path="res://tile_managing/tile_manager.tscn" id="1_f3sb7"]
 [ext_resource type="Texture2D" uid="uid://pplano3pr864" path="res://assets/GrassBigTilemap.png" id="1_tlwt5"]
-[ext_resource type="Script" uid="uid://du2caerf3mc7b" path="res://camera_panning.gd" id="4_036b0"]
-[ext_resource type="Script" uid="uid://1toggjd1fpte" path="res://cursor_sprite.gd" id="4_aqk2v"]
+[ext_resource type="Script" path="res://camera_panning.gd" id="4_036b0"]
+[ext_resource type="Script" uid="uid://65eqsj5ryu83" path="res://UI_elements/cursor_sprite.gd" id="4_aqk2v"]
+[ext_resource type="Texture2D" uid="uid://bxod2d5xxvctc" path="res://assets/shop.png" id="5_dwbse"]
+[ext_resource type="Script" uid="uid://53xfcettuadq" path="res://structures/structures.gd" id="5_pkg7o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aqk2v"]
 texture = ExtResource("1_tlwt5")
@@ -73,6 +75,9 @@ terrain_set_0/terrain_0/name = "grass"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_aqk2v")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_shop"]
+size = Vector2(60.5, 44)
+
 [node name="World" type="Node2D" unique_id=532617015]
 
 [node name="UI" parent="." unique_id=22193431 instance=ExtResource("1_aqk2v")]
@@ -87,6 +92,22 @@ tile_set = SubResource("TileSet_036b0")
 zoom = Vector2(4, 4)
 script = ExtResource("4_036b0")
 
+[node name="Structures" type="Node2D" parent="." unique_id=8002341]
+position = Vector2(110, 90)
+script = ExtResource("5_pkg7o")
+
+[node name="Shop" type="Sprite2D" parent="Structures" unique_id=8002342]
+position = Vector2(80, 0)
+texture = ExtResource("5_dwbse")
+
+[node name="ShopArea2D" type="Area2D" parent="Structures/Shop" unique_id=8002343]
+input_pickable = true
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Structures/Shop/ShopArea2D" unique_id=8002344]
+position = Vector2(-0.25, -6)
+shape = SubResource("RectangleShape2D_shop")
+
 [node name="MouseLayer" type="CanvasLayer" parent="." unique_id=1918348282]
 layer = 2
 
@@ -96,3 +117,5 @@ visibility_layer = 1023
 z_index = 1000
 scale = Vector2(4, 4)
 script = ExtResource("4_aqk2v")
+
+[connection signal="input_event" from="Structures/Shop/ShopArea2D" to="Structures" method="_on_shop_area_2d_input_event"]

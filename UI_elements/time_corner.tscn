@@ -13,9 +13,10 @@ script = ExtResource("1_uw0kl")
 layout_mode = 3
 anchors_preset = 0
 offset_left = 43.5
-offset_top = 16.75
+offset_top = 16.5
 offset_right = 83.5
-offset_bottom = 56.75
+offset_bottom = 56.5
+mouse_filter = 1
 
 [node name="NinePatchRect" type="NinePatchRect" parent="Control" unique_id=799430136]
 layout_mode = 1

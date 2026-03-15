@@ -4,6 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://cplyghx5wiidn" path="res://assets/items/corn.png" id="2_wdl6i"]
 [ext_resource type="Script" uid="uid://bx42syormp3rp" path="res://item_manager/item_constants.gd" id="3_vh5rn"]
 [ext_resource type="Texture2D" uid="uid://cxkjojns7rxuv" path="res://assets/items/wheat.png" id="4_hoo0y"]
+[ext_resource type="Texture2D" uid="uid://pfb65oskq60i" path="res://assets/items/wheat_bag.png" id="5_wseed"]
+[ext_resource type="Texture2D" uid="uid://chxniqhp48t4l" path="res://assets/items/carrot_bag.png" id="6_cseed"]
+[ext_resource type="Texture2D" uid="uid://u4qlpuyiiyv7" path="res://assets/items/corn_bag.png" id="7_cnseed"]
 
 [resource]
 script = ExtResource("3_vh5rn")

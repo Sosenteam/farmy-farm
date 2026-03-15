@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://2vpjr3eug8tp"]
 
 [ext_resource type="Texture2D" uid="uid://dbf2ncasdyqy3" path="res://assets/rect.png" id="1_mjjvq"]
-[ext_resource type="Script" uid="uid://px3i4vkbts" path="res://UI_elements/inspectorbars.gd" id="1_osjua"]
+[ext_resource type="Script" uid="uid://bqtw7xnh5u6v8" path="res://UI_elements/inspectorbars.gd" id="1_osjua"]
 [ext_resource type="Texture2D" uid="uid://dj716ipmgstum" path="res://assets/ui_elements.png" id="2_osjua"]
 [ext_resource type="Texture2D" uid="uid://6kktf00gvibt" path="res://assets/bat1.png" id="3_ijb2h"]
 [ext_resource type="Texture2D" uid="uid://bdis6fiilr5n2" path="res://assets/bat2.png" id="4_astnl"]
@@ -40,6 +40,7 @@ anchors_preset = 0
 offset_right = 480.0
 offset_bottom = 230.0
 size_flags_horizontal = 4
+mouse_filter = 1
 
 [node name="NinePatchRect" type="NinePatchRect" parent="Control2" unique_id=1433291778]
 layout_mode = 1

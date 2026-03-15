@@ -49,8 +49,13 @@ func water(index):
 		map[index].ground.moisture_percent = 1
 
 func plant(index):
-	if(map[index].occupant == null):
-		map[index].set_occupant([Wheat,Corn,Carrot].pick_random())
-		map[index].occupant.change_growth_stage.connect(manager.on_change_growth_stage.bind(index)) # Bind growthstage changes to function
-		map[index].occupant.harvested.connect(manager.on_harvested.bind(index)) 
-	
+	var seed = Global.selected_seed
+	if seed == null:
+		print("No crop selected from menu!")
+		return
+
+	if(map[index].occupant == null && seed.quantity > 0):
+		map[index].set_occupant(seed.crop)
+		seed.addQuantity(-1)
+		map[index].occupant.change_growth_stage.connect(manager.on_change_growth_stage.bind(index))
+		map[index].occupant.harvested.connect(manager.on_harvested.bind(index))

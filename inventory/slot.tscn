@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://b6olo7fop7ljx"]
 
-[ext_resource type="Script" uid="uid://bdv7sp4hpfq5v" path="res://inventory/slot.gd" id="1_hiqfk"]
-[ext_resource type="Texture2D" uid="uid://dbf2ncasdyqy3" path="res://assets/rect.png" id="2_hiqfk"]
-[ext_resource type="FontFile" uid="uid://cp7khvcr6ixv" path="res://assets/Font.ttf" id="3_hiqfk"]
+[ext_resource type="Script" uid="uid://bdv7sp4hpfq5v" path="res://inventory/slot.gd" id="1_87gbl"]
+[ext_resource type="Texture2D" uid="uid://dbf2ncasdyqy3" path="res://assets/rect.png" id="2_ecxla"]
+[ext_resource type="FontFile" uid="uid://cp7khvcr6ixv" path="res://assets/Font.ttf" id="3_tbilg"]
 
 [node name="Slot" type="Control" unique_id=1746189848]
 custom_minimum_size = Vector2(22, 22)
@@ -10,7 +10,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 22.0
 offset_bottom = 22.0
-script = ExtResource("1_hiqfk")
+script = ExtResource("1_87gbl")
 
 [node name="Control" type="Control" parent="." unique_id=1449798278]
 anchors_preset = 0
@@ -27,7 +27,7 @@ offset_left = -10.0
 offset_right = 10.0
 offset_bottom = 20.0
 grow_horizontal = 2
-texture = ExtResource("2_hiqfk")
+texture = ExtResource("2_ecxla")
 region_rect = Rect2(0, 0, 32, 32)
 patch_margin_left = 4
 patch_margin_top = 4
@@ -35,7 +35,6 @@ patch_margin_right = 4
 patch_margin_bottom = 4
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
-mouse_filter = 2
 
 [node name="TextureRect" type="TextureRect" parent="Control" unique_id=1199130497]
 layout_mode = 0
@@ -52,7 +51,6 @@ offset_top = 11.0
 offset_right = 37.25
 offset_bottom = 29.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_hiqfk")
+theme_override_fonts/font = ExtResource("3_tbilg")
 theme_override_font_sizes/font_size = 8
 text = "3"
-mouse_filter = 2

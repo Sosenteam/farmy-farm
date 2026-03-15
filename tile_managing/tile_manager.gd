@@ -4,10 +4,11 @@ var tiles = preload("res://tile_managing/tiles.tres")
 var constants = preload("res://tiles/tiles_resource.tres")
 
 var map = tiles.map
-
+var dirt_rendered = false
 @onready var ground_layer = $GroundLayer
 @onready var dirt_layer = $DirtLayer
 @onready var occupant_layer = $OccupantLayer
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -27,16 +28,21 @@ func on_tick():
 	pass
 	
 ## Renders tile array to tilemaps 
+# THIS FUNCTION NEEDS OPTIMISATION
 func render():
 	#Renders GroundLayer
+	
+	
 	for i in map.size():
 		# FIX THIS PLEASE
-		dirt_layer.set_cells_terrain_connect([tiles.index_to_vector(i)],0,1) # THIS IS A PROBLEM
+		if !dirt_rendered:
+			dirt_layer.set_cells_terrain_connect([tiles.index_to_vector(i)],0,1) # THIS IS A PROBLEM
+			
 		if(map[i].ground is Dirt): # Changes Terrain to Dirt
 			ground_layer.erase_cell(tiles.index_to_vector(i))	
 		if(map[i].ground is TilledDirt): # Changes Terrain to Dirt
 			ground_layer.set_cells_terrain_connect([tiles.index_to_vector(i)],0,0)
-
+	dirt_rendered = true
 	#Renders OccupantLayer 
 	
 

@@ -18,9 +18,10 @@ func toggle(tool):
 	else:
 		hide()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+# This could probably be called every tick instead of every frame?
 func _process(delta: float) -> void:
-	if (Global.current_selected_tile != null):
-		if typeof(Global.current_selected_tile.occupant.n_happy_amount != null):
+	if (Global.current_selected_tile):
+		if Global.current_selected_tile.occupant && "n_happy_amount" in Global.current_selected_tile.occupant:
 		
 			n.get_parent_control().get_child(1).position.x = Global.current_selected_tile.occupant.n_happy_amount
 			p.get_parent_control().get_child(1).position.x = Global.current_selected_tile.occupant.p_happy_amount

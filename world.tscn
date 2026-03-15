@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bjdqclm1chc36" path="res://UI_elements/ui.tscn" id="1_aqk2v"]
 [ext_resource type="PackedScene" uid="uid://c6qcddfe0an4p" path="res://tile_managing/tile_manager.tscn" id="1_f3sb7"]
 [ext_resource type="Texture2D" uid="uid://pplano3pr864" path="res://assets/GrassBigTilemap.png" id="1_tlwt5"]
-[ext_resource type="Script" path="res://camera_panning.gd" id="4_036b0"]
+[ext_resource type="Script" uid="uid://br6loujvvelrj" path="res://camera_panning.gd" id="4_036b0"]
 [ext_resource type="Script" uid="uid://65eqsj5ryu83" path="res://UI_elements/cursor_sprite.gd" id="4_aqk2v"]
 [ext_resource type="Texture2D" uid="uid://bxod2d5xxvctc" path="res://assets/shop.png" id="5_dwbse"]
 [ext_resource type="Script" uid="uid://53xfcettuadq" path="res://structures/structures.gd" id="5_pkg7o"]
@@ -101,7 +101,6 @@ position = Vector2(80, 0)
 texture = ExtResource("5_dwbse")
 
 [node name="ShopArea2D" type="Area2D" parent="Structures/Shop" unique_id=8002343]
-input_pickable = true
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Structures/Shop/ShopArea2D" unique_id=8002344]

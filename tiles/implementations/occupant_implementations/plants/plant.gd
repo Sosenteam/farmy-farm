@@ -4,6 +4,7 @@ var crop_name:StringName = ""
 var growth_percentage:float = 0.0;
 var growth_stages:Array
 var current_growth_stage:int = 0
+var has_emitted_initial_stage:bool = false
 var base_growth_rate:float = Tile.constants.BASE_GROWTH_RATE
 var n_per_yield:float = Tile.constants.BASE_NUTRIENT_PER_YIELD
 var p_per_yield:float = Tile.constants.BASE_NUTRIENT_PER_YIELD
@@ -15,11 +16,17 @@ var harvestable:bool = false
 var yield_count = Tile.constants.BASE_YIELD_COUNT
 
 signal change_growth_stage(stage:int)
+signal harvested(product:Yield)
 
 func tick() -> void:
 	if tile.ground is TilledDirt: # You never know
 		var dirt_tile = tile.ground as TilledDirt
 		
+		# ==== First Stage Show ===== #
+		if !has_emitted_initial_stage:
+			has_emitted_initial_stage = true
+			change_growth_stage.emit(crop_name, 0)
+		 
 		# ==== Grow ==== #
 		var effectiveGrowthRate = \
 			base_growth_rate * \
@@ -35,7 +42,8 @@ func tick() -> void:
 			if growth_percentage >= growth_stages[current_growth_stage + 1]:
 				current_growth_stage += 1
 				change_growth_stage.emit(crop_name, current_growth_stage)
-				
+		else:
+			harvestable = true
 		# ==== Nutrients ==== #
 		dirt_tile.change_nutrients(-n_per_yield * effectiveGrowthRate, -p_per_yield * effectiveGrowthRate, -k_per_yield * effectiveGrowthRate)
 		
@@ -47,6 +55,7 @@ func _get_nutrient_multiplier(soil_has:float, plant_wants:float):
 		return 1.0
 	return 1.25
 
-func harvest(plant_name,yield_count) -> Yield:
-	return Yield.new(plant_name,yield_count)
-	
+func harvest() -> void:
+	harvested.emit(Yield.new(crop_name,yield_count))
+	change_growth_stage.emit(crop_name,-1)
+	tile.delete_occupant()

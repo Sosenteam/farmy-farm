@@ -13,10 +13,11 @@ var map = tiles.map
 func _ready() -> void:
 	Global.on_tick.connect(on_tick)
 	for i in tiles.cells:
-		map.append(Tile.new([Dirt].pick_random(),[Corn,Wheat,Carrot].pick_random()))
+		map.append(Tile.new([Dirt].pick_random(),null))
 		#map[i].ground.moisture_percent = randf()
 		#map.append(Tile.new(Dirt,Wheat))
-		map[i].occupant.change_growth_stage.connect(on_change_growth_stage.bind(i)) # Bind growthstage changes to function
+		#map[i].occupant.change_growth_stage.connect(on_change_growth_stage.bind(i)) # Bind growthstage changes to function
+		#map[i].occupant.harvested.connect(on_harvested.bind(i)) 
 		map[i].index = i
 	render()
 
@@ -42,6 +43,8 @@ func render():
 
 func on_change_growth_stage(crop,stage: int, index: int) -> void:
 	#print("Stage: ",stage,"  Index: ",index)
+	if (stage == -1):
+		occupant_layer.erase_cell(tiles.index_to_vector(index))
 	var tiles_to_access
 	match crop:
 		"wheat":
@@ -51,4 +54,7 @@ func on_change_growth_stage(crop,stage: int, index: int) -> void:
 		"corn":
 			tiles_to_access = 2
 	occupant_layer.set_cell(tiles.index_to_vector(index),tiles_to_access,Vector2i(stage,0))
-	
+
+func on_harvested(product:Yield,index:int):
+	# THIS SHOULD GET SENT TO INVENTORY??
+	print("yield: ",product,"index: ",index)

@@ -7,8 +7,13 @@ extends Node
 @onready var dirt_layer = $"../DirtLayer"
 @onready var occupant_layer = $"../OccupantLayer"
 
+var mouse_pressed = false
+
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
+		if event.button_index == 1:
+			mouse_pressed = event.pressed
+	if event is InputEventMouseMotion && mouse_pressed:
 		# Get tile where mouse pressed
 		var tilemap_pos = ground_layer.local_to_map(manager.get_local_mouse_position())
 		var index = tiles.vector_to_index(tilemap_pos)
@@ -24,10 +29,13 @@ func _input(event: InputEvent) -> void:
 					water(index)
 				Global.Tool.INSPECT:
 					Global.current_selected_tile = tile
+				Global.Tool.PLANT:
+					# CHANGE THIS TO A REAL MENU
+					plant(index)
 					
-			if(tile.occupant != null && tile.occupant.growth_stages.size()-1 == tile.occupant.current_growth_stage):
-				print("Creating yield")
-				Yield.new(tile.occupant.crop_name,tile.occupant.yield_count)
+				Global.Tool.NONE:
+					if(tile.occupant is Plant && tile.occupant.harvestable):
+						tile.occupant.harvest()
 
 
 
@@ -39,3 +47,10 @@ func till(index):
 func water(index):
 	if(map[index].ground is TilledDirt):
 		map[index].ground.moisture_percent = 1
+
+func plant(index):
+	if(map[index].occupant == null):
+		map[index].set_occupant([Wheat,Corn,Carrot].pick_random())
+		map[index].occupant.change_growth_stage.connect(manager.on_change_growth_stage.bind(index)) # Bind growthstage changes to function
+		map[index].occupant.harvested.connect(manager.on_harvested.bind(index)) 
+	

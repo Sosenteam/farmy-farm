@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bjdqclm1chc36" path="res://UI_elements/ui.tscn" id="1_aqk2v"]
 [ext_resource type="PackedScene" uid="uid://c6qcddfe0an4p" path="res://tile_managing/tile_manager.tscn" id="1_f3sb7"]
 [ext_resource type="Texture2D" uid="uid://pplano3pr864" path="res://assets/GrassBigTilemap.png" id="1_tlwt5"]
+[ext_resource type="Script" uid="uid://du2caerf3mc7b" path="res://camera_panning.gd" id="4_036b0"]
 [ext_resource type="Script" uid="uid://1toggjd1fpte" path="res://cursor_sprite.gd" id="4_aqk2v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aqk2v"]
@@ -83,8 +84,8 @@ tile_set = SubResource("TileSet_036b0")
 [node name="TileManager" parent="." unique_id=1968677421 instance=ExtResource("1_f3sb7")]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=876653144]
-visible = false
 zoom = Vector2(4, 4)
+script = ExtResource("4_036b0")
 
 [node name="MouseLayer" type="CanvasLayer" parent="." unique_id=1918348282]
 layer = 2

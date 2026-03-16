@@ -5,8 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://pplano3pr864" path="res://assets/GrassBigTilemap.png" id="1_tlwt5"]
 [ext_resource type="Script" uid="uid://br6loujvvelrj" path="res://camera_panning.gd" id="4_036b0"]
 [ext_resource type="Script" uid="uid://65eqsj5ryu83" path="res://UI_elements/cursor_sprite.gd" id="4_aqk2v"]
-[ext_resource type="Texture2D" uid="uid://bxod2d5xxvctc" path="res://assets/shop.png" id="5_dwbse"]
 [ext_resource type="Script" uid="uid://53xfcettuadq" path="res://structures/structures.gd" id="5_pkg7o"]
+[ext_resource type="Texture2D" uid="uid://xcoh42hcuoxi" path="res://assets/structures.png" id="6_pkg7o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aqk2v"]
 texture = ExtResource("1_tlwt5")
@@ -75,8 +75,16 @@ terrain_set_0/terrain_0/name = "grass"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_aqk2v")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_gbfbk"]
+atlas = ExtResource("6_pkg7o")
+region = Rect2(4, 2, 131, 109)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ioo17"]
+atlas = ExtResource("6_pkg7o")
+region = Rect2(168, 44, 81, 62)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_shop"]
-size = Vector2(60.5, 44)
+size = Vector2(80, 64)
 
 [node name="World" type="Node2D" unique_id=532617015]
 
@@ -96,15 +104,26 @@ script = ExtResource("4_036b0")
 position = Vector2(110, 90)
 script = ExtResource("5_pkg7o")
 
+[node name="Barn" type="Sprite2D" parent="Structures" unique_id=1180815727]
+position = Vector2(147, -129)
+texture = SubResource("AtlasTexture_gbfbk")
+
+[node name="BarnArea2D" type="Area2D" parent="Structures/Barn" unique_id=697822413]
+monitorable = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Structures/Barn/BarnArea2D" unique_id=45965943]
+position = Vector2(37, 51)
+polygon = PackedVector2Array(2, -6, 24, -6, 24, -27, 27, -27, 28, -61, 9, -67, 9, -79, -9, -96, -37, -105, -62, -97, -83, -78, -83, -67, -101, -61, -102, -28, -98, -27, -98, -6, -77, -5, -77, 3, 1, 1)
+
 [node name="Shop" type="Sprite2D" parent="Structures" unique_id=8002342]
 position = Vector2(80, 0)
-texture = ExtResource("5_dwbse")
+texture = SubResource("AtlasTexture_ioo17")
 
 [node name="ShopArea2D" type="Area2D" parent="Structures/Shop" unique_id=8002343]
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Structures/Shop/ShopArea2D" unique_id=8002344]
-position = Vector2(-0.25, -6)
+position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_shop")
 
 [node name="MouseLayer" type="CanvasLayer" parent="." unique_id=1918348282]

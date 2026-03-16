@@ -1,8 +1,8 @@
 extends Control
 
-@onready var container = $ScaledControl/NinePatchRect/ScrollContainer/VBoxContainer
+@onready var container = $ScaledControl/Panel/ScrollContainer/FlowContainer/BoxContainer
 var slot_scene = preload("res://inventory/slot.tscn")
-
+var is_plant_opened = false
 var selected_slot = null
 
 func _ready() -> void:
@@ -47,18 +47,20 @@ func _on_slot_clicked(slot_node) -> void:
 	print("Selected crop: ", Global.selected_seed)
 	
 func open():
+	is_plant_opened = true
 	show()
 	$AnimationPlayer.play("open_popup")
 	
 #some very rookie code here lol
 func close():
-	$AnimationPlayer.play("close_popup")
+	is_plant_opened = false
+	$AnimationPlayer.play_backwards("open_popup")
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	print("Asd")
-	if (anim_name == "close_popup"):
-		
+	if (anim_name == "open_popup" && !is_plant_opened):
 		hide()
+		
 
 #func _process(delta: float) -> void:
 	#print(Global.selected_seed)

@@ -47,7 +47,9 @@ func till(index):
 func water(index):
 	if(map[index].ground is TilledDirt):
 		map[index].ground.moisture_percent = 1
-
+		manager.ground_tiles_to_update[tiles.index_to_vector(index)]=true
+		ground_layer.notify_runtime_tile_data_update()
+	
 func plant(index):
 	var seed = Global.selected_seed
 	if seed == null:

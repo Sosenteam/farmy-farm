@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://e8h1x0f7mmig"]
+
+[ext_resource type="FontFile" uid="uid://cp7khvcr6ixv" path="res://assets/Font.ttf" id="1_kmrrg"]
+[ext_resource type="Script" uid="uid://c3fxuwtxmwq0u" path="res://UI_elements/item_box.gd" id="1_mf8ub"]
+[ext_resource type="Texture2D" uid="uid://dbf2ncasdyqy3" path="res://assets/rect.png" id="2_tudev"]
+
+[node name="ItemBox" type="Control" unique_id=732174998]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mf8ub")
+
+[node name="Box" type="Control" parent="." unique_id=1732288161]
+anchors_preset = 0
+offset_right = 95.0
+offset_bottom = 121.0
+
+[node name="Label" type="Label" parent="Box" unique_id=1459838332]
+layout_mode = 0
+offset_left = 2.0
+offset_top = -17.5
+offset_right = 81.0
+offset_bottom = 5.5
+theme_override_fonts/font = ExtResource("1_kmrrg")
+theme_override_font_sizes/font_size = 12
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ItemBox" type="NinePatchRect" parent="Box" unique_id=1707134338]
+self_modulate = Color(0.71374464, 0.71374464, 0.71374464, 1)
+layout_mode = 0
+offset_left = 1.0
+offset_right = 81.0
+offset_bottom = 121.0
+texture = ExtResource("2_tudev")
+region_rect = Rect2(0, 0, 32, 32)
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Box/ItemBox" unique_id=2003003074]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 3.7799988
+offset_right = -2.0
+offset_bottom = -3.2200012
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+tile_scroll_hint = true
+
+[node name="FlowContainer" type="FlowContainer" parent="Box/ItemBox/ScrollContainer" unique_id=1463353290]
+layout_mode = 2
+alignment = 1
+
+[node name="BoxContainer" type="BoxContainer" parent="Box/ItemBox/ScrollContainer/FlowContainer" unique_id=384473382]
+layout_mode = 2
+theme_override_constants/separation = 4

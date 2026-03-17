@@ -10,7 +10,7 @@ func init_me(name, items):
 		var slot = slot_node.instantiate()
 		
 		slot.set_slot(item)
-		$Box/ItemBox/ScrollContainer/HFlowContainer.add_child(slot)
+		$Box/ItemBox/ScrollContainer/HBoxContainer.add_child(slot)
 	
 
 func _ready() -> void:

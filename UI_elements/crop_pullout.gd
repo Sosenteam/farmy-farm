@@ -1,6 +1,6 @@
 extends Control
 
-@onready var container = $ScaledControl/Panel/ScrollContainer/FlowContainer/BoxContainer
+@onready var container = $ScaledControl/Panel/ScrollContainer/HFlowContainer
 var slot_scene = preload("res://inventory/slot.tscn")
 var is_plant_opened = false
 var selected_slot = null

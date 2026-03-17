@@ -62,5 +62,19 @@ func on_change_growth_stage(crop,stage: int, index: int) -> void:
 	occupant_layer.set_cell(tiles.index_to_vector(index),tiles_to_access,Vector2i(stage,0))
 
 func on_harvested(product:Yield,index:int):
-	# THIS SHOULD GET SENT TO INVENTORY??
-	print("yield: ",product,"index: ",index)
+	 #THIS SHOULD GET SENT TO INVENTORY??
+	for crop in Global.inventory.Crops:
+		if (crop.name.to_lower() == name.to_lower()):
+			crop.addQuantity(product.item_count)
+			return
+	Global.inventory.Crops.append(Item.new(product.crop_name, product.item_count))
+
+func add_size(x,y):
+	tiles.add_size(-1,0)
+	if(x<0):
+		position.x+=x*16
+	if(y<0):
+		position.y+=y*16
+	
+	dirt_rendered = false
+	render()

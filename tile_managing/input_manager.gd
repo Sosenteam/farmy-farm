@@ -10,6 +10,10 @@ extends Node
 var mouse_pressed = false
 
 func _unhandled_input(event: InputEvent) -> void:
+	#HOTKEYS
+	if event.is_action_pressed("test_size_increase"):
+		manager.add_size(-1,0)
+	
 	if event is InputEventMouseButton:
 		if event.button_index == 1:
 			mouse_pressed = event.pressed

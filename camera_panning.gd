@@ -20,5 +20,5 @@ func _input(event: InputEvent) -> void:
 	# trackpad panning (Two-finger swipe on Mac/Laptops)
 	if event is InputEventPanGesture:
 		# sensitivity
-		position -= event.delta * 20.0 / zoom.x
+		position += event.delta * 20.0 / zoom.x
 		

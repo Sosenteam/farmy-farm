@@ -12,7 +12,6 @@ var dirt_rendered = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	Global.on_tick.connect(on_tick)
 	for i in tiles.cells:
 		map.append(Tile.new([Dirt].pick_random(),null))
 		#map[i].ground.moisture_percent = randf()
@@ -22,11 +21,6 @@ func _ready() -> void:
 		map[i].index = i
 	render()
 
-func on_tick():
-	#for i in map.size():
-		#map[i].tick()
-	pass
-	
 ## Renders tile array to tilemaps 
 # THIS FUNCTION NEEDS OPTIMISATION
 func render():

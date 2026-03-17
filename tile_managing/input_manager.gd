@@ -54,7 +54,7 @@ func plant(index):
 		print("No crop selected from menu!")
 		return
 
-	if(map[index].occupant == null && seed.quantity > 0):
+	if(map[index].occupant == null && seed.quantity > 0 && map[index].ground is TilledDirt):
 		map[index].set_occupant(seed.crop)
 		seed.addQuantity(-1)
 		map[index].occupant.change_growth_stage.connect(manager.on_change_growth_stage.bind(index))

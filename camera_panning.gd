@@ -23,3 +23,6 @@ func _input(event: InputEvent) -> void:
 			
 	if event is InputEventScreenDrag:
 		position -= event.screen_relative/zoom.x
+
+func _process(_delta) -> void:
+	position = position.clamp(Vector2(-200,-200),Vector2(200,200)) 

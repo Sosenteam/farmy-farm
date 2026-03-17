@@ -18,7 +18,7 @@ func _update_list() -> void:
 	
 	selected_slot = null
 	
-	for item in Global.inventory.Seeds:
+	for item in Global.inventory.seeds:
 		var new_slot = slot_scene.instantiate()
 		new_slot.set_slot(item)
 		new_slot.slot_clicked.connect(_on_slot_clicked)

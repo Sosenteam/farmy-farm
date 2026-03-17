@@ -5,6 +5,10 @@ var constants = preload("res://tiles/tiles_resource.tres")
 
 var map = tiles.map
 var dirt_rendered = false
+var ground_tiles_to_update: Dictionary[Vector2i,bool] = {}
+var occupant_tiles_to_update: Dictionary[Vector2i,bool] = {}
+var current_water_render_row = 0
+
 @onready var ground_layer = $GroundLayer
 @onready var dirt_layer = $DirtLayer
 @onready var occupant_layer = $OccupantLayer
@@ -14,10 +18,6 @@ var dirt_rendered = false
 func _ready() -> void:
 	for i in tiles.cells:
 		map.append(Tile.new([Dirt].pick_random(),null))
-		#map[i].ground.moisture_percent = randf()
-		#map.append(Tile.new(Dirt,Wheat))
-		#map[i].occupant.change_growth_stage.connect(on_change_growth_stage.bind(i)) # Bind growthstage changes to function
-		#map[i].occupant.harvested.connect(on_harvested.bind(i)) 
 		map[i].index = i
 	render()
 
@@ -28,17 +28,23 @@ func render():
 	
 	
 	for i in map.size():
-		# FIX THIS PLEASE
 		if !dirt_rendered:
-			dirt_layer.set_cells_terrain_connect([tiles.index_to_vector(i)],0,1) # THIS IS A PROBLEM
-			
+			dirt_layer.set_cells_terrain_connect([tiles.index_to_vector(i)],0,1)
 		if(map[i].ground is Dirt): # Changes Terrain to Dirt
 			ground_layer.erase_cell(tiles.index_to_vector(i))	
 		if(map[i].ground is TilledDirt): # Changes Terrain to Dirt
 			ground_layer.set_cells_terrain_connect([tiles.index_to_vector(i)],0,0)
 	dirt_rendered = true
 	#Renders OccupantLayer 
+
+func update_water():
 	
+	for i in range(tiles.width):
+		ground_tiles_to_update[tiles.index_to_vector(i+current_water_render_row)]=true
+		ground_layer.notify_runtime_tile_data_update()
+	current_water_render_row+= 1
+	if(current_water_render_row>tiles.width):
+		current_water_render_row = 0
 
 
 func on_change_growth_stage(crop,stage: int, index: int) -> void:
@@ -56,5 +62,19 @@ func on_change_growth_stage(crop,stage: int, index: int) -> void:
 	occupant_layer.set_cell(tiles.index_to_vector(index),tiles_to_access,Vector2i(stage,0))
 
 func on_harvested(product:Yield,index:int):
-	# THIS SHOULD GET SENT TO INVENTORY??
-	print("yield: ",product,"index: ",index)
+	 #THIS SHOULD GET SENT TO INVENTORY??
+	for crop in Global.inventory.Crops:
+		if (crop.name.to_lower() == name.to_lower()):
+			crop.addQuantity(product.item_count)
+			return
+	Global.inventory.Crops.append(Item.new(product.crop_name, product.item_count))
+
+func add_size(x,y):
+	tiles.add_size(-1,0)
+	if(x<0):
+		position.x+=x*16
+	if(y<0):
+		position.y+=y*16
+	
+	dirt_rendered = false
+	render()

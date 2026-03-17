@@ -4,6 +4,7 @@ extends Resource
 @export var width: int = 5 # Width of Tile Array
 @export var height: int = 5 # Height of Tile Array
 
+
 var map: Array[Tile] # Main Tile Array
 var cells := 0:
 	get:
@@ -64,6 +65,7 @@ func add_size(width_change: int,height_change: int):
 	## STUFF
 	for t in map.size():
 		map[t].index = t
+
 	
 	
 func get_surrounding_tiles(index) -> Array[Tile]:

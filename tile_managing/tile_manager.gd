@@ -33,12 +33,13 @@ func render():
 	
 	
 	for i in map.size():
+		var v = tiles.index_to_vector(i)
 		if !dirt_rendered:
-			dirt_layer.set_cells_terrain_connect([tiles.index_to_vector(i)],0,1)
-		if(map[i].ground is Dirt): # Changes Terrain to Dirt
-			ground_layer.erase_cell(tiles.index_to_vector(i))
-		if(map[i].ground is TilledDirt): # Changes Terrain to Dirt
-			ground_layer.set_cells_terrain_connect([tiles.index_to_vector(i)],0,0)
+			dirt_layer.set_cells_terrain_connect([v],0,1)
+		if(map[i].ground is Dirt && ground_layer.get_cell_source_id(v) != -1): # Changes Terrain to Dirt
+			ground_layer.erase_cell(v)
+		if(map[i].ground is TilledDirt && ground_layer.get_cell_source_id(v) == -1): # Changes Terrain to Dirt
+			ground_layer.set_cells_terrain_connect([v],0,0,false)
 	dirt_rendered = true
 	#Renders OccupantLayer 
 

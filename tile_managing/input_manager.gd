@@ -44,7 +44,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func till(index):
-	if(map[index].ground is Dirt):
+	if(map[index].ground is Dirt && !(map[index].ground is TilledDirt)):
 			map[index].ground = TilledDirt.new(map[index].ground)
 			manager.render()
 

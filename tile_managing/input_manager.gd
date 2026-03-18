@@ -36,6 +36,8 @@ func _unhandled_input(event: InputEvent) -> void:
 				Global.Tool.PLANT:
 					# CHANGE THIS TO A REAL MENU
 					plant(index)
+				Global.Tool.MACHINE:
+					place_machine(index)
 					
 				Global.Tool.NONE:
 					if(tile.occupant is Plant && tile.occupant.harvestable):
@@ -65,3 +67,10 @@ func plant(index):
 		seed.addQuantity(-1)
 		map[index].occupant.change_growth_stage.connect(manager.on_change_growth_stage.bind(index))
 		map[index].occupant.harvested.connect(manager.on_harvested.bind(index))
+		
+func place_machine(index):
+	var machine = Sprinkler.new()
+	
+	if(map[index].occupant == null && map[index].ground is Dirt):
+		map[index].set_occupant(Sprinkler)
+		manager.update_machine(index)

@@ -19,6 +19,7 @@ func _ready():
 	_add_tool_button(Global.Tool.TILL, "Till")
 	_add_tool_button(Global.Tool.PLANT, "Plant")
 	_add_tool_button(Global.Tool.INSPECT, "Inspect")
+	_add_tool_button(Global.Tool.MACHINE, "Machine")
 	
 	# Instantiate and hide crop pullout
 	crop_pullout_instance = CROP_PULLOUT_SCENE.instantiate()

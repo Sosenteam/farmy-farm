@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://4wrn3rccs4if" path="res://assets/plants/carrot.png" id="1_2r3ew"]
 [ext_resource type="Texture2D" uid="uid://s5b8s7kn7ku2" path="res://assets/plants/wheat.png" id="1_mphft"]
 [ext_resource type="Texture2D" uid="uid://cau7o1kef41cd" path="res://assets/plants/corn.png" id="3_mphft"]
+[ext_resource type="PackedScene" uid="uid://b3g3xg5s0cgmh" path="res://machine_scenes/sprinkler.tscn" id="4_v826q"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5riq7"]
 resource_name = "Wheat"
@@ -53,7 +54,12 @@ texture_region_size = Vector2i(16, 32)
 7:0/0 = 0
 7:0/0/texture_origin = Vector2i(0, 15)
 
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_jvcuk"]
+resource_name = "Machines"
+scenes/1/scene = ExtResource("4_v826q")
+
 [resource]
 sources/1 = SubResource("TileSetAtlasSource_v826q")
 sources/2 = SubResource("TileSetAtlasSource_jvcuk")
 sources/0 = SubResource("TileSetAtlasSource_5riq7")
+sources/999 = SubResource("TileSetScenesCollectionSource_jvcuk")

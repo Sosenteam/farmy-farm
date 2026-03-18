@@ -10,7 +10,8 @@ var current_tool: int = 0: set = _set_tool
 var current_selected_tile: Tile
 var selected_seed: Seed
 
-enum Tool { WATER, TILL, PLANT, INSPECT, NONE }
+enum Tool { WATER, TILL, PLANT, INSPECT, MACHINE, NONE }
+var inventory = {"Crops": [], "Seeds": [], "Machines": [], "Fertilizer": []}
 
 @onready var tick_timer = $TickTimer
 

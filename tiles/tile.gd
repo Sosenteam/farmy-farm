@@ -27,3 +27,4 @@ func delete_occupant():
 	occupant = null
 
 static var constants = preload("res://tiles/tiles_resource.tres")
+static var tiles = preload("res://tile_managing/tiles.tres")

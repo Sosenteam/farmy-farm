@@ -13,6 +13,7 @@ var current_water_render_row = 0
 @onready var dirt_layer = $DirtLayer
 @onready var occupant_layer = $OccupantLayer
 
+var machine_tiles_id = 999;
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -88,3 +89,15 @@ func add_size(x,y):
 	dirt_rendered = false
 	render()
 	update_water()
+
+func update_machine(index:int):
+	var machine = map[index].occupant
+	
+	if machine is Machine:
+		var scene_index:int = 0;
+		match machine.machine_name:
+			"sprinkler":
+				scene_index = 1
+		print(scene_index)
+		
+		occupant_layer.set_cell(tiles.index_to_vector(index), machine_tiles_id, Vector2i(0, 0), scene_index)

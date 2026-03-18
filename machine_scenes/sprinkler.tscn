@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://b3g3xg5s0cgmh"]
+
+[ext_resource type="Texture2D" uid="uid://cwlq2rdwcdnfn" path="res://assets/machines/sprinkler.png" id="1_22fqw"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uyv73"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_22fqw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Sprinkler" type="AnimatedSprite2D" unique_id=1109414348]
+process_mode = 4
+sprite_frames = SubResource("SpriteFrames_uyv73")

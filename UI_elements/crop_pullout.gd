@@ -57,7 +57,7 @@ func close():
 	$AnimationPlayer.play_backwards("open_popup")
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
-	print("Asd")
+	#print("Asd")
 	if (anim_name == "open_popup" && !is_plant_opened):
 		hide()
 		

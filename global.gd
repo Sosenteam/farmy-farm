@@ -4,12 +4,14 @@ signal on_tick
 signal on_tool_changed(tool_type: int)
 signal on_inventory_changed
 signal open_ui(ui_type)
+signal add_size
 
 var tick: int = 0
 var current_tool: int = 0: set = _set_tool
 var current_selected_tile: Tile
 var selected_seed: Seed
 var inventory = {"crops": [], "seeds": [], "machines": [], "fertilizer": []}
+var money:int = 0
 enum Tool { WATER, TILL, PLANT, INSPECT, NONE }
 
 @onready var tick_timer = $TickTimer
@@ -27,3 +29,6 @@ func _update_inventory():
 func _on_tick() -> void:
 	tick += 1
 	on_tick.emit()
+	
+func expand_size(x,y):
+	add_size.emit(x,y)

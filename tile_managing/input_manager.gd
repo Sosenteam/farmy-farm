@@ -17,7 +17,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == 1:
 			mouse_pressed = event.pressed
-	if event is InputEventMouseMotion && mouse_pressed:
+	if (event is InputEventMouseMotion && mouse_pressed) || (event is InputEventMouseButton && event.button_index == 1 && event.pressed):
 		# Get tile where mouse pressed
 		var tilemap_pos = ground_layer.local_to_map(manager.get_local_mouse_position())
 		var index = tiles.vector_to_index(tilemap_pos)

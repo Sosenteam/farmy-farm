@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://darcwl6h2itfh" path="res://UI_elements/shop.gd" id="1_e7rdd"]
 [ext_resource type="Texture2D" uid="uid://dbf2ncasdyqy3" path="res://assets/rect.png" id="2_blqjs"]
+[ext_resource type="FontFile" uid="uid://cp7khvcr6ixv" path="res://assets/Font.ttf" id="3_sc7dq"]
 
 [node name="Shop" type="CanvasLayer" unique_id=453794963]
 scale = Vector2(4, 4)
@@ -50,10 +51,11 @@ axis_stretch_vertical = 1
 
 [node name="Button" type="Button" parent="Shop/NinePatchRect" unique_id=107290571]
 layout_mode = 0
-offset_left = 119.25
-offset_top = 53.5
-offset_right = 403.25
-offset_bottom = 84.5
+offset_left = 84.0
+offset_top = 48.0
+offset_right = 410.0
+offset_bottom = 86.0
+theme_override_fonts/font = ExtResource("3_sc7dq")
 text = "GIVE ME SOME DMAN SEEDS BOZOS"
 
 [node name="CloseButton" type="Button" parent="Shop/NinePatchRect" unique_id=107290572]

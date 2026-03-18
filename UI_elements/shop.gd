@@ -3,7 +3,7 @@ extends CanvasLayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	Global.open_shop_ui.connect(func(): show())
+	Global.open_ui.connect(func(ui): if (ui == "shop"): show())
 
 func _on_close_button_pressed() -> void:
 	hide()

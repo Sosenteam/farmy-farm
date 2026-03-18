@@ -45,11 +45,13 @@ func come_back():
 	
 #temporary, just to test shwoing boxes
 func _on_static_body_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if event is InputEventMouseButton and event.pressed:
-		add_item("ITEM")
-		set_box_profile()
-	if (items_in_truck.size() == 8 ):
-		send_off()
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		Global.open_ui.emit("sell")
+	#if event is InputEventMouseButton and event.pressed:
+		#add_item("ITEM")
+		#set_box_profile()
+	#if (items_in_truck.size() == 8 ):
+		#send_off()
 		
 
 

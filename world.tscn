@@ -140,4 +140,5 @@ z_index = 1000
 scale = Vector2(4, 4)
 script = ExtResource("4_aqk2v")
 
+[connection signal="input_event" from="Structures/Barn/BarnArea2D" to="Structures" method="_on_barn_area_2d_input_event"]
 [connection signal="input_event" from="Structures/Shop/ShopArea2D" to="Structures" method="_on_shop_area_2d_input_event"]

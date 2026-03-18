@@ -3,7 +3,7 @@ extends Node
 signal on_tick
 signal on_tool_changed(tool_type: int)
 signal on_inventory_changed
-signal open_shop_ui
+signal open_ui(ui_type)
 
 var tick: int = 0
 var current_tool: int = 0: set = _set_tool

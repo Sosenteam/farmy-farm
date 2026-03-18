@@ -12,4 +12,10 @@ func _process(delta: float) -> void:
 func _on_shop_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		print("SHOP CLICKED")
-		Global.open_shop_ui.emit()
+		Global.open_ui.emit("shop")
+		
+
+func _on_barn_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		print("BARN CLICKED")
+		Global.open_ui.emit("storage")

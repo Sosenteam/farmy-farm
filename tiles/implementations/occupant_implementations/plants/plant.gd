@@ -51,7 +51,10 @@ func tick() -> void:
 
 func _get_nutrient_multiplier(soil_has:float, plant_wants:float):
 	if soil_has < plant_wants:
-		return 0.6
+		if soil_has < (0.5 * plant_wants):
+			return 0.4
+		else:
+			return 0.6
 	if (plant_wants == 0) or (soil_has / plant_wants < 20):
 		return 1.0
 	return 1.25

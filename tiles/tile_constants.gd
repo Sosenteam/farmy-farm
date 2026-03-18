@@ -23,26 +23,29 @@ const ticks_per_day:int = ticks_per_second * 90
 @export var wheat_n_happy_amount = 30
 @export var wheat_p_happy_amount = 5
 @export var wheat_k_happy_amount = 2
-@export var wheat_sell_price = 10
+@export var wheat_sell_price = 72
+@export var wheat_seed_price = 30
 
 @export_group("Carrot")
 @export var carrot_grow_speed = 0.01 # NEED TO CHANGE - SHOULD BE BASED ON NPK AMNTS
 @export var carrot_grow_stages = [0,0.3,0.6,1]
-@export var carrot_n_per_yield = 10
-@export var carrot_p_per_yield = 40
-@export var carrot_k_per_yield = 10
-@export var carrot_n_happy_amount = 5
-@export var carrot_p_happy_amount = 25
+@export var carrot_n_per_yield = 6
+@export var carrot_p_per_yield = 27
+@export var carrot_k_per_yield = 4
+@export var carrot_n_happy_amount = 3
+@export var carrot_p_happy_amount = 14
 @export var carrot_k_happy_amount = 5
-@export var carrot_sell_price = 10
+@export var carrot_sell_price = 44
+@export var carrot_seed_price = 20
 
 @export_group("Corn")
 @export var corn_grow_speed = 0.01 # NEED TO CHANGE - SHOULD BE BASED ON NPK AMNTS
 @export var corn_grow_stages = [0,0.16,0.33,0.5,0.66,0.83,1]
-@export var corn_n_per_yield = 20
-@export var corn_p_per_yield = 0
-@export var corn_k_per_yield = 30
+@export var corn_n_per_yield = 62
+@export var corn_p_per_yield = 8
+@export var corn_k_per_yield = 2
 @export var corn_n_happy_amount = 10
 @export var corn_p_happy_amount = 1
 @export var corn_k_happy_amount = 13
-@export var corn_sell_price = 10
+@export var corn_sell_price = 110
+@export var corn_seed_price = 35

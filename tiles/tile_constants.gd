@@ -15,7 +15,7 @@ const ticks_per_day:int = ticks_per_second * 90
 @export_category("Crop Constants")
 
 @export_group("Wheat")
-@export var wheat_grow_speed = 0.01 # NEED TO CHANGE - SHOULD BE BASED ON NPK AMNTS
+@export var wheat_grow_speed = (1.0/900.0) # NEED TO CHANGE - SHOULD BE BASED ON NPK AMNTS
 @export var wheat_grow_stages = [0,0.25,0.5,0.75,1]
 @export var wheat_n_per_yield = 55
 @export var wheat_p_per_yield = 10
@@ -27,7 +27,7 @@ const ticks_per_day:int = ticks_per_second * 90
 @export var wheat_seed_price = 30
 
 @export_group("Carrot")
-@export var carrot_grow_speed = 0.01 # NEED TO CHANGE - SHOULD BE BASED ON NPK AMNTS
+@export var carrot_grow_speed = (1.0/510.0) # NEED TO CHANGE - SHOULD BE BASED ON NPK AMNTS
 @export var carrot_grow_stages = [0,0.3,0.6,1]
 @export var carrot_n_per_yield = 6
 @export var carrot_p_per_yield = 27
@@ -39,7 +39,7 @@ const ticks_per_day:int = ticks_per_second * 90
 @export var carrot_seed_price = 20
 
 @export_group("Corn")
-@export var corn_grow_speed = 0.01 # NEED TO CHANGE - SHOULD BE BASED ON NPK AMNTS
+@export var corn_grow_speed = (1.0/1600.0) # NEED TO CHANGE - SHOULD BE BASED ON NPK AMNTS
 @export var corn_grow_stages = [0,0.16,0.33,0.5,0.66,0.83,1]
 @export var corn_n_per_yield = 62
 @export var corn_p_per_yield = 8

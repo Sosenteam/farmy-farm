@@ -2,6 +2,16 @@
 
 [ext_resource type="Script" uid="uid://darcwl6h2itfh" path="res://UI_elements/shop.gd" id="1_e7rdd"]
 [ext_resource type="Texture2D" uid="uid://dbf2ncasdyqy3" path="res://assets/rect.png" id="2_blqjs"]
+[ext_resource type="FontFile" uid="uid://bpy4hbp8susis" path="res://assets/PrStart.ttf" id="3_sc7dq"]
+
+[sub_resource type="FontVariation" id="FontVariation_nclu2"]
+base_font = ExtResource("3_sc7dq")
+spacing_glyph = -1
+spacing_space = -11
+
+[sub_resource type="FontVariation" id="FontVariation_evbk1"]
+base_font = ExtResource("3_sc7dq")
+spacing_glyph = -3
 
 [node name="Shop" type="CanvasLayer" unique_id=453794963]
 scale = Vector2(4, 4)
@@ -50,11 +60,13 @@ axis_stretch_vertical = 1
 
 [node name="Button" type="Button" parent="Shop/NinePatchRect" unique_id=107290571]
 layout_mode = 0
-offset_left = 119.25
-offset_top = 53.5
-offset_right = 403.25
-offset_bottom = 84.5
-text = "GIVE ME SOME DMAN SEEDS BOZOS"
+offset_left = 238.25
+offset_top = 32.0
+offset_right = 417.25
+offset_bottom = 63.0
+theme_override_fonts/font = SubResource("FontVariation_nclu2")
+theme_override_font_sizes/font_size = 16
+text = "Random Seeds"
 
 [node name="CloseButton" type="Button" parent="Shop/NinePatchRect" unique_id=107290572]
 layout_mode = 1
@@ -66,7 +78,56 @@ offset_top = 5.0
 offset_right = -5.0
 offset_bottom = 30.0
 grow_horizontal = 0
+theme_override_fonts/font = SubResource("FontVariation_nclu2")
+theme_override_font_sizes/font_size = 16
 text = "X"
+
+[node name="Expand Menu" type="Control" parent="Shop/NinePatchRect" unique_id=1796101727]
+anchors_preset = 0
+offset_left = 1.25
+offset_top = 75.5
+offset_right = 111.25
+offset_bottom = 175.5
+
+[node name="Up" type="Button" parent="Shop/NinePatchRect/Expand Menu" unique_id=863809244]
+layout_mode = 0
+offset_left = 40.75
+offset_top = 3.0
+offset_right = 77.75
+offset_bottom = 34.0
+theme_override_fonts/font = SubResource("FontVariation_evbk1")
+text = "Up"
+
+[node name="Down" type="Button" parent="Shop/NinePatchRect/Expand Menu" unique_id=2099305474]
+layout_mode = 0
+offset_left = 24.75
+offset_top = 66.25
+offset_right = 77.75
+offset_bottom = 97.25
+theme_override_fonts/font = SubResource("FontVariation_evbk1")
+text = "Down"
+
+[node name="Left" type="Button" parent="Shop/NinePatchRect/Expand Menu" unique_id=2070602900]
+layout_mode = 0
+offset_left = 1.5
+offset_top = 33.75
+offset_right = 54.5
+offset_bottom = 64.75
+theme_override_fonts/font = SubResource("FontVariation_evbk1")
+text = "Left"
+
+[node name="Right" type="Button" parent="Shop/NinePatchRect/Expand Menu" unique_id=1017837610]
+layout_mode = 0
+offset_left = 65.75
+offset_top = 34.75
+offset_right = 141.75
+offset_bottom = 65.75
+theme_override_fonts/font = SubResource("FontVariation_evbk1")
+text = "Right"
 
 [connection signal="pressed" from="Shop/NinePatchRect/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Shop/NinePatchRect/CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="Shop/NinePatchRect/Expand Menu/Up" to="." method="_on_up_pressed"]
+[connection signal="pressed" from="Shop/NinePatchRect/Expand Menu/Down" to="." method="_on_down_pressed"]
+[connection signal="pressed" from="Shop/NinePatchRect/Expand Menu/Left" to="." method="_on_left_pressed"]
+[connection signal="pressed" from="Shop/NinePatchRect/Expand Menu/Right" to="." method="_on_right_pressed"]

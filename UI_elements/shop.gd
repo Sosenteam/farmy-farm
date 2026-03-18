@@ -21,3 +21,19 @@ func _on_button_pressed() -> void:
 			
 	Global.inventory.seeds.append(Seed.new(seed_name, 1))
 	Global._update_inventory()
+
+
+func _on_up_pressed() -> void:
+	Global.expand_size(0,-1)
+
+
+func _on_down_pressed() -> void:
+	Global.expand_size(0,1)
+
+
+func _on_left_pressed() -> void:
+	Global.expand_size(-1,0)
+
+
+func _on_right_pressed() -> void:
+	Global.expand_size(1,0)

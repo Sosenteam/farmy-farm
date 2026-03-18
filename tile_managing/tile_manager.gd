@@ -17,6 +17,7 @@ var current_water_render_row = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Global.on_tick.connect(on_tick)
+	Global.add_size.connect(add_size)
 	for i in tiles.cells:
 		map.append(Tile.new([Dirt].pick_random(),null))
 		map[i].index = i
@@ -77,7 +78,7 @@ func on_harvested(product:Yield,index:int):
 	Global.inventory.crops.append(Item.new(product.crop_name, product.item_count))
 
 func add_size(x,y):
-	tiles.add_size(-1,0)
+	tiles.add_size(x,y)
 	if(x<0):
 		position.x+=x*16
 	if(y<0):

@@ -11,6 +11,6 @@ func _init():
 	n_happy_amount = Tile.constants.corn_n_happy_amount
 	p_happy_amount = Tile.constants.corn_p_happy_amount
 	k_happy_amount = Tile.constants.corn_k_happy_amount
-
+	sell_price = Tile.constants.corn_sell_price
 func tick() -> void:
 	super()

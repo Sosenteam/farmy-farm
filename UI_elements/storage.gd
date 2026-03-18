@@ -5,22 +5,25 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Global.open_ui.connect(open)
-	var i = 0
-	for array in Global.inventory.values():
+	Global.on_inventory_changed.connect(refresh_inventory)
+	refresh_inventory()
+
+func refresh_inventory():
+	for child in HBox.get_children():
+		child.queue_free()
+	
+	for category in Global.inventory.keys():
+		var items = Global.inventory[category]
 		var newThing = ItemBox.instantiate()
-		newThing.init_me(Global.inventory.keys()[i], array)
-		$HBoxContainer.add_child(newThing)
-		
-		i+=1
+		HBox.add_child(newThing)
+		newThing.init_me(category.capitalize(), items)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 
 func open(ui):
-	print("jansdjk")
 	if (ui == "storage"): 
-		print("jansdjk")
 		get_parent().show()
 	
 func _on_close_button_pressed() -> void:

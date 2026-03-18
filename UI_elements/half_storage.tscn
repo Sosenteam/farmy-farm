@@ -39,7 +39,7 @@ axis_stretch_vertical = 1
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1815153064]
 layout_mode = 0
 offset_left = 71.0
-offset_top = 26.25
+offset_top = 27.0
 offset_right = 231.75
-offset_bottom = 186.25
-theme_override_constants/separation = 38
+offset_bottom = 187.0
+theme_override_constants/separation = 42

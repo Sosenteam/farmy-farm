@@ -72,10 +72,11 @@ func on_change_growth_stage(crop,stage: int, index: int) -> void:
 func on_harvested(product:Yield,index:int):
 	 #THIS SHOULD GET SENT TO INVENTORY??
 	for crop in Global.inventory.crops:
-		if (crop.name.to_lower() == name.to_lower()):
+		if (crop.name.to_lower() == product.crop_name.to_lower()):
 			crop.addQuantity(product.item_count)
 			return
 	Global.inventory.crops.append(Item.new(product.crop_name, product.item_count))
+	Global._update_inventory()
 
 func add_size(x,y):
 	tiles.add_size(x,y)

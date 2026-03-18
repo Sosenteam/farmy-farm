@@ -11,3 +11,7 @@ func ready():
 func _update_inventory():
 	on_inventory_changed.emit()
 	
+func sell(crop_array:Array[Crop]):
+	for crop in crop_array:
+		print("selling crop for ",crop.sell_price)
+		money+=crop.sell_price

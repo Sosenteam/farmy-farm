@@ -25,3 +25,4 @@ func addQuantity(count):
 	Inventory.on_inventory_changed.emit()
 	
 static var constants = preload("res://item_manager/item_resources.tres")
+static var tile_constants = preload("res://tiles/tiles_resource.tres")

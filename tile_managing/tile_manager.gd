@@ -75,7 +75,7 @@ func on_harvested(product:Yield,index:int):
 		if (crop.name.to_lower() == product.crop_name.to_lower()):
 			crop.addQuantity(product.item_count)
 			return
-	Inventory.inventory.crops.append(Item.new(product.crop_name, product.item_count))
+	Inventory.inventory.crops.append(Crop.new(product.crop_name, product.item_count))
 	Inventory._update_inventory()
 
 func add_size(x,y):

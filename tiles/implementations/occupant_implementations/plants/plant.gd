@@ -12,6 +12,7 @@ var k_per_yield:float = Tile.constants.BASE_NUTRIENT_PER_YIELD
 var n_happy_amount:float = Tile.constants.BASE_NUTRIENT_HAPPY_AMOUNT
 var p_happy_amount:float = Tile.constants.BASE_NUTRIENT_HAPPY_AMOUNT
 var k_happy_amount:float = Tile.constants.BASE_NUTRIENT_HAPPY_AMOUNT
+var sell_price:int = 1
 var harvestable:bool = false
 var yield_count = Tile.constants.BASE_YIELD_COUNT
 

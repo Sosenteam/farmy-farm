@@ -14,7 +14,8 @@ func tick() -> void:
 		var surroundingTiles = tile.tiles.get_surrounding_tiles(tile.index)
 		
 		for surrounding in surroundingTiles:
-			if(surrounding.ground is Dirt):
-				surrounding.ground.change_water(0.1)
-				#print("watering " + str(surrounding.index))
+			if surrounding:
+				if(surrounding.ground is Dirt):
+					surrounding.ground.change_water(0.1)
+					#print("watering " + str(surrounding.index))
 	ticks_since_last_watering += 1;

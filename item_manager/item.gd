@@ -17,11 +17,11 @@ func _init(_type: String, _quantity: int = 1) -> void:
 	
 func addQuantity(count):
 	quantity += count
-	Global.on_inventory_changed.emit()
+	Inventory.on_inventory_changed.emit()
 	if (quantity < 1):
-		for array in Global.inventory.values():
+		for array in Inventory.inventory.values():
 			if self in array:
 				array.erase(self)
-	Global.on_inventory_changed.emit()
+	Inventory.on_inventory_changed.emit()
 	
 static var constants = preload("res://item_manager/item_resources.tres")

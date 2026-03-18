@@ -5,15 +5,15 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Global.open_ui.connect(open)
-	Global.on_inventory_changed.connect(refresh_inventory)
+	Inventory.on_inventory_changed.connect(refresh_inventory)
 	refresh_inventory()
 
 func refresh_inventory():
 	for child in HBox.get_children():
 		child.queue_free()
 	
-	for category in Global.inventory.keys():
-		var items = Global.inventory[category]
+	for category in Inventory.inventory.keys():
+		var items = Inventory.inventory[category]
 		var newThing = ItemBox.instantiate()
 		HBox.add_child(newThing)
 		newThing.init_me(category.capitalize(), items)

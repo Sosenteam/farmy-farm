@@ -23,6 +23,7 @@ const ticks_per_day:int = ticks_per_second * 90
 @export var wheat_n_happy_amount = 30
 @export var wheat_p_happy_amount = 5
 @export var wheat_k_happy_amount = 2
+@export var wheat_sell_price = 10
 
 @export_group("Carrot")
 @export var carrot_grow_speed = 0.01 # NEED TO CHANGE - SHOULD BE BASED ON NPK AMNTS
@@ -33,6 +34,7 @@ const ticks_per_day:int = ticks_per_second * 90
 @export var carrot_n_happy_amount = 5
 @export var carrot_p_happy_amount = 25
 @export var carrot_k_happy_amount = 5
+@export var carrot_sell_price = 10
 
 @export_group("Corn")
 @export var corn_grow_speed = 0.01 # NEED TO CHANGE - SHOULD BE BASED ON NPK AMNTS
@@ -43,3 +45,4 @@ const ticks_per_day:int = ticks_per_second * 90
 @export var corn_n_happy_amount = 10
 @export var corn_p_happy_amount = 1
 @export var corn_k_happy_amount = 13
+@export var corn_sell_price = 10

@@ -12,15 +12,15 @@ func _on_close_button_pressed() -> void:
 func _on_button_pressed() -> void:
 	var seed_name = ["Carrot","Corn","Wheat"].pick_random()
 	
-	for seed_item in Global.inventory.seeds:
+	for seed_item in Inventory.inventory.seeds:
 		if seed_item.type.to_lower() == seed_name.to_lower():
 			seed_item.quantity += 1
-			Global._update_inventory()
+			Inventory._update_inventory()
 			return
 			
 			
-	Global.inventory.seeds.append(Seed.new(seed_name, 1))
-	Global._update_inventory()
+	Inventory.inventory.seeds.append(Seed.new(seed_name, 1))
+	Inventory._update_inventory()
 
 
 func _on_up_pressed() -> void:

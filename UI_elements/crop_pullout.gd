@@ -7,7 +7,7 @@ var selected_slot = null
 
 func _ready() -> void:
 	#$ScaledControl/NinePatchRect/ScrollContainer.get_v_scroll_bar().scale = Vector2(0.5,0.5)
-	Global.on_inventory_changed.connect(_update_list)
+	Inventory.on_inventory_changed.connect(_update_list)
 	_update_list()
 
 func _update_list() -> void:
@@ -18,7 +18,7 @@ func _update_list() -> void:
 	
 	selected_slot = null
 	
-	for item in Global.inventory.seeds:
+	for item in Inventory.inventory.seeds:
 		var new_slot = slot_scene.instantiate()
 		new_slot.set_slot(item)
 		new_slot.slot_clicked.connect(_on_slot_clicked)

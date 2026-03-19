@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b3g3xg5s0cgmh"]
 
 [ext_resource type="Texture2D" uid="uid://cwlq2rdwcdnfn" path="res://assets/machines/sprinkler.png" id="1_22fqw"]
+[ext_resource type="Script" uid="uid://0xnbgkfngx0m" path="res://machine_scenes/machine_scene.gd" id="2_uyv73"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_uyv73"]
 animations = [{
@@ -16,3 +17,4 @@ animations = [{
 [node name="Sprinkler" type="AnimatedSprite2D" unique_id=1109414348]
 process_mode = 4
 sprite_frames = SubResource("SpriteFrames_uyv73")
+script = ExtResource("2_uyv73")

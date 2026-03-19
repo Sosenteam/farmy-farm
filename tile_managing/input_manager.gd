@@ -88,4 +88,7 @@ func place_machine(index):
 		map[index].occupant.pick_up.connect(manager.on_pick_up_machine.bind(index))
 
 func fertilize(index):
-	print(index)
+	if(map[index].ground is Dirt && Inventory.inventory.fertilizer):	
+		if(map[index].ground.fertilize(Global.selected_fertilizer.fertilizer)):
+			#Write code here to use up the fertilizer, will only run if the fert was used
+			pass

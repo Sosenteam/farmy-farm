@@ -38,6 +38,9 @@ func _unhandled_input(event: InputEvent) -> void:
 					plant(index)
 				Global.Tool.MACHINE:
 					place_machine(index)
+				Global.Tool.FERTILIZER:
+					fertilize(index)
+					
 					
 				Global.Tool.NONE:
 					if(tile.occupant is Plant && tile.occupant.harvestable):
@@ -78,3 +81,6 @@ func place_machine(index):
 		map[index].set_occupant(Sprinkler)
 		manager.place_machine(index)
 		map[index].occupant.pick_up.connect(manager.on_pick_up_machine.bind(index))
+
+func fertilize(index):
+	print(index)

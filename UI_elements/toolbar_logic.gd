@@ -42,13 +42,8 @@ func _add_tool_button(tool_type: Global.Tool, tool_name: String):
 	# Atlas slicing (each icon is 20x20 in the 100x20 sheet)
 	var atlas = AtlasTexture.new()
 	atlas.atlas = ICON_SHEET
-	if tool_type < 5:
-		atlas.region = Rect2(tool_type * 20, 0, 20, 20)
-		btn.texture_normal = atlas
-	else:
-		atlas.region = Rect2((tool_type-1) * 20, 0, 20, 20)
-		btn.texture_normal = atlas
-	
+	atlas.region = Rect2(tool_type%5 * 20, floor(tool_type/5)*20, 20, 20)
+	btn.texture_normal = atlas
 	btn.mouse_entered.connect(func():
 		var tween = btn.create_tween()
 		tween.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BACK)

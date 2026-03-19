@@ -4,7 +4,10 @@
 [ext_resource type="Script" uid="uid://bqtw7xnh5u6v8" path="res://UI_elements/inspectorbars.gd" id="1_osjua"]
 [ext_resource type="Texture2D" uid="uid://dj716ipmgstum" path="res://assets/ui_elements.png" id="2_osjua"]
 [ext_resource type="Texture2D" uid="uid://6kktf00gvibt" path="res://assets/bat1.png" id="3_ijb2h"]
+[ext_resource type="Texture2D" uid="uid://dnfuqs40nxvnx" path="res://assets/alec/32x32 circle bar under.png" id="3_r8f5t"]
 [ext_resource type="Texture2D" uid="uid://bdis6fiilr5n2" path="res://assets/bat2.png" id="4_astnl"]
+[ext_resource type="Texture2D" uid="uid://do3mndqdwqyov" path="res://assets/alec/32x32 circle bar over.png" id="4_qhqlr"]
+[ext_resource type="Texture2D" uid="uid://c3srfs8hbmkcg" path="res://assets/alec/32x32 circle bar progress green.png" id="5_asuoh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fcnl7"]
 atlas = ExtResource("2_osjua")
@@ -59,6 +62,23 @@ patch_margin_right = 4
 patch_margin_bottom = 4
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Control2/NinePatchRect" unique_id=1870150127]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 5.25
+offset_top = -16.25
+offset_right = 37.25
+offset_bottom = 15.75
+grow_vertical = 2
+max_value = 1.0
+step = 0.01
+fill_mode = 4
+texture_under = ExtResource("3_r8f5t")
+texture_over = ExtResource("4_qhqlr")
+texture_progress = ExtResource("5_asuoh")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control2" unique_id=260840136]
 layout_mode = 0
@@ -179,3 +199,12 @@ texture_under = ExtResource("4_astnl")
 texture_progress = ExtResource("3_ijb2h")
 tint_under = Color(0.34117648, 0.64705884, 1, 1)
 tint_progress = Color(0.34117648, 0.64705884, 1, 1)
+
+[node name="happy" type="TextureRect" parent="Control2/VBoxContainer/HBoxContainer3/Control" unique_id=186790518]
+layout_mode = 0
+offset_left = 15.0
+offset_top = -1.0
+offset_right = 18.0
+offset_bottom = 7.0
+tooltip_text = "Happy Level For Plant"
+texture = SubResource("AtlasTexture_a7ecf")

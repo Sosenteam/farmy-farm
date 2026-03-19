@@ -4,6 +4,7 @@ extends CanvasLayer
 @onready var k = $Control2/VBoxContainer/HBoxContainer4/Control/K
 @onready var p = $Control2/VBoxContainer/HBoxContainer2/Control/P
 @onready var w = $Control2/VBoxContainer/HBoxContainer3/Control/Water
+@onready var growth_progess_bar = $Control2/NinePatchRect/TextureProgressBar
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Global.on_tool_changed.connect(toggle)
@@ -26,6 +27,9 @@ func _process(delta: float) -> void:
 			n.get_parent_control().get_child(1).position.x = Global.current_selected_tile.occupant.n_happy_amount
 			p.get_parent_control().get_child(1).position.x = Global.current_selected_tile.occupant.p_happy_amount
 			k.get_parent_control().get_child(1).position.x = Global.current_selected_tile.occupant.k_happy_amount
+			w.get_parent_control().get_child(1).position.x = Global.current_selected_tile.occupant.water_requirement
+		if Global.current_selected_tile.occupant && "growth_percentage" in Global.current_selected_tile.occupant:
+			growth_progess_bar.value = Global.current_selected_tile.occupant.growth_percentage
 		n.value = Global.current_selected_tile.ground.nitrogen
 		p.value = Global.current_selected_tile.ground.phosphorus
 		k.value = Global.current_selected_tile.ground.potassium

@@ -10,7 +10,7 @@ const ticks_per_day:int = ticks_per_second * 60
 @export var BASE_NUTRIENT_HAPPY_AMOUNT:float = 0
 @export var BASE_YIELD_COUNT = 1
 @export var BASE_WATER_PER_YIELD:float = 1.5
-@export var BASE_WATER_REQUIREMENT:float = 0.05
+@export var BASE_WATER_REQUIREMENT:float = 0.15
 
 @export var nutrient_capacity:float = 100
 

@@ -77,8 +77,8 @@ func _update_selection_visuals(_tool: int):
 	# Update crop pullout
 	if crop_pullout_instance and plant_butt:
 		if Global.current_tool == Global.Tool.PLANT:
+			crop_pullout_instance.global_position = plant_butt.global_position + Vector2(2, 10)
 			crop_pullout_instance.open()
-			crop_pullout_instance.global_position = plant_butt.global_position + Vector2(-1, -55)
 		else:
 			crop_pullout_instance.close()
 

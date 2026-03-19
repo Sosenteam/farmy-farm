@@ -18,7 +18,7 @@ func _init(_type: String, _quantity: int = 1) -> void:
 func addQuantity(count):
 	quantity += count
 	Inventory.on_inventory_changed.emit()
-	if (quantity < 1):
+	if (quantity < 1 and not self is Seed):
 		for array in Inventory.inventory.values():
 			if self in array:
 				array.erase(self)

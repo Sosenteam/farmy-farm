@@ -10,3 +10,18 @@ func _ready() -> void:
 	
 	if occupant is Machine:
 		occupant.scene = self
+
+
+
+func _process(delta: float) -> void:
+	#specifically for the sprinkler
+	if get(&"animation") == &"watering":
+		print("wateriong")
+		for child in get_children():
+			if child is GPUParticles2D:
+				child.rotation += delta * 15.0
+				child.emitting = true
+	else:
+		for child in get_children():
+			if child is GPUParticles2D:
+				child.emitting = false

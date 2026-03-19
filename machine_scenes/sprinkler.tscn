@@ -1,15 +1,25 @@
 [gd_scene format=3 uid="uid://b3g3xg5s0cgmh"]
 
 [ext_resource type="Texture2D" uid="uid://cwlq2rdwcdnfn" path="res://assets/machines/sprinkler.png" id="1_22fqw"]
-[ext_resource type="Texture2D" uid="uid://ctdbx0tublsvq" path="res://assets/machines/sprinkler_water1.png" id="2_lleie"]
 [ext_resource type="Script" uid="uid://0xnbgkfngx0m" path="res://machine_scenes/machine_scene.gd" id="2_uyv73"]
-[ext_resource type="Texture2D" uid="uid://bh52w5328jpi2" path="res://assets/machines/sprinkler_water2.png" id="3_233iy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uyv73"]
+atlas = ExtResource("1_22fqw")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qwq8s"]
+atlas = ExtResource("1_22fqw")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lleie"]
+atlas = ExtResource("1_22fqw")
+region = Rect2(32, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_uyv73"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_22fqw")
+"texture": SubResource("AtlasTexture_uyv73")
 }],
 "loop": true,
 "name": &"idle",
@@ -17,18 +27,43 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_lleie")
+"texture": SubResource("AtlasTexture_qwq8s")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_233iy")
+"texture": SubResource("AtlasTexture_lleie")
 }],
 "loop": true,
 "name": &"watering",
 "speed": 10.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_233iy"]
+atlas = ExtResource("1_22fqw")
+region = Rect2(55, 7, 2, 2)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_water"]
+particle_flag_disable_z = true
+angle_min = -720.0
+angle_max = 720.0
+spread = 15.0
+initial_velocity_min = 60.0
+initial_velocity_max = 80.0
+angular_velocity_min = -500.0
+angular_velocity_max = 500.0
+gravity = Vector3(0, 60.25, 0)
+scale_min = 0.5
+
 [node name="Sprinkler" type="AnimatedSprite2D" unique_id=1109414348]
 sprite_frames = SubResource("SpriteFrames_uyv73")
 animation = &"idle"
-frame_progress = 0.69164205
 script = ExtResource("2_uyv73")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=1035685076]
+rotation = 0.0012464275
+amount = 10
+texture = SubResource("AtlasTexture_233iy")
+lifetime = 0.29000000000000004
+interp_to_end = 1.0
+speed_scale = 0.7
+randomness = 0.1
+process_material = SubResource("ParticleProcessMaterial_water")

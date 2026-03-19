@@ -32,8 +32,6 @@ func on_tick():
 # THIS FUNCTION NEEDS OPTIMISATION
 func render():
 	#Renders GroundLayer
-	
-	
 	for i in map.size():
 		var v = tiles.index_to_vector(i)
 		if !dirt_rendered:
@@ -44,6 +42,18 @@ func render():
 			ground_layer.set_cells_terrain_connect([v],0,0,false)
 	dirt_rendered = true
 	#Renders OccupantLayer 
+
+func occupant_rerender():
+	for i in map.size():
+		if (map[i].occupant is Machine):
+			if("position" in map[i].occupant.scene ):
+				print("moving machinbe")
+				map[i].occupant.scene.position = tiles.index_to_vector(i)*16
+				map[i].occupant.scene.position+=Vector2(8,8)
+		elif(map[i].occupant is Plant):
+			on_change_growth_stage(map[i].occupant.crop_name,map[i].occupant.current_growth_stage,i)
+		elif(occupant_layer.get_cell_source_id(tiles.index_to_vector(i)) != 999):
+			occupant_layer.erase_cell(tiles.index_to_vector(i))
 
 func update_water():
 	for i in map.size():
@@ -89,6 +99,8 @@ func add_size(x,y):
 	dirt_rendered = false
 	render()
 	update_water()
+	occupant_rerender()
+
 
 func place_machine(index:int):
 	var machine = map[index].occupant

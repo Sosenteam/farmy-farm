@@ -9,6 +9,8 @@ func _init():
 	ticks_since_last_watering = ticks_between_waterings - 10
 
 func tick() -> void:
+	if(!scene):
+		return
 	if ticks_since_last_watering > ticks_between_waterings:
 		if ticks_since_last_watering == ticks_between_waterings + 1:
 			scene.play("watering")

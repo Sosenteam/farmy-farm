@@ -27,7 +27,7 @@ func _process(delta: float) -> void:
 			n.get_parent_control().get_child(1).position.x = Global.current_selected_tile.occupant.n_happy_amount
 			p.get_parent_control().get_child(1).position.x = Global.current_selected_tile.occupant.p_happy_amount
 			k.get_parent_control().get_child(1).position.x = Global.current_selected_tile.occupant.k_happy_amount
-			w.get_parent_control().get_child(1).position.x = Global.current_selected_tile.occupant.water_requirement
+			w.get_parent_control().get_child(1).position.x = Global.current_selected_tile.occupant.water_requirement*100
 		if Global.current_selected_tile.occupant && "growth_percentage" in Global.current_selected_tile.occupant:
 			growth_progess_bar.value = Global.current_selected_tile.occupant.growth_percentage
 		n.value = Global.current_selected_tile.ground.nitrogen

@@ -46,7 +46,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func till(index):
-	if(map[index].ground is Dirt && !(map[index].ground is TilledDirt)):
+	if(map[index].ground is Dirt && !(map[index].ground is TilledDirt) && !map[index].occupant):
 			map[index].ground = TilledDirt.new(map[index].ground)
 			manager.render()
 
@@ -71,7 +71,10 @@ func plant(index):
 func place_machine(index):
 	var machine = Global.selected_machine
 	
-	if(map[index].occupant == null && map[index].ground is Dirt):
+	if(!(map[index].occupant) && map[index].ground is Dirt):
+		if map[index].ground is TilledDirt:
+			map[index].ground = Dirt.from_tilled_dirt(map[index].ground)
+			manager.render()
 		map[index].set_occupant(Sprinkler)
 		manager.place_machine(index)
 		map[index].occupant.pick_up.connect(manager.on_pick_up_machine.bind(index))

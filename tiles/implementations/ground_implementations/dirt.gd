@@ -10,6 +10,15 @@ var growth_rate_multiplier:float = 1
 var yield_multiplier:float = 1
 var water_loss_multiplier:float = 1
 
+static func from_tilled_dirt(dirt: TilledDirt) -> Dirt:
+	var new_dirt = Dirt.new()
+	
+	for p in dirt.get_property_list():
+		if p.usage & PROPERTY_USAGE_SCRIPT_VARIABLE:
+			new_dirt.set(p.name, dirt.get(p.name))
+	
+	return new_dirt
+
 func tick() -> void:
 	moisture_percent = clampf(moisture_percent - (Tile.constants.BASE_WATER_LOSS_PER_TICK * water_loss_multiplier), 0.0, 1.0)
 	

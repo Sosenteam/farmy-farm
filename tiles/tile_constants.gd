@@ -44,8 +44,8 @@ const ticks_per_day:int = ticks_per_second * 60
 
 @export_group("Corn")
 @export var corn_grow_speed = (1.0/1600.0) # NEED TO CHANGE - SHOULD BE BASED ON NPK AMNTS
-@export var corn_grow_stages = [0,0.16,0.33,0.5,0.66,0.83,1]
-@export var corn_n_per_yield = 62
+@export var corn_grow_stages = [0,0.16,0.33,0.5,0.66,1,1]
+@export var corn_n_per_yield = 62	
 @export var corn_p_per_yield = 8
 @export var corn_k_per_yield = 2
 @export var corn_n_happy_amount = 10

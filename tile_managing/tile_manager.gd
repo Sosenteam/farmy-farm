@@ -44,7 +44,10 @@ func render():
 	#Renders OccupantLayer 
 
 func occupant_rerender():
+	# This is super broken
 	for i in map.size():
+		if(occupant_layer.get_cell_source_id(tiles.index_to_vector(i)) != 999):
+			occupant_layer.erase_cell(tiles.index_to_vector(i))
 		if (map[i].occupant is Machine):
 			if("position" in map[i].occupant.scene ):
 				print("moving machinbe")
@@ -52,8 +55,8 @@ func occupant_rerender():
 				map[i].occupant.scene.position+=Vector2(8,8)
 		elif(map[i].occupant is Plant):
 			on_change_growth_stage(map[i].occupant.crop_name,map[i].occupant.current_growth_stage,i)
-		elif(occupant_layer.get_cell_source_id(tiles.index_to_vector(i)) != 999):
-			occupant_layer.erase_cell(tiles.index_to_vector(i))
+		reconnect_signals()
+		
 
 func update_water():
 	for i in map.size():
@@ -116,3 +119,11 @@ func place_machine(index:int):
 
 func on_pick_up_machine(index:int):
 	occupant_layer.erase_cell(tiles.index_to_vector(index))
+	
+func reconnect_signals():
+	for i in map.size():
+		if(map[i].occupant && map[i].occupant is Plant):
+			map[i].occupant.change_growth_stage.disconnect(on_change_growth_stage.bind(i))
+			map[i].occupant.harvested.disconnect(on_harvested.bind(i))
+			map[i].occupant.change_growth_stage.connect(on_change_growth_stage.bind(i))
+			map[i].occupant.harvested.connect(on_harvested.bind(i))

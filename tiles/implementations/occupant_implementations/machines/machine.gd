@@ -9,3 +9,6 @@ func _pick_up():
 	tile.delete_occupant()
 	pick_up.emit()
 	#TODO: put it in your inventory :3
+
+func delete_occupant():
+	scene.queue_free()

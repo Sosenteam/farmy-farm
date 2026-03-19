@@ -38,6 +38,9 @@ func _unhandled_input(event: InputEvent) -> void:
 					plant(index)
 				Global.Tool.MACHINE:
 					place_machine(index)
+				Global.Tool.FERTILIZER:
+					fertilize(index)
+					
 					
 				Global.Tool.NONE:
 					if(tile.occupant is Plant && tile.occupant.harvestable):
@@ -49,6 +52,11 @@ func till(index):
 	if(map[index].ground is Dirt && !(map[index].ground is TilledDirt) && !map[index].occupant):
 			map[index].ground = TilledDirt.new(map[index].ground)
 			manager.render()
+	if(map[index].ground is Dirt && map[index].occupant is Machine):
+		map[index].occupant.delete_occupant()
+		map[index].delete_occupant()
+		occupant_layer.erase_cell(tiles.index_to_vector(index))
+		
 
 func water(index):
 	if(map[index].ground is TilledDirt):
@@ -78,3 +86,6 @@ func place_machine(index):
 		map[index].set_occupant(Sprinkler)
 		manager.place_machine(index)
 		map[index].occupant.pick_up.connect(manager.on_pick_up_machine.bind(index))
+
+func fertilize(index):
+	print(index)

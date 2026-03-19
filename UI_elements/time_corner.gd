@@ -42,7 +42,7 @@ func format_number(number: int) -> String:
 	
 func update_cashmoney():
 	var mon = format_number(Inventory.money)
-	cash_label.text = "%s$" % [mon]
+	cash_label.text = "$%s" % [mon]
 	
 func on_tick() -> void:
 	total_ticks += 1

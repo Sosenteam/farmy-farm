@@ -28,7 +28,7 @@ animations = [{
 }]
 
 [node name="Sprinkler" type="AnimatedSprite2D" unique_id=1109414348]
+process_mode = 4
 sprite_frames = SubResource("SpriteFrames_uyv73")
-animation = &"idle"
-frame_progress = 0.69164205
+animation = &"watering"
 script = ExtResource("2_uyv73")

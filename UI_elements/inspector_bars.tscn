@@ -202,9 +202,9 @@ tint_progress = Color(0.34117648, 0.64705884, 1, 1)
 
 [node name="happy" type="TextureRect" parent="Control2/VBoxContainer/HBoxContainer3/Control" unique_id=186790518]
 layout_mode = 0
-offset_left = 20.0
+offset_left = 15.0
 offset_top = -1.0
-offset_right = 23.0
+offset_right = 18.0
 offset_bottom = 7.0
 tooltip_text = "Happy Level For Plant"
 texture = SubResource("AtlasTexture_a7ecf")

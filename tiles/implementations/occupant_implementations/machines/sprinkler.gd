@@ -18,4 +18,5 @@ func tick() -> void:
 				if(surrounding.ground is Dirt):
 					surrounding.ground.change_water(0.1)
 					#print("watering " + str(surrounding.index))
+	
 	ticks_since_last_watering += 1;

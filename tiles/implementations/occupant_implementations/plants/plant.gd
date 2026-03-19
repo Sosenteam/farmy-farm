@@ -12,6 +12,8 @@ var k_per_yield:float = Tile.constants.BASE_NUTRIENT_PER_YIELD
 var n_happy_amount:float = Tile.constants.BASE_NUTRIENT_HAPPY_AMOUNT
 var p_happy_amount:float = Tile.constants.BASE_NUTRIENT_HAPPY_AMOUNT
 var k_happy_amount:float = Tile.constants.BASE_NUTRIENT_HAPPY_AMOUNT
+var water_per_yield:float = Tile.constants.BASE_WATER_PER_YIELD
+var water_requirement:float = Tile.constants.BASE_WATER_REQUIREMENT
 var sell_price:int = 1
 var harvestable:bool = false
 var yield_count = Tile.constants.BASE_YIELD_COUNT
@@ -31,9 +33,10 @@ func tick() -> void:
 		# ==== Grow ==== #
 		var effectiveGrowthRate = \
 			base_growth_rate * \
-			_get_nutrient_multiplier(dirt_tile.nitrogen, n_happy_amount) * \
-			_get_nutrient_multiplier(dirt_tile.phosphorus, p_happy_amount) * \
-			_get_nutrient_multiplier(dirt_tile.potassium, k_happy_amount) * \
+			get_nutrient_multiplier(dirt_tile.nitrogen, n_happy_amount) * \
+			get_nutrient_multiplier(dirt_tile.phosphorus, p_happy_amount) * \
+			get_nutrient_multiplier(dirt_tile.potassium, k_happy_amount) * \
+			get_water_growthrate_multiplier(dirt_tile.moisture_percent) * \
 			dirt_tile.growth_rate_multiplier
 		
 		growth_percentage += effectiveGrowthRate;
@@ -45,11 +48,13 @@ func tick() -> void:
 				change_growth_stage.emit(crop_name, current_growth_stage)
 		else:
 			harvestable = true
-		# ==== Nutrients ==== #
+			
+		# ==== affect soil ==== #
+		dirt_tile.change_water(-water_per_yield * effectiveGrowthRate);
 		dirt_tile.change_nutrients(-n_per_yield * effectiveGrowthRate, -p_per_yield * effectiveGrowthRate, -k_per_yield * effectiveGrowthRate)
 		
 
-func _get_nutrient_multiplier(soil_has:float, plant_wants:float):
+func get_nutrient_multiplier(soil_has:float, plant_wants:float):
 	if soil_has < plant_wants:
 		if soil_has < (0.5 * plant_wants):
 			return 0.6
@@ -58,6 +63,11 @@ func _get_nutrient_multiplier(soil_has:float, plant_wants:float):
 	if (plant_wants == 0) or (soil_has / plant_wants < 20):
 		return 1.0
 	return 1.25
+	
+func get_water_growthrate_multiplier(soil_water_percent:float):
+	if soil_water_percent < water_requirement:
+		return 0.01
+	return 1
 
 func harvest() -> void:
 	harvested.emit(Yield.new(crop_name,yield_count))

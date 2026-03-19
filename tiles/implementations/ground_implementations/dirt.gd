@@ -14,6 +14,8 @@ func tick() -> void:
 	moisture_percent = clampf(moisture_percent - (Tile.constants.BASE_WATER_LOSS_PER_TICK * water_loss_multiplier), 0.0, 1.0)
 	
 func change_water(water:float) -> void:
+	if water < 0:
+		water *= water_loss_multiplier
 	moisture_percent = clampf(moisture_percent + water, 0.0, 1.0)
 
 func change_nutrients(n:float, p:float, k:float):

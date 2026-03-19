@@ -9,6 +9,7 @@ func _ready() -> void:
 	refresh_inventory()
 
 func refresh_inventory():
+	
 	for child in HBox.get_children():
 		child.queue_free()
 	

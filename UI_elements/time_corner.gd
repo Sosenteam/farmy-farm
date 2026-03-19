@@ -2,6 +2,7 @@ extends CanvasLayer
 
 @onready var time_label = $Control/Time
 @onready var date_label = $Control/Date
+@onready var cash_label = $Control/CashMoney
 
 const TICKS_PER_DAY = 960
 const TICKS_PER_HOUR = TICKS_PER_DAY/24
@@ -23,8 +24,26 @@ func _ready() -> void:
 	total_ticks = hour * TICKS_PER_HOUR
 	
 	Global.on_tick.connect(on_tick)
+	Inventory.on_cash_changed.connect(update_cashmoney)
+	update_cashmoney()
 	update_ui()
-
+	
+#stolen from reddit
+func format_number(number: int) -> String:
+	var string_num = str(number)
+	var regex = RegEx.new()
+	# Matches a position preceded by a digit and followed by 3*n digits
+	regex.compile("(?<=\\d)(?=(\\d{3})+(?!\\d))")
+	
+	# Replace matched positions with a comma
+	print(regex.sub(string_num, ",", true))
+	return regex.sub(string_num, ",", true)
+	
+	
+func update_cashmoney():
+	var mon = format_number(Inventory.money)
+	cash_label.text = "$%s" % [mon]
+	
 func on_tick() -> void:
 	total_ticks += 1
 

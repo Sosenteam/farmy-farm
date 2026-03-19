@@ -9,6 +9,7 @@ var tick: int = 0
 var current_tool: int = 0: set = _set_tool
 var current_selected_tile: Tile
 var selected_seed: Seed
+var selected_machine: Machine
 
 enum Tool { WATER, TILL, PLANT, INSPECT, MACHINE, NONE }
 var inventory = {"Crops": [], "Seeds": [], "Machines": [], "Fertilizer": []}

@@ -69,8 +69,9 @@ func plant(index):
 		map[index].occupant.harvested.connect(manager.on_harvested.bind(index))
 		
 func place_machine(index):
-	var machine = Sprinkler.new()
+	var machine = Global.selected_machine
 	
 	if(map[index].occupant == null && map[index].ground is Dirt):
 		map[index].set_occupant(Sprinkler)
-		manager.update_machine(index)
+		manager.place_machine(index)
+		map[index].occupant.pick_up.connect(manager.on_pick_up_machine.bind(index))

@@ -90,7 +90,7 @@ func add_size(x,y):
 	render()
 	update_water()
 
-func update_machine(index:int):
+func place_machine(index:int):
 	var machine = map[index].occupant
 	
 	if machine is Machine:
@@ -101,3 +101,6 @@ func update_machine(index:int):
 		print(scene_index)
 		
 		occupant_layer.set_cell(tiles.index_to_vector(index), machine_tiles_id, Vector2i(0, 0), scene_index)
+
+func on_pick_up_machine(index:int):
+	occupant_layer.erase_cell(tiles.index_to_vector(index))

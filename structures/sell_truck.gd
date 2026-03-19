@@ -7,11 +7,15 @@ extends Node2D
 @onready var particle2 = $Truck/GPUParticles2D
 
 var items_in_truck = []
+var is_moving = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	set_box_profile()
 	particle1.emitting = false
 	particle2.emitting = false
+	Inventory.sell_items.connect(send_off)
+	Inventory.update_truck_boxes.connect(update_boxes)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -23,11 +27,31 @@ func add_item(item):
 	items_in_truck.append(item)
 	
 func set_box_profile():
-	print("res://Assets/sell_truck/boxes/"+ str(items_in_truck.size()) +".png")
-	boxes_sprite.texture = load("res://Assets/sell_truck/boxes/"+ str(items_in_truck.size()) +".png")
+	var total_quantity = 0
+	for item in items_in_truck:
+		total_quantity += item.quantity
+	
+	var box_count = ceil(total_quantity / 5.0)
+	if box_count > 9:
+		box_count = 9
+	
+	if box_count <= 0:
+		boxes_sprite.texture = null
+		return
+		
+	print("res://assets/sell_truck/boxes/"+ str(box_count) +".png")
+	boxes_sprite.texture = load("res://assets/sell_truck/boxes/"+ str(int(box_count)) +".png")
 
-func send_off():
-	truck_sprite.texture = load("res://Assets/sell_truck/closed_truck.png")
+func update_boxes(items):
+	if is_moving: return
+	items_in_truck = items
+	set_box_profile()
+
+func send_off(sold_items):
+	is_moving = true
+	items_in_truck = sold_items
+	set_box_profile()
+	truck_sprite.texture = load("res://assets/sell_truck/closed_truck.png")
 	particle1.emitting = true
 	particle2.emitting = true
 	animation_player.play("truck_leaving")
@@ -45,6 +69,7 @@ func come_back():
 	
 #temporary, just to test shwoing boxes
 func _on_static_body_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if is_moving: return
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		Global.open_ui.emit("sell")
 	#if event is InputEventMouseButton and event.pressed:
@@ -62,6 +87,7 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 		come_back()
 		
 	if (anim_name == "truck_returning"):
-		truck_sprite.texture = load("res://Assets/sell_truck/opened_truck.png")
+		truck_sprite.texture = load("res://assets/sell_truck/opened_truck.png")
 		particle1.emitting = false
 		particle2.emitting = false
+		is_moving = false

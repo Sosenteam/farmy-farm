@@ -28,17 +28,17 @@ func _update_list() -> void:
 		if previously_selected_item and new_slot.item_data == previously_selected_item:
 			selected_slot = new_slot
 			new_slot.set_selected(true)
+			
 
 func _on_slot_clicked(slot_node) -> void:
+	Global.selected_seed = null
+	for child in container.get_children():
+		child.set_selected(false)
 	if selected_slot == slot_node:
 		return
-	
 	if selected_slot:
 		print("nto sames")
 		selected_slot.set_selected(false)
-	
-	
-	
 	selected_slot = slot_node
 	Global.selected_seed = selected_slot.item_data
 	selected_slot.set_selected(true)

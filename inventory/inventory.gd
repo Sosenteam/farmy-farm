@@ -12,10 +12,13 @@ var quota = {
 	"max_amount":8,
 }
 signal on_inventory_changed
+signal sell_items(items)
+signal update_truck_boxes(items)
 
-func ready():
+func _ready():
 	_update_inventory()
 	Global.on_tick.connect(on_tick)
+	sell_items.connect(sell)
 
 func on_tick():
 	quota.time_left -=1
@@ -32,6 +35,7 @@ func sell(crop_array:Array[Crop]):
 			if(quota.amount<1):
 				win_quota()
 		money+=crop.sell_price
+	_update_inventory()
 
 func create_quota():
 	quota.crop = quota.possible_crops.pick_random()

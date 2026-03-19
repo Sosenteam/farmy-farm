@@ -32,3 +32,21 @@ extends Resource
 @export var corn_seed_image = preload("res://assets/items/corn_bag.png")
 @export var corn_seed_name = "Corn Seeds"
 @export var corn_seed_plants = "Corn"
+
+@export_group("Fish")
+@export var fish_n_add = 25
+@export var fish_p_add = 4
+@export var fish_k_add = 3
+@export var fish_price = 35
+
+@export_group("Bone")
+@export var bone_n_add = 10
+@export var bone_p_add = 20
+@export var bone_k_add = 0
+@export var bone_price = 35
+
+@export_group("Seaweed")
+@export var seaweed_n_add = 4
+@export var seaweed_p_add = 0
+@export var seaweed_k_add = 12
+@export var seaweed_price = 25

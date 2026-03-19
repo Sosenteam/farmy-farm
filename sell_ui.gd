@@ -62,7 +62,7 @@ func _on_exit_pressed() -> void:
 
 func _on_send_off_pressed() -> void:
 	#print(items_to_sell)
-	Inventory.sell_items.emit(items_to_sell)
+	Inventory.sell(items_to_sell)
 	items_to_sell.clear()
 	Inventory.update_truck_boxes.emit(items_to_sell)
 	_update_list()

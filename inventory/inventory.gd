@@ -18,7 +18,6 @@ signal update_truck_boxes(items)
 func _ready():
 	_update_inventory()
 	Global.on_tick.connect(on_tick)
-	sell_items.connect(sell)
 
 func on_tick():
 	quota.time_left -=1

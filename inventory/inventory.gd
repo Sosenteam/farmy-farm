@@ -58,7 +58,6 @@ func create_quota():
 	print("new quota of ",quota.amount," of ",quota.crop,"with time ",quota.time_left)
 
 func fail_quota():
-	print("you suck")
 	create_quota()
 
 func win_quota():

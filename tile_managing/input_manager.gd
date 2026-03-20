@@ -50,8 +50,7 @@ func till(index):
 			map[index].ground = TilledDirt.new(map[index].ground)
 			manager.render()
 	if(map[index].ground is Dirt && map[index].occupant is Machine):
-		map[index].occupant.delete_occupant()
-		map[index].delete_occupant()
+		map[index].occupant._pick_up()
 		occupant_layer.erase_cell(tiles.index_to_vector(index))
 		
 

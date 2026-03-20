@@ -50,3 +50,9 @@ extends Resource
 @export var seaweed_p_add = 0
 @export var seaweed_k_add = 12
 @export var seaweed_price = 25
+
+
+@export_category("Machines")
+@export_group("Sprinkler")
+@export var sprinkler_image = preload("res://assets/items/sprinkler.png")
+@export var sprinkler_name = "Sprinkler"

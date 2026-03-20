@@ -4,8 +4,7 @@ var image: Texture2D
 var name: String
 var type: String
 var quantity: int
-
-
+var price: int = 5
 
 func _init(_type: String, _quantity: int = 1) -> void:
 	type = _type
@@ -13,6 +12,7 @@ func _init(_type: String, _quantity: int = 1) -> void:
 	
 	var prefix = type.to_lower()
 	name = constants.get(prefix + "_name")
+	price = constants.get(prefix + "_price") if constants.get(prefix + "_price") else 5
 	
 	var coords = constants.get(prefix + "_coords")
 	if coords is Vector2i:

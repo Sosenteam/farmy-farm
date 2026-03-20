@@ -66,43 +66,78 @@ func water(index):
 func plant(index):
 	var seed = Global.selected_seed
 	if seed == null:
-		print("No crop selected from menu!")
 		return
 
-	if(map[index].occupant == null && seed.quantity > 0 && map[index].ground is TilledDirt):
-		map[index].set_occupant(seed.crop)
-		seed.addQuantity(-1)
-		map[index].occupant.change_growth_stage.connect(manager.on_change_growth_stage.bind(index))
-		map[index].occupant.harvested.connect(manager.on_harvested.bind(index))
+	if map[index].occupant == null && map[index].ground is TilledDirt:
+		if seed.quantity > 0:
+			map[index].set_occupant(seed.crop)
+			seed.addQuantity(-1)
+			map[index].occupant.change_growth_stage.connect(manager.on_change_growth_stage.bind(index))
+			map[index].occupant.harvested.connect(manager.on_harvested.bind(index))
+		elif Inventory.money >= seed.price:
+			Inventory.money -= seed.price
+			Inventory.on_cash_changed.emit()
+			_ensure_in_inventory("seeds", seed)
+			map[index].set_occupant(seed.crop)
+			map[index].occupant.change_growth_stage.connect(manager.on_change_growth_stage.bind(index))
+			map[index].occupant.harvested.connect(manager.on_harvested.bind(index))
+			Inventory.on_inventory_changed.emit()
 		
 func place_machine(index):
 	var item = Global.selected_machine
 	if item == null:
-		#print("No machine selected!")
 		return
 	
-	if item.quantity <= 0:
-		#print("Out of machine!")
-		return
-	
-	if(!(map[index].occupant) && map[index].ground is Dirt):
-		if map[index].ground is TilledDirt:
-			map[index].ground = Dirt.from_tilled_dirt(map[index].ground)
-			manager.render()
-			
-		# Map item type to class
-		var occupant_class = null
-		if item.type.to_lower() == "sprinkler":
-			occupant_class = Sprinkler
-		
-		if occupant_class:
-			map[index].set_occupant(occupant_class)
+	if !(map[index].occupant) && map[index].ground is Dirt:
+		var can_place = false
+		if item.quantity > 0:
+			can_place = true
 			item.addQuantity(-1)
-			manager.place_machine(index)
-			map[index].occupant.pick_up.connect(manager.on_pick_up_machine.bind(index))
+		elif Inventory.money >= item.price:
+			Inventory.money -= item.price
+			Inventory.on_cash_changed.emit()
+			_ensure_in_inventory("machines", item)
+			can_place = true
+			Inventory.on_inventory_changed.emit()
+			
+		if can_place:
+			if map[index].ground is TilledDirt:
+				map[index].ground = Dirt.from_tilled_dirt(map[index].ground)
+				manager.render()
+				
+			# Map item type to class
+			var occupant_class = null
+			if item.type.to_lower() == "sprinkler":
+				occupant_class = Sprinkler
+			
+			if occupant_class:
+				map[index].set_occupant(occupant_class)
+				manager.place_machine(index)
+				map[index].occupant.pick_up.connect(manager.on_pick_up_machine.bind(index))
 
 func fertilize(index):
-	if(map[index].ground is Dirt && Global.selected_fertilizer):
-		if(map[index].ground.fertilize(Global.selected_fertilizer.fertilizer)):
-			Global.selected_fertilizer.addQuantity(-1)
-			print("Fertilized with ", Global.selected_fertilizer.type)
+	var item = Global.selected_fertilizer
+	if item == null:
+		return
+		
+	if map[index].ground is Dirt:
+		if item.quantity > 0:
+			if map[index].ground.fertilize(item.fertilizer):
+				item.addQuantity(-1)
+		elif Inventory.money >= item.price:
+			if map[index].ground.fertilize(item.fertilizer):
+				Inventory.money -= item.price
+				Inventory.on_cash_changed.emit()
+				_ensure_in_inventory("fertilizer", item)
+				Inventory.on_inventory_changed.emit()
+
+func _ensure_in_inventory(category: String, item: Item):
+	var cat = category.to_lower()
+	if not Inventory.inventory.has(cat):
+		Inventory.inventory[cat] = []
+	
+	for inv_item in Inventory.inventory[cat]:
+		if inv_item.type.to_lower() == item.type.to_lower():
+			return # Already in inventory
+			
+	Inventory.inventory[cat].append(item)

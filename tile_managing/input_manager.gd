@@ -78,11 +78,11 @@ func plant(index):
 func place_machine(index):
 	var item = Global.selected_machine
 	if item == null:
-		print("No machine selected!")
+		#print("No machine selected!")
 		return
 	
 	if item.quantity <= 0:
-		print("Out of machine!")
+		#print("Out of machine!")
 		return
 	
 	if(!(map[index].occupant) && map[index].ground is Dirt):

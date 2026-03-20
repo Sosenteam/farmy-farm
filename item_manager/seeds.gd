@@ -7,6 +7,7 @@ func _init(_type: String, _quantity: int = 1):
 	
 	var prefix = type.to_lower()
 	name = constants.get(prefix + "_seed_name")
+	price = constants.get(prefix + "_seed_price") if constants.get(prefix + "_seed_price") else 5
 	
 	var coords = constants.get(prefix + "_seed_coords")
 	if coords is Vector2i:

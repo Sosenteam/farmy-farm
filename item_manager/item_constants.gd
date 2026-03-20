@@ -24,16 +24,19 @@ const ITEMS_SHEET = preload("res://assets/items.png")
 @export var wheat_seed_coords = Vector2i(2, 0)
 @export var wheat_seed_name = "Wheat Seeds"
 @export var wheat_seed_plants = "Wheat"
+@export var wheat_seed_price = 3
 
 @export_group("Carrot Seed")
 @export var carrot_seed_coords = Vector2i(0, 0)
 @export var carrot_seed_name = "Carrot Seeds"
 @export var carrot_seed_plants = "Carrot"
+@export var carrot_seed_price = 5
 
 @export_group("Corn Seed")
 @export var corn_seed_coords = Vector2i(1, 0)
 @export var corn_seed_name = "Corn Seeds"
 @export var corn_seed_plants = "Corn"
+@export var corn_seed_price = 10
 
 @export_category("Fertilizer")
 

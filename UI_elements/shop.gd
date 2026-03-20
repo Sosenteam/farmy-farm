@@ -10,7 +10,9 @@ func _on_close_button_pressed() -> void:
 
 func _on_up_pressed() -> void:
 	Global.expand_size(1,1)
-	
+	if(Inventory.check_if_broke(-250)):
+		Inventory.money -= 250
+	Inventory.on_cash_changed.emit()
 
 func _on_carrot_button_pressed() -> void:
 	var seed_name = "Carrot"

@@ -98,11 +98,11 @@ func _update_selection_visuals(_tool: int):
 	fertilizer_pullout.close()
 	
 	if Global.current_tool == Global.Tool.PLANT and plant_butt:
-		seed_pullout.global_position = plant_butt.global_position + Vector2(2, 10)
+		seed_pullout.global_position = plant_butt.global_position + Vector2(4, 10)
 		seed_pullout.open()
 	elif Global.current_tool == Global.Tool.MACHINE and machine_butt:
-		machine_pullout.global_position = machine_butt.global_position + Vector2(2, 10)
+		machine_pullout.global_position = machine_butt.global_position + Vector2(4, 10)
 		machine_pullout.open()
 	elif Global.current_tool == Global.Tool.FERTILIZER and fertilizer_butt:
-		fertilizer_pullout.global_position = fertilizer_butt.global_position + Vector2(2, 10)
+		fertilizer_pullout.global_position = fertilizer_butt.global_position + Vector2(4, 10)
 		fertilizer_pullout.open()

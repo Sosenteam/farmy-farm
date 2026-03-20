@@ -1,10 +1,10 @@
-[gd_scene format=3 uid="uid://cmluq3u5td7oa"]
+[gd_scene load_steps=4 format=3 uid="uid://cxsc3k3q1w3p3"]
 
-[ext_resource type="Script" path="res://UI_elements/crop_slot.gd" id="1_slot"]
+[ext_resource type="Script" path="res://UI_elements/item_slot.gd" id="1_slot"]
 [ext_resource type="FontFile" uid="uid://cp7khvcr6ixv" path="res://assets/Font.ttf" id="2_font"]
-[ext_resource type="Texture2D" path="res://assets/seed_icon_slot.png" id="2_ktrm4"]
+[ext_resource type="Texture2D" uid="uid://ctbi06dbc1in4" path="res://assets/seed_icon_slot.png" id="3_icon"]
 
-[node name="CropSlot" type="Control" unique_id=202333423]
+[node name="ItemSlot" type="Control" unique_id=202333423]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 3
 anchors_preset = 0
@@ -24,7 +24,7 @@ offset_right = -12.0
 offset_bottom = -12.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_ktrm4")
+texture = ExtResource("3_icon")
 expand_mode = 1
 stretch_mode = 5
 

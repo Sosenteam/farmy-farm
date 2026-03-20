@@ -14,7 +14,7 @@ func _ready() -> void:
 	set_box_profile()
 	particle1.emitting = false
 	particle2.emitting = false
-	Inventory.sell_items.connect(send_off)
+	Inventory.send_off_truck.connect(send_off)
 	Inventory.update_truck_boxes.connect(update_boxes)
 
 

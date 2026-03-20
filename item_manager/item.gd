@@ -12,8 +12,16 @@ func _init(_type: String, _quantity: int = 1) -> void:
 	quantity = _quantity
 	
 	var prefix = type.to_lower()
-	image = constants.get(prefix + "_image")
 	name = constants.get(prefix + "_name")
+	
+	var coords = constants.get(prefix + "_coords")
+	if coords is Vector2i:
+		var atlas = AtlasTexture.new()
+		atlas.atlas = constants.ITEMS_SHEET
+		atlas.region = Rect2(coords.x * 16, coords.y * 16, 16, 16)
+		image = atlas
+	else:
+		image = constants.get(prefix + "_image")
 	
 func addQuantity(count):
 	quantity += count

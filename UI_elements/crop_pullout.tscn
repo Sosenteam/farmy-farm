@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://c2tkyweac5usp"]
+[gd_scene format=3 uid="uid://cd8784odub8x6"]
 
-[ext_resource type="Script" uid="uid://b2nc50nxl7n0y" path="res://UI_elements/crop_pullout.gd" id="1_cropull"]
+[ext_resource type="Script" path="res://UI_elements/crop_pullout.gd" id="1_cropull"]
 
-[node name="CropPullout" type="Control"]
+[node name="CropPullout" type="Control" unique_id=1133754373]
 layout_mode = 3
 anchors_preset = 0
 mouse_filter = 2

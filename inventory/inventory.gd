@@ -1,7 +1,7 @@
 extends Node
 
 var inventory = {"crops": [], "seeds": [], "machines": [], "fertilizer": []}
-var money:int = 0
+var money:int = 10000
 var quota = {
 	"crop":null,
 	"amount":0,
@@ -14,6 +14,7 @@ var quota = {
 signal on_inventory_changed
 signal on_cash_changed
 signal sell_items(items)
+signal send_off_truck(times)
 signal update_truck_boxes(items)
 
 func _ready():
@@ -28,8 +29,9 @@ func _update_inventory():
 	on_inventory_changed.emit()
 	
 func sell(crop_array:Array[Crop]):
-	on_cash_changed.emit()
+	
 	for crop in crop_array:
+		
 		print("selling crop for ",crop.sell_price)
 		if(crop.crop == quota.crop):
 			quota.amount-=1
@@ -37,6 +39,8 @@ func sell(crop_array:Array[Crop]):
 				win_quota()
 		money+=crop.sell_price
 	_update_inventory()
+	on_cash_changed.emit()
+	send_off_truck.emit(crop_array)
 	
 func buy(item):
 	on_cash_changed.emit()

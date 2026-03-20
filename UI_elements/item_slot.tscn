@@ -1,9 +1,9 @@
-[gd_scene format=3 uid="uid://cmluq3u5td7oa"]
+[gd_scene format=3 uid="uid://cxsc3k3q1w3p3"]
 
-[ext_resource type="Script" path="res://UI_elements/crop_slot.gd" id="1_slot"]
+[ext_resource type="Script" uid="uid://47o4qti0xkk6" path="res://UI_elements/item_slot.gd" id="1_slot"]
 [ext_resource type="FontFile" uid="uid://cp7khvcr6ixv" path="res://assets/Font.ttf" id="2_font"]
 
-[node name="CropSlot" type="Control" unique_id=202333423]
+[node name="ItemSlot" type="Control" unique_id=202333423]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 3
 anchors_preset = 0

@@ -34,10 +34,12 @@ func _unhandled_input(event: InputEvent) -> void:
 				Global.Tool.INSPECT:
 					Global.current_selected_tile = tile
 				Global.Tool.PLANT:
-					# CHANGE THIS TO A REAL MENU
 					plant(index)
 				Global.Tool.MACHINE:
 					place_machine(index)
+				Global.Tool.FERTILIZER:
+					fertilize(index)
+					
 					
 				Global.Tool.NONE:
 					if(tile.occupant is Plant && tile.occupant.harvestable):
@@ -73,12 +75,33 @@ func plant(index):
 		map[index].occupant.harvested.connect(manager.on_harvested.bind(index))
 		
 func place_machine(index):
-	var machine = Global.selected_machine
+	var item = Global.selected_machine
+	if item == null:
+		#print("No machine selected!")
+		return
+	
+	if item.quantity <= 0:
+		#print("Out of machine!")
+		return
 	
 	if(!(map[index].occupant) && map[index].ground is Dirt):
 		if map[index].ground is TilledDirt:
 			map[index].ground = Dirt.from_tilled_dirt(map[index].ground)
 			manager.render()
-		map[index].set_occupant(Sprinkler)
-		manager.place_machine(index)
-		map[index].occupant.pick_up.connect(manager.on_pick_up_machine.bind(index))
+			
+		# Map item type to class
+		var occupant_class = null
+		if item.type.to_lower() == "sprinkler":
+			occupant_class = Sprinkler
+		
+		if occupant_class:
+			map[index].set_occupant(occupant_class)
+			item.addQuantity(-1)
+			manager.place_machine(index)
+			map[index].occupant.pick_up.connect(manager.on_pick_up_machine.bind(index))
+
+func fertilize(index):
+	if(map[index].ground is Dirt && Global.selected_fertilizer):
+		if(map[index].ground.fertilize(Global.selected_fertilizer.fertilizer)):
+			Global.selected_fertilizer.addQuantity(-1)
+			print("Fertilized with ", Global.selected_fertilizer.type)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://u4qlpuyiiyv7"
-path="res://.godot/imported/corn_bag.png-e7caef1a689136aff369a00e06937e39.ctex"
+uid="uid://iax8dl0jy172"
+path="res://.godot/imported/items.png-47d902c7b073dc8ecbdcf38de461db0f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/items/corn_bag.png"
-dest_files=["res://.godot/imported/corn_bag.png-e7caef1a689136aff369a00e06937e39.ctex"]
+source_file="res://assets/items.png"
+dest_files=["res://.godot/imported/items.png-47d902c7b073dc8ecbdcf38de461db0f.ctex"]
 
 [params]
 

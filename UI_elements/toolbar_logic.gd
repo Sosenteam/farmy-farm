@@ -1,12 +1,16 @@
 extends HBoxContainer
 
 var ICON_SHEET = preload("res://assets/ui_elements.png")
-var CROP_PULLOUT_SCENE = preload("res://UI_elements/crop_pullout.tscn")
+var ITEM_PULLOUT_SCENE = preload("res://UI_elements/item_pullout.tscn")
 
-var crop_pullout_instance: Control
+var seed_pullout: Control
+var machine_pullout: Control
+var fertilizer_pullout: Control
+
 var plant_butt: TextureButton
+var machine_butt: TextureButton
+var fertilizer_butt: TextureButton
 
-# Enum to match the 5 icons in the sheet (from left to right)
 func _ready():
 	# Clear any placeholders from the editor
 	Global.current_tool = Global.Tool.NONE
@@ -14,20 +18,33 @@ func _ready():
 	for child in get_children():
 		child.queue_free()
 
-	# add thingd to the tool bar
+	# add things to the tool bar
 	_add_tool_button(Global.Tool.WATER, "Water")
 	_add_tool_button(Global.Tool.TILL, "Till")
 	_add_tool_button(Global.Tool.PLANT, "Plant")
 	_add_tool_button(Global.Tool.INSPECT, "Inspect")
 	_add_tool_button(Global.Tool.MACHINE, "Machine")
+	_add_tool_button(Global.Tool.FERTILIZER, "Fertilizer")
 	
-	# Instantiate and hide crop pullout
-	crop_pullout_instance = CROP_PULLOUT_SCENE.instantiate()
-	crop_pullout_instance.close()
+	# Initialize pullouts
+	seed_pullout = ITEM_PULLOUT_SCENE.instantiate()
+	machine_pullout = ITEM_PULLOUT_SCENE.instantiate()
+	fertilizer_pullout = ITEM_PULLOUT_SCENE.instantiate()
 	
-	get_parent().add_child.call_deferred(crop_pullout_instance)
+	get_parent().add_child.call_deferred(seed_pullout)
+	get_parent().add_child.call_deferred(machine_pullout)
+	get_parent().add_child.call_deferred(fertilizer_pullout)
+	
+	# Setup pullouts
+	seed_pullout.setup("seeds", ["Carrot", "Corn", "Wheat"], {"Carrot": 5, "Corn": 10, "Wheat": 3})
+	seed_pullout.item_selected.connect(func(item): Global.selected_seed = item)
+	
+	machine_pullout.setup("machines", ["Sprinkler"], {"Sprinkler": 100})
+	machine_pullout.item_selected.connect(func(item): Global.selected_machine = item)
+	
+	fertilizer_pullout.setup("fertilizer", ["Fish", "Bone", "Seaweed"], {"Fish": 35, "Bone": 35, "Seaweed": 25})
+	fertilizer_pullout.item_selected.connect(func(item): Global.selected_fertilizer = item)
 
-	#signal globally so the whole game and keep track? Lmk if you think otherwise
 	Global.on_tool_changed.connect(_update_selection_visuals)
 
 func _add_tool_button(tool_type: Global.Tool, tool_name: String):
@@ -37,13 +54,16 @@ func _add_tool_button(tool_type: Global.Tool, tool_name: String):
 	
 	if tool_type == Global.Tool.PLANT:
 		plant_butt = btn
+	elif tool_type == Global.Tool.MACHINE:
+		machine_butt = btn
+	elif tool_type == Global.Tool.FERTILIZER:
+		fertilizer_butt = btn
 	
-	# Atlas slicing (each icon is 20x20 in the 100x20 sheet)
+	# Atlas slicing (each icon is 20x20)
 	var atlas = AtlasTexture.new()
 	atlas.atlas = ICON_SHEET
-	atlas.region = Rect2(tool_type * 20, 0, 20, 20)
+	atlas.region = Rect2(tool_type%5 * 20, floor(tool_type/5)*20, 20, 20)
 	btn.texture_normal = atlas
-	
 	btn.mouse_entered.connect(func():
 		var tween = btn.create_tween()
 		tween.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BACK)
@@ -55,7 +75,6 @@ func _add_tool_button(tool_type: Global.Tool, tool_name: String):
 		tween.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_ELASTIC)
 		tween.tween_property(btn, "scale", Vector2.ONE, 0.2))
 		
-	# Connect the signal
 	btn.pressed.connect(func(): 
 		if (Global.current_tool == tool_type):
 			Global.current_tool = Global.Tool.NONE
@@ -65,7 +84,6 @@ func _add_tool_button(tool_type: Global.Tool, tool_name: String):
 	
 	add_child(btn)
 
-#diming for not selected one
 func _update_selection_visuals(_tool: int):
 	for i in get_child_count():
 		var child = get_child(i)
@@ -74,13 +92,17 @@ func _update_selection_visuals(_tool: int):
 		else:
 			child.modulate = Color(0.897, 0.897, 0.897, 0.453)
 			
-	# Update crop pullout
-	if crop_pullout_instance and plant_butt:
-		if Global.current_tool == Global.Tool.PLANT:
-			crop_pullout_instance.global_position = plant_butt.global_position + Vector2(2, 10)
-			crop_pullout_instance.open()
-		else:
-			crop_pullout_instance.close()
-
-#func _process(delta: float) -> void:
+	# Update pullouts visibility
+	seed_pullout.close()
+	machine_pullout.close()
+	fertilizer_pullout.close()
 	
+	if Global.current_tool == Global.Tool.PLANT and plant_butt:
+		seed_pullout.global_position = plant_butt.global_position + Vector2(2, 10)
+		seed_pullout.open()
+	elif Global.current_tool == Global.Tool.MACHINE and machine_butt:
+		machine_pullout.global_position = machine_butt.global_position + Vector2(2, 10)
+		machine_pullout.open()
+	elif Global.current_tool == Global.Tool.FERTILIZER and fertilizer_butt:
+		fertilizer_pullout.global_position = fertilizer_butt.global_position + Vector2(2, 10)
+		fertilizer_pullout.open()

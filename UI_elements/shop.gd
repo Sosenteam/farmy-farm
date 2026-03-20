@@ -9,20 +9,8 @@ func _on_close_button_pressed() -> void:
 	hide()
 
 func _on_up_pressed() -> void:
-	Global.expand_size(0,-1)
-
-
-func _on_down_pressed() -> void:
-	Global.expand_size(0,1)
-
-
-func _on_left_pressed() -> void:
-	Global.expand_size(-1,0)
-
-
-func _on_right_pressed() -> void:
-	Global.expand_size(1,0)
-
+	Global.expand_size(1,1)
+	
 
 func _on_carrot_button_pressed() -> void:
 	var seed_name = "Carrot"
@@ -32,7 +20,8 @@ func _on_carrot_button_pressed() -> void:
 			Inventory._update_inventory()
 			return
 	Inventory.inventory.seeds.append(Seed.new(seed_name, 1))
-	Inventory.edit_bal(-20)
+	if(Inventory.check_if_broke(-20)):
+		Inventory.money -= 20
 	Inventory.on_cash_changed.emit()
 	Inventory._update_inventory()
 
@@ -45,7 +34,8 @@ func _on_corn_button_pressed() -> void:
 			Inventory._update_inventory()
 			return
 	Inventory.inventory.seeds.append(Seed.new(seed_name, 1))
-	Inventory.edit_bal(-35)
+	if(Inventory.check_if_broke(-35)):
+		Inventory.money -= 35
 	Inventory.on_cash_changed.emit()
 	Inventory._update_inventory()
 
@@ -69,6 +59,7 @@ func _on_wheat_button_pressed() -> void:
 			Inventory._update_inventory()
 			return
 	Inventory.inventory.seeds.append(Seed.new(seed_name, 1))
-	Inventory.edit_bal(-30)
+	if(Inventory.check_if_broke(-30)):
+		Inventory.money -= 30
 	Inventory.on_cash_changed.emit()
 	Inventory._update_inventory()

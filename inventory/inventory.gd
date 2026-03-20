@@ -64,6 +64,8 @@ func win_quota():
 	print("you are awesome")
 	create_quota()
 
-func edit_bal(num:int):
+func check_if_broke(num:int):
 	if(money+num > -1):
-		money += num
+		return true
+	else:
+		return false

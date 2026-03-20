@@ -122,38 +122,17 @@ offset_bottom = 175.5
 [node name="Up" type="Button" parent="Shop/NinePatchRect/Expand Menu" unique_id=863809244]
 layout_mode = 0
 offset_left = 8.0
-offset_top = -34.0
-offset_right = 45.0
-offset_bottom = -3.0
+offset_top = -45.75
+offset_right = 121.5
+offset_bottom = 91.5
 theme_override_fonts/font = SubResource("FontVariation_evbk1")
-text = "Up"
-
-[node name="Down" type="Button" parent="Shop/NinePatchRect/Expand Menu" unique_id=2099305474]
-layout_mode = 0
-offset_left = 5.25
-offset_top = 63.5
-offset_right = 68.25
-offset_bottom = 94.5
-theme_override_fonts/font = SubResource("FontVariation_evbk1")
-text = "Down"
-
-[node name="Left" type="Button" parent="Shop/NinePatchRect/Expand Menu" unique_id=2070602900]
-layout_mode = 0
-offset_left = 5.5
-offset_top = -2.25
-offset_right = 68.5
-offset_bottom = 28.75
-theme_override_fonts/font = SubResource("FontVariation_evbk1")
-text = "Left"
-
-[node name="Right" type="Button" parent="Shop/NinePatchRect/Expand Menu" unique_id=1017837610]
-layout_mode = 0
-offset_left = 6.75
-offset_top = 30.75
-offset_right = 82.75
-offset_bottom = 61.75
-theme_override_fonts/font = SubResource("FontVariation_evbk1")
-text = "Right"
+text = "===
+($250)
+===
+Expand
+Your
+Farm
+==="
 
 [connection signal="pressed" from="Shop/NinePatchRect/WheatButton" to="." method="_on_wheat_button_pressed"]
 [connection signal="pressed" from="Shop/NinePatchRect/CarrotButton" to="." method="_on_carrot_button_pressed"]
@@ -161,6 +140,3 @@ text = "Right"
 [connection signal="pressed" from="Shop/NinePatchRect/PotatoButton" to="." method="_on_potato_button_pressed"]
 [connection signal="pressed" from="Shop/NinePatchRect/CloseButton" to="." method="_on_close_button_pressed"]
 [connection signal="pressed" from="Shop/NinePatchRect/Expand Menu/Up" to="." method="_on_up_pressed"]
-[connection signal="pressed" from="Shop/NinePatchRect/Expand Menu/Down" to="." method="_on_down_pressed"]
-[connection signal="pressed" from="Shop/NinePatchRect/Expand Menu/Left" to="." method="_on_left_pressed"]
-[connection signal="pressed" from="Shop/NinePatchRect/Expand Menu/Right" to="." method="_on_right_pressed"]

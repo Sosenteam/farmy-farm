@@ -38,7 +38,7 @@ const ITEMS_SHEET = preload("res://assets/items.png")
 @export_category("Fertilizer")
 
 @export_group("Fish")
-@export var fish_coords = Vector2i(2, 2)
+@export var fish_coords = Vector2i(2, 3)
 @export var fish_name = "Fish Paste"
 @export var fish_n_add = 25
 @export var fish_p_add = 4
@@ -46,7 +46,7 @@ const ITEMS_SHEET = preload("res://assets/items.png")
 @export var fish_price = 35
 
 @export_group("Bone")
-@export var bone_coords = Vector2i(0, 2)
+@export var bone_coords = Vector2i(0, 3)
 @export var bone_name = "Bone Meal"
 @export var bone_n_add = 10
 @export var bone_p_add = 20
@@ -54,7 +54,7 @@ const ITEMS_SHEET = preload("res://assets/items.png")
 @export var bone_price = 35
 
 @export_group("Seaweed")
-@export var seaweed_coords = Vector2i(1, 2)
+@export var seaweed_coords = Vector2i(1, 3)
 @export var seaweed_name = "Seaweed Extract"
 @export var seaweed_n_add = 4
 @export var seaweed_p_add = 0
@@ -64,6 +64,6 @@ const ITEMS_SHEET = preload("res://assets/items.png")
 @export_category("Machines")
 
 @export_group("Sprinkler")
-@export var sprinkler_coords = Vector2i(0, 3)
+@export var sprinkler_coords = Vector2i(0, 2)
 @export var sprinkler_name = "Sprinkler"
 @export var sprinkler_price = 100

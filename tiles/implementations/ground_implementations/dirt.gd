@@ -31,3 +31,20 @@ func change_nutrients(n:float, p:float, k:float):
 	nitrogen = clampf(nitrogen + n, 0, Tile.constants.nutrient_capacity)
 	phosphorus = clampf(phosphorus + p, 0, Tile.constants.nutrient_capacity)
 	potassium = clampf(potassium + k, 0, Tile.constants.nutrient_capacity)
+
+func fertilize(fert:Fertilizer) -> bool:
+	var n = fert.n_to_add
+	var p = fert.p_to_add
+	var k = fert.k_to_add
+	# This stops fertilizer use if ANY nutrient would be over 100 (maybe change it to if all)
+	if(nitrogen+n >Tile.constants.nutrient_capacity):
+		return false
+	if(phosphorus+p >Tile.constants.nutrient_capacity):
+		return false
+	if(potassium+k >Tile.constants.nutrient_capacity):
+		return false
+	nitrogen = clampf(nitrogen + n, 0, Tile.constants.nutrient_capacity)
+	phosphorus = clampf(phosphorus + p, 0, Tile.constants.nutrient_capacity)
+	potassium = clampf(potassium + k, 0, Tile.constants.nutrient_capacity)
+	
+	return true

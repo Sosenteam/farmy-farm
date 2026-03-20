@@ -1,7 +1,7 @@
 extends Node
 
 var inventory = {"crops": [], "seeds": [], "machines": [], "fertilizer": []}
-var money:int = 0
+var money:int = 10000
 var quota = {
 	"crop":null,
 	"amount":0,

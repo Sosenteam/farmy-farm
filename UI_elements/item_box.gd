@@ -7,10 +7,11 @@ func init_me(name, items):
 	$Box/Label.text = name
 	for item in items:
 		print(item)
-		var slot = slot_node.instantiate()
-		
-		slot.set_slot(item)
-		$Box/ItemBox/ScrollContainer/HFlowContainer.add_child(slot)
+		if item.quantity > 0:
+			var slot = slot_node.instantiate()
+			
+			slot.set_slot(item)
+			$Box/ItemBox/ScrollContainer/HFlowContainer.add_child(slot)
 	
 
 func _ready() -> void:

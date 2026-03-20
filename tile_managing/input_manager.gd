@@ -102,21 +102,7 @@ func place_machine(index):
 			map[index].occupant.pick_up.connect(manager.on_pick_up_machine.bind(index))
 
 func fertilize(index):
-	var item = Global.selected_fertilizer
-	if item == null:
-		print("No fertilizer selected!")
-		return
-		
-	if item.quantity <= 0:
-		print("Out of fertilizer!")
-		return
-		
-	if map[index].ground is TilledDirt:
-		var prefix = item.type.to_lower()
-		var n = Item.constants.get(prefix + "_n_add")
-		var p = Item.constants.get(prefix + "_p_add")
-		var k = Item.constants.get(prefix + "_k_add")
-		
-		map[index].ground.change_nutrients(n, p, k)
-		item.addQuantity(-1)
-		print("Fertilized with ", item.type)
+	if(map[index].ground is Dirt && Global.selected_fertilizer):
+		if(map[index].ground.fertilize(Global.selected_fertilizer.fertilizer)):
+			Global.selected_fertilizer.addQuantity(-1)
+			print("Fertilized with ", Global.selected_fertilizer.type)

@@ -33,6 +33,8 @@ func setup(_item_type: String, _category: String, _price: int = 5):
 		var temp_item
 		if category_name == "seeds":
 			temp_item = Seed.new(item_type, 0)
+		elif category_name == "fertilizer":
+			temp_item = FertilizerItem.new(item_type, 0)
 		else:
 			temp_item = Item.new(item_type, 0)
 		icon.texture = temp_item.image
@@ -84,6 +86,8 @@ func _on_gui_input(event: InputEvent) -> void:
 				var new_item
 				if category_name == "seeds":
 					new_item = Seed.new(item_type, 1)
+				elif category_name == "fertilizer":
+					new_item = FertilizerItem.new(item_type, 1)
 				else:
 					new_item = Item.new(item_type, 1)
 				

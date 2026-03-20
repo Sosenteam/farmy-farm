@@ -3,6 +3,8 @@ extends CanvasLayer
 @onready var time_label = $Control/Time
 @onready var date_label = $Control/Date
 @onready var cash_label = $Control/CashMoney
+@onready var quota_label = $"Control/Quote Data"
+@onready var quota_bar = $"Control/Quota Bar"
 
 const TICKS_PER_DAY = 960
 const TICKS_PER_HOUR = TICKS_PER_DAY/24
@@ -25,6 +27,7 @@ func _ready() -> void:
 	
 	Global.on_tick.connect(on_tick)
 	Inventory.on_cash_changed.connect(update_cashmoney)
+	Inventory.on_quota_changed.connect(update_quota)
 	update_cashmoney()
 	update_ui()
 	
@@ -76,3 +79,10 @@ func update_ui() -> void:
 	var am_pm = "AM" if hour < 12 else "PM"
 	
 	time_label.text = "%d:00 %s" % [display_hour, am_pm]
+	update_quota()
+func update_quota() -> void:
+	# Update Quota Stuff
+	quota_bar.value = (Inventory.quota.time_left_percent)
+
+	if(Inventory.quota.crop):
+		quota_label.text = str(Inventory.quota.amount) + " " + Inventory.quota.crop

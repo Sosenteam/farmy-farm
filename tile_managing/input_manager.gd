@@ -11,12 +11,17 @@ var mouse_pressed = false
 
 func _unhandled_input(event: InputEvent) -> void:
 	#HOTKEYS
-	if event.is_action_pressed("test_size_increase"):
-		manager.add_size(-1,0)
-	
+	#if event.is_action_pressed("test_size_increase"):
+		#manager.add_size(-1,0)
+	#
 	if event is InputEventMouseButton:
 		if event.button_index == 1:
 			mouse_pressed = event.pressed
+	if event is InputEventMouseMotion:
+		var tilemap_pos = ground_layer.local_to_map(manager.get_local_mouse_position())
+		if(tiles.is_in(tilemap_pos)):
+			var tile = map[tiles.vector_to_index(tilemap_pos)]
+			Global.current_selected_tile = tile
 	if (event is InputEventMouseMotion && mouse_pressed) || (event is InputEventMouseButton && event.button_index == 1 && event.pressed):
 		# Get tile where mouse pressed
 		var tilemap_pos = ground_layer.local_to_map(manager.get_local_mouse_position())

@@ -11,7 +11,7 @@ func _ready() -> void:
 	hide()
 
 func toggle(tool):
-	if(tool == 3):
+	if(tool == Global.Tool.INSPECT || tool == Global.Tool.FERTILIZER ):
 		if (visible):
 			hide()
 		else:

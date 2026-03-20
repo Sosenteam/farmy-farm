@@ -32,7 +32,7 @@ func _on_carrot_button_pressed() -> void:
 			Inventory._update_inventory()
 			return
 	Inventory.inventory.seeds.append(Seed.new(seed_name, 1))
-	Inventory.money -= 20
+	Inventory.edit_bal(-20)
 	Inventory.on_cash_changed.emit()
 	Inventory._update_inventory()
 
@@ -45,7 +45,7 @@ func _on_corn_button_pressed() -> void:
 			Inventory._update_inventory()
 			return
 	Inventory.inventory.seeds.append(Seed.new(seed_name, 1))
-	Inventory.money -= 35
+	Inventory.edit_bal(-35)
 	Inventory.on_cash_changed.emit()
 	Inventory._update_inventory()
 
@@ -69,6 +69,6 @@ func _on_wheat_button_pressed() -> void:
 			Inventory._update_inventory()
 			return
 	Inventory.inventory.seeds.append(Seed.new(seed_name, 1))
-	Inventory.money -= 30
+	Inventory.edit_bal(-30)
 	Inventory.on_cash_changed.emit()
 	Inventory._update_inventory()

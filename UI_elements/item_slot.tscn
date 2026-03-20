@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cxsc3k3q1w3p3"]
+[gd_scene format=3 uid="uid://b23s5yy176idf"]
 
 [ext_resource type="Script" uid="uid://47o4qti0xkk6" path="res://UI_elements/item_slot.gd" id="1_slot"]
 [ext_resource type="FontFile" uid="uid://cp7khvcr6ixv" path="res://assets/Font.ttf" id="2_font"]

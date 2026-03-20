@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://c2tkyweac5usp"]
+[gd_scene format=3 uid="uid://dh082de8c0yuv"]
 
 [ext_resource type="Script" path="res://UI_elements/item_pullout.gd" id="1_itempull"]
 

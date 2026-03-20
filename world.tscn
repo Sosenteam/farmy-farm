@@ -8,6 +8,8 @@
 [ext_resource type="Script" uid="uid://53xfcettuadq" path="res://structures/structures.gd" id="5_pkg7o"]
 [ext_resource type="Texture2D" uid="uid://xcoh42hcuoxi" path="res://assets/structures.png" id="6_pkg7o"]
 [ext_resource type="PackedScene" uid="uid://cw5qjlpox30kb" path="res://structures/sell_truck.tscn" id="7_gbfbk"]
+[ext_resource type="Texture2D" uid="uid://2jehdw6qcv85" path="res://assets/selected_tile_overlay.png" id="8_wse8f"]
+[ext_resource type="Script" uid="uid://djb1hkckrdgww" path="res://selected_tile_overlay.gd" id="9_ic0uy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aqk2v"]
 texture = ExtResource("1_tlwt5")
@@ -130,8 +132,20 @@ shape = SubResource("RectangleShape2D_shop")
 [node name="Sell Truck" parent="Structures" unique_id=1943514205 instance=ExtResource("7_gbfbk")]
 position = Vector2(144, -51)
 
+[node name="Control" type="Control" parent="." unique_id=1011076659]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 16.0
+offset_bottom = 16.0
+
+[node name="TextureRect" type="TextureRect" parent="Control" unique_id=267146804]
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = ExtResource("8_wse8f")
+script = ExtResource("9_ic0uy")
+
 [node name="MouseLayer" type="CanvasLayer" parent="." unique_id=1918348282]
-layer = 2
 
 [node name="CursorSprite" type="Sprite2D" parent="MouseLayer" unique_id=1843853415]
 top_level = true

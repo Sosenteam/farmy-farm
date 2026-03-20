@@ -58,9 +58,14 @@ func create_quota():
 	print("new quota of ",quota.amount," of ",quota.crop,"with time ",quota.time_left)
 
 func fail_quota():
-	print("you suck")
 	create_quota()
 
 func win_quota():
 	print("you are awesome")
 	create_quota()
+
+func check_if_broke(num:int):
+	if(money+num > -1):
+		return true
+	else:
+		return false

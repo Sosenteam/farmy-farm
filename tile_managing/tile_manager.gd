@@ -117,8 +117,17 @@ func place_machine(index:int):
 		
 		occupant_layer.set_cell(tiles.index_to_vector(index), machine_tiles_id, Vector2i(0, 0), scene_index)
 
-func on_pick_up_machine(index:int):
+func on_pick_up_machine(machine_name:String, count:int, index:int):
 	occupant_layer.erase_cell(tiles.index_to_vector(index))
+	map[index].occupant.delete_occupant()
+	map[index].delete_occupant()
+	
+	for machine in Inventory.inventory.machines:
+		if (machine.name.to_lower() == machine_name.to_lower()):
+			machine.addQuantity(count)
+			return
+	Inventory.inventory.machines.append(MachineItem.new(machine_name, count))
+	Inventory._update_inventory()
 	
 func reconnect_signals():
 	for i in map.size():

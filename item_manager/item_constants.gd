@@ -64,9 +64,10 @@ const ITEMS_SHEET = preload("res://assets/items.png")
 @export var seaweed_k_add = 12
 @export var seaweed_price = 25
 
-@export_category("Machines")
 
+@export_category("Machines")
 @export_group("Sprinkler")
-@export var sprinkler_coords = Vector2i(0, 2)
+@export var sprinkler_image = preload("res://assets/items/sprinkler.png")
 @export var sprinkler_name = "Sprinkler"
+@export var sprinkler_coords = Vector2i(0, 2)
 @export var sprinkler_price = 100

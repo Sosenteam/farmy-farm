@@ -48,8 +48,38 @@ func sell(crop_array:Array[Crop]):
 	on_cash_changed.emit()
 	send_off_truck.emit(crop_array)
 	
-func buy(item):
-	on_cash_changed.emit()
+func add_item(category: String, type_name: String, amount: int = 1):
+	var cat = category.to_lower()
+	if not inventory.has(cat):
+		inventory[cat] = []
+	
+	# Try to find and merge
+	for item in inventory[cat]:
+		if item.type.to_lower() == type_name.to_lower():
+			item.addQuantity(amount)
+			return
+	
+	# Not found, add new
+	var new_item
+	if cat == "seeds":
+		new_item = Seed.new(type_name, amount)
+	elif cat == "fertilizer":
+		new_item = FertilizerItem.new(type_name, amount)
+	elif cat == "crops":
+		new_item = Crop.new(type_name, amount)
+	else:
+		new_item = Item.new(type_name, amount)
+	
+	inventory[cat].append(new_item)
+	_update_inventory()
+
+func buy(category: String, type_name: String, price: int, amount: int = 1):
+	if money >= price * amount:
+		money -= price * amount
+		add_item(category, type_name, amount)
+		on_cash_changed.emit()
+		return true
+	return false
 
 func create_quota():
 	quota.crop = quota.possible_crops.pick_random()

@@ -85,13 +85,7 @@ func on_change_growth_stage(crop,stage: int, index: int) -> void:
 	occupant_layer.set_cell(tiles.index_to_vector(index),tiles_to_access,Vector2i(stage,0))
 
 func on_harvested(product:Yield,index:int):
-	 #THIS SHOULD GET SENT TO INVENTORY??
-	for crop in Inventory.inventory.crops:
-		if (crop.name.to_lower() == product.crop_name.to_lower()):
-			crop.addQuantity(product.item_count)
-			return
-	Inventory.inventory.crops.append(Crop.new(product.crop_name, product.item_count))
-	Inventory._update_inventory()
+	Inventory.add_item("crops", product.crop_name, product.item_count)
 
 func add_size(x,y):
 	tiles.add_size(x,y)

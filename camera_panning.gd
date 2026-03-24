@@ -1,6 +1,9 @@
 extends Camera2D
 
+@export var camera_speed = 1.5
 var middle_button_pressed
+var direction
+var keyboard_pressed
 
 func _input(event: InputEvent) -> void:
 	#print("Hovered: ", get_viewport().gui_get_hovered_control())
@@ -23,6 +26,8 @@ func _input(event: InputEvent) -> void:
 			
 	if event is InputEventScreenDrag:
 		position -= event.screen_relative/zoom.x
-
+	#---Keyboard---#
 func _process(_delta) -> void:
 	position = position.clamp(Vector2(-200,-200),Vector2(200,200)) 
+	direction = Input.get_vector("camera_left","camera_right","camera_up","camera_down")
+	position += direction*camera_speed

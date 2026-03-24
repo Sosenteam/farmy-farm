@@ -32,14 +32,14 @@ func _on_slot_clicked(slot_node) -> void:
 	if selected_slot == slot_node:
 		return
 	if selected_slot:
-		print("nto sames")
+		#print("nto sames")
 		selected_slot.set_selected(false)
 	selected_slot = slot_node
 	Global.selected_seed = selected_slot.item_data
 	selected_slot.set_selected(true)
 	
 	
-	print("Selected crop: ", Global.selected_seed)
+	#print("Selected crop: ", Global.selected_seed)
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -6,7 +6,7 @@ var slot_node = preload("res://inventory/slot.tscn")
 func init_me(name, items):
 	$Box/Label.text = name
 	for item in items:
-		print(item)
+		#print(item)
 		var slot = slot_node.instantiate()
 		
 		slot.set_slot(item)

@@ -39,7 +39,7 @@ func set_box_profile():
 		boxes_sprite.texture = null
 		return
 		
-	print("res://assets/sell_truck/boxes/"+ str(box_count) +".png")
+	#print("res://assets/sell_truck/boxes/"+ str(box_count) +".png")
 	boxes_sprite.texture = load("res://assets/sell_truck/boxes/"+ str(int(box_count)) +".png")
 
 func update_boxes(items):

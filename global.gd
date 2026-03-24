@@ -11,6 +11,7 @@ var current_selected_tile: Tile
 var selected_seed: Seed
 var selected_machine: Item #Change to MachineItem?
 var selected_fertilizer: FertilizerItem
+var tiles
 
 enum Tool { WATER, TILL, PLANT, INSPECT, MACHINE, FERTILIZER, NONE }
 var inventory = {"Crops": [], "Seeds": [], "Machines": [], "Fertilizer": []}

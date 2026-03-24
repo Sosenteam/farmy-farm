@@ -39,7 +39,7 @@ func format_number(number: int) -> String:
 	regex.compile("(?<=\\d)(?=(\\d{3})+(?!\\d))")
 	
 	# Replace matched positions with a comma
-	print(regex.sub(string_num, ",", true))
+	#print(regex.sub(string_num, ",", true))
 	return regex.sub(string_num, ",", true)
 	
 	

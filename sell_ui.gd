@@ -54,7 +54,7 @@ func _on_slot_clicked(slot_node:Node) -> void:
 	Inventory.update_truck_boxes.emit(items_to_sell)
 	
 	
-	print("Selected crop: ", Global.selected_seed)
+	#print("Selected crop: ", Global.selected_seed)
 
 func _on_exit_pressed() -> void:
 	get_parent().hide()

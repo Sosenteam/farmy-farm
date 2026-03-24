@@ -7,8 +7,8 @@ var item_data
 func _gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		slot_clicked.emit(self)
-		print(Global.selected_seed, item_data)
-		print("handled")
+		#print(Global.selected_seed, item_data)
+		#print("handled")
 		get_viewport().set_input_as_handled()  # stops the event propagating further
 
 func set_slot(item):
@@ -19,7 +19,7 @@ func set_slot(item):
 
 func set_selected(selected: bool):
 
-	print(Global.selected_seed, item_data)
+	#print(Global.selected_seed, item_data)
 	if Global.selected_seed == item_data:
 		$Control/NinePatchRect.self_modulate = Color(0.771, 0.771, 0.771, 1.0) # Light blue tint (Selected)
 	else:

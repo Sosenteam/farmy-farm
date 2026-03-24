@@ -9,8 +9,12 @@ func _on_close_button_pressed() -> void:
 	hide()
 
 func _on_up_pressed() -> void:
-	Global.expand_size(1,1)
 	if(Inventory.check_if_broke(-250)):
+		if(Global.tiles.width > 8):
+			Global.expand_size(-1,-1)
+		else:
+			Global.expand_size(1,1)
+		
 		Inventory.money -= 250
 	Inventory.on_cash_changed.emit()
 

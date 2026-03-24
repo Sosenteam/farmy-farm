@@ -17,6 +17,7 @@ var machine_tiles_id = 999;
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Global.tiles = tiles
 	Global.on_tick.connect(on_tick)
 	Global.add_size.connect(add_size)
 	for i in tiles.cells:

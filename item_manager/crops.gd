@@ -14,3 +14,4 @@ func _init(_type: String, _quantity: int = 1) -> void:
 			"wheat": crop = Wheat
 			"corn": crop = Corn
 			"carrot": crop = Carrot
+			"potato": crop = Potato

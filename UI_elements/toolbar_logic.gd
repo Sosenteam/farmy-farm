@@ -11,6 +11,9 @@ var plant_butt: TextureButton
 var machine_butt: TextureButton
 var fertilizer_butt: TextureButton
 
+var constants = preload("res://tiles/tiles_resource.tres")
+var item_constants = preload("res://item_manager/item_resources.tres")
+
 func _ready():
 	# Clear any placeholders from the editor
 	Global.current_tool = Global.Tool.NONE
@@ -36,13 +39,13 @@ func _ready():
 	get_parent().add_child.call_deferred(fertilizer_pullout)
 	
 	# Setup pullouts
-	seed_pullout.setup("seeds", ["Carrot", "Corn", "Wheat"], {"Carrot": 5, "Corn": 10, "Wheat": 3})
+	seed_pullout.setup("seeds", ["Carrot", "Corn", "Wheat", "Potato"], {"Carrot": constants.carrot_seed_price, "Corn": constants.corn_seed_price, "Wheat": constants.wheat_seed_price, "Potato": constants.potato_seed_price})
 	seed_pullout.item_selected.connect(func(item): Global.selected_seed = item)
 	
-	machine_pullout.setup("machines", ["Sprinkler"], {"Sprinkler": 100})
+	machine_pullout.setup("machines", ["Sprinkler"], {"Sprinkler": item_constants.sprinkler_price})
 	machine_pullout.item_selected.connect(func(item): Global.selected_machine = item)
 	
-	fertilizer_pullout.setup("fertilizer", ["Fish", "Bone", "Seaweed"], {"Fish": 35, "Bone": 35, "Seaweed": 25})
+	fertilizer_pullout.setup("fertilizer", ["Fish", "Bone", "Seaweed"], {"Fish": item_constants.fish_price, "Bone": item_constants.bone_price, "Seaweed": item_constants.seaweed_price})
 	fertilizer_pullout.item_selected.connect(func(item): Global.selected_fertilizer = item)
 
 	Global.on_tool_changed.connect(_update_selection_visuals)

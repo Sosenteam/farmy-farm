@@ -82,6 +82,8 @@ func on_change_growth_stage(crop,stage: int, index: int) -> void:
 			tiles_to_access = 1
 		"corn":
 			tiles_to_access = 2
+		"potato":
+			tiles_to_access = 3
 	occupant_layer.set_cell(tiles.index_to_vector(index),tiles_to_access,Vector2i(stage,0))
 
 func on_harvested(product:Yield,index:int):

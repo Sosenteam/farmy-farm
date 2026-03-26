@@ -26,3 +26,6 @@ func _on_corn_button_pressed() -> void:
 
 func _on_wheat_button_pressed() -> void:
 	Inventory.buy("seeds", "Wheat", 30)
+
+func _on_potato_button_pressed() -> void:
+	Inventory.buy("seeds", "Potato", 25)

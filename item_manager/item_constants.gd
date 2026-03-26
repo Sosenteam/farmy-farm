@@ -18,6 +18,10 @@ const ITEMS_SHEET = preload("res://assets/items.png")
 @export var corn_coords = Vector2i(1, 1)
 @export var corn_name = "Corn"
 
+@export_group("Potato")
+@export var potato_coords = Vector2i(3, 1)
+@export var potato_name = "Potato"
+
 @export_category("Seeds")
 
 @export_group("Wheat Seed")
@@ -37,6 +41,12 @@ const ITEMS_SHEET = preload("res://assets/items.png")
 @export var corn_seed_name = "Corn Seeds"
 @export var corn_seed_plants = "Corn"
 @export var corn_seed_price = 10
+
+@export_group("Potato Seed")
+@export var potato_seed_coords = Vector2i(3, 0)
+@export var potato_seed_name = "Potato Seeds"
+@export var potato_seed_plants = "Potato"
+@export var potato_seed_price = 10 #UPDATE
 
 @export_category("Fertilizer")
 
@@ -66,6 +76,7 @@ const ITEMS_SHEET = preload("res://assets/items.png")
 
 
 @export_category("Machines")
+
 @export_group("Sprinkler")
 @export var sprinkler_image = preload("res://assets/items/sprinkler.png")
 @export var sprinkler_name = "Sprinkler"

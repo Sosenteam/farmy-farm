@@ -7,7 +7,7 @@ var quota = {
 	"amount":0,
 	"time_left":1920,
 	"max_time":1920,
-	"possible_crops":[&"carrot",&"wheat",&"corn"],
+	"possible_crops":[&"carrot",&"wheat",&"corn",&"potato"],
 	"min_amount":1,
 	"max_amount":8,
 	"time_left_percent":1.0

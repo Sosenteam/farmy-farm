@@ -24,6 +24,8 @@ func _process(delta: float) -> void:
 			var new_body:String
 			new_body += str("Sell Price: $",Global.hovered_item.item_data.crop_sell_price)
 			body.text = new_body
+		else:
+			body.text = ""
 func _on_hold_timer_timeout() -> void:
 	visible = true
 

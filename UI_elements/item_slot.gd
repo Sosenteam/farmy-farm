@@ -70,7 +70,7 @@ func update_display():
 		var buy_price = item_data.price if item_data else price
 		label.text = str(buy_price) + "$"
 		if Inventory.money >= buy_price:
-			label.add_theme_color_override("font_color", Color.GREEN)
+			label.add_theme_color_override("font_color", Color.LAWN_GREEN)
 		else:
 			label.add_theme_color_override("font_color", Color.RED)
 
@@ -78,6 +78,7 @@ func _on_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		slot_clicked.emit(self)
 		get_viewport().set_input_as_handled()
+	print(Global.hovered_item)
 
 
 func selected_effect(active: bool):

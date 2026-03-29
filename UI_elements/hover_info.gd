@@ -14,7 +14,8 @@ func _process(delta: float) -> void:
 			off_timer.start()
 	# Make it render right
 	if(visible&&Global.hovered_item):
-		position = get_global_mouse_position() + Vector2(-314/2,-150)
+		$Background.show()
+		position = get_global_mouse_position() + Vector2(-58/2,-35)
 		title.text = Global.hovered_item.item_data.name
 		if(Global.hovered_item.item_data is FertilizerItem):
 			var new_body:String 
@@ -23,6 +24,11 @@ func _process(delta: float) -> void:
 		elif(Global.hovered_item.item_data is Seed):
 			var new_body:String
 			new_body += str("Sell Price: $",Global.hovered_item.item_data.crop_sell_price)
+			body.text = new_body
+		elif(Global.hovered_item.item_data is Item):
+			var new_body:String
+			position = get_global_mouse_position() + Vector2(-58/2,-18)
+			$Background.hide()
 			body.text = new_body
 func _on_hold_timer_timeout() -> void:
 	visible = true

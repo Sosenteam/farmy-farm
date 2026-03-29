@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://cw5qjlpox30kb" path="res://structures/sell_truck.tscn" id="7_gbfbk"]
 [ext_resource type="Texture2D" uid="uid://2jehdw6qcv85" path="res://assets/selected_tile_overlay.png" id="8_wse8f"]
 [ext_resource type="Script" uid="uid://djb1hkckrdgww" path="res://selected_tile_overlay.gd" id="9_ic0uy"]
+[ext_resource type="PackedScene" uid="uid://dsh3sdo5d6ioa" path="res://UI_elements/main_menu.tscn" id="10_menu"]
+[ext_resource type="Script" uid="uid://btu32p5ln4yfl" path="res://environment/tree_spawner.gd" id="11_forest"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aqk2v"]
 texture = ExtResource("1_tlwt5")
@@ -103,6 +105,10 @@ tile_set = SubResource("TileSet_036b0")
 zoom = Vector2(4, 4)
 script = ExtResource("4_036b0")
 
+[node name="TreeSpawner" type="Node2D" parent="." unique_id=4002341]
+y_sort_enabled = true
+script = ExtResource("11_forest")
+
 [node name="Structures" type="Node2D" parent="." unique_id=8002341]
 position = Vector2(110, 90)
 script = ExtResource("5_pkg7o")
@@ -146,7 +152,8 @@ texture = ExtResource("8_wse8f")
 script = ExtResource("9_ic0uy")
 
 [node name="MouseLayer" type="CanvasLayer" parent="." unique_id=1918348282]
-layer = 3
+process_mode = 3
+layer = 100
 
 [node name="CursorSprite" type="Sprite2D" parent="MouseLayer" unique_id=1843853415]
 top_level = true
@@ -154,6 +161,8 @@ visibility_layer = 1023
 z_index = 1000
 scale = Vector2(4, 4)
 script = ExtResource("4_aqk2v")
+
+[node name="MainMenu" parent="." unique_id=141203491 instance=ExtResource("10_menu")]
 
 [connection signal="input_event" from="Structures/Barn/BarnArea2D" to="Structures" method="_on_barn_area_2d_input_event"]
 [connection signal="input_event" from="Structures/Shop/ShopArea2D" to="Structures" method="_on_shop_area_2d_input_event"]

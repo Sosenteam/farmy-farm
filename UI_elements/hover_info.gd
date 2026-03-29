@@ -15,7 +15,7 @@ func _process(delta: float) -> void:
 	# Make it render right
 	if(visible&&Global.hovered_item):
 		$Background.show()
-		position = get_global_mouse_position() + Vector2(-58/2,-35)
+		position = get_global_mouse_position() + Vector2(-58/2,-40)
 		title.text = Global.hovered_item.item_data.name
 		if(Global.hovered_item.item_data is FertilizerItem):
 			var new_body:String 

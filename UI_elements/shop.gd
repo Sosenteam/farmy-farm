@@ -4,6 +4,11 @@ extends CanvasLayer
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Global.open_ui.connect(func(ui): if (ui == "shop"): show())
+	
+	var exit_btn = %CloseButton
+	if exit_btn:
+		exit_btn.mouse_entered.connect(func(): exit_btn.self_modulate = Color(0.6, 0.6, 0.6))
+		exit_btn.mouse_exited.connect(func(): exit_btn.self_modulate = Color.WHITE)
 
 func _on_close_button_pressed() -> void:
 	hide()

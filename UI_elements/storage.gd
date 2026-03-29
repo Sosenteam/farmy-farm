@@ -6,6 +6,12 @@ extends Control
 func _ready() -> void:
 	Global.open_ui.connect(open)
 	Inventory.on_inventory_changed.connect(refresh_inventory)
+	
+	var exit_btn = %CloseButton
+	if exit_btn:
+		exit_btn.mouse_entered.connect(func(): exit_btn.self_modulate = Color(0.6, 0.6, 0.6))
+		exit_btn.mouse_exited.connect(func(): exit_btn.self_modulate = Color.WHITE)
+		
 	refresh_inventory()
 
 func refresh_inventory():

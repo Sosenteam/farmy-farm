@@ -67,6 +67,7 @@ theme_override_styles/focus = SubResource("StyleBoxTexture_uoikd")
 text = "SEND OFF >>>"
 
 [node name="Exit" type="TextureButton" parent="SellUI/Control" unique_id=888564453]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 169.0
 offset_top = -14.875

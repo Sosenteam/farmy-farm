@@ -79,6 +79,7 @@ func _on_gui_input(event: InputEvent) -> void:
 		slot_clicked.emit(self)
 		get_viewport().set_input_as_handled()
 
+
 func selected_effect(active: bool):
 	var tween = create_tween()
 	tween.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BACK)
@@ -92,3 +93,11 @@ func selected_effect(active: bool):
 		modulate = Color.WHITE
 		tween.tween_property(self, "scale", Vector2.ONE, 0.1)
 		z_index = 0
+
+
+func _on_mouse_entered() -> void:
+	Global.hovered_item = self
+
+
+func _on_mouse_exited() -> void:
+	Global.hovered_item = null

@@ -8,6 +8,7 @@ signal add_size
 var tick: int = 0
 var current_tool: int = 0: set = _set_tool
 var current_selected_tile: Tile
+var hovered_item
 var selected_seed: Seed
 var selected_machine: Item #Change to MachineItem?
 var selected_fertilizer: FertilizerItem

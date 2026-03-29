@@ -1,7 +1,7 @@
 class_name Seed extends Item
 
 var crop
-
+var crop_sell_price
 func _init(_type: String, _quantity: int = 1):
 	super(_type, _quantity)
 	
@@ -23,3 +23,5 @@ func _init(_type: String, _quantity: int = 1):
 		"corn": crop = Corn
 		"carrot": crop = Carrot
 		"potato": crop = Potato
+	
+	crop_sell_price = tile_constants.get(prefix+"_sell_price")

@@ -103,6 +103,7 @@ func fail_quota():
 func win_quota():
 	money+=100
 	quota.quotas_complete+=1
+	quota.lives=3
 	create_quota()
 
 func manage_quota_time():

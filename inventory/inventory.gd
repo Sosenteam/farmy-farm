@@ -5,12 +5,15 @@ var money:int = 10000
 var quota = {
 	"crop":null,
 	"amount":0,
-	"time_left":1920,
-	"max_time":1920,
+	"time_left":3840,
+	"max_time":3840,
 	"possible_crops":[&"carrot",&"wheat",&"corn",&"potato"],
 	"min_amount":1,
 	"max_amount":8,
-	"time_left_percent":1.0
+	"time_left_percent":1.0,
+	"lives":3,
+	"quotas_complete":0
+	
 }
 signal on_inventory_changed
 signal on_cash_changed
@@ -84,15 +87,35 @@ func buy(category: String, type_name: String, price: int, amount: int = 1):
 func create_quota():
 	quota.crop = quota.possible_crops.pick_random()
 	quota.amount = randi_range(quota.min_amount,quota.max_amount)
+	manage_quota_time()
 	quota.time_left = quota.max_time
 	print("new quota of ",quota.amount," of ",quota.crop,"with time ",quota.time_left)
 
+func super_fail_quota():
+	money-=200
+
 func fail_quota():
+	quota.lives-=1
+	if(quota.lives <= 0):
+		super_fail_quota()
 	create_quota()
 
 func win_quota():
-	print("you are awesome")
+	money+=100
+	quota.quotas_complete+=1
 	create_quota()
+
+func manage_quota_time():
+	match quota.quotas_complete:
+		0 or 1:
+			quota.max_time=10
+		2:
+			quota.max_time=2280
+		3 or 4:
+			quota.max_time=1920
+		_: 
+			quota.max_time=1440
+		
 
 func check_if_broke(num:int):
 	if(money+num > -1):

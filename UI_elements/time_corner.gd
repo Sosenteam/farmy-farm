@@ -5,6 +5,7 @@ extends CanvasLayer
 @onready var cash_label = $Control/CashMoney
 @onready var quota_label = $"Control/Quote Data"
 @onready var quota_bar = $"Control/Quota Bar"
+@onready var quota_lives = $"Control/Quota Lives"
 
 const TICKS_PER_DAY = 960
 const TICKS_PER_HOUR = TICKS_PER_DAY/24
@@ -83,6 +84,6 @@ func update_ui() -> void:
 func update_quota() -> void:
 	# Update Quota Stuff
 	quota_bar.value = (Inventory.quota.time_left_percent)
-
+	quota_lives.value = Inventory.quota.lives
 	if(Inventory.quota.crop):
 		quota_label.text = str(Inventory.quota.amount) + " " + Inventory.quota.crop

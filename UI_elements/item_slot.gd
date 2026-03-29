@@ -68,6 +68,7 @@ func update_display():
 	else:
 		label.text = "$"
 		var buy_price = item_data.price if item_data else price
+		label.text = str(buy_price) + "$"
 		if Inventory.money >= buy_price:
 			label.add_theme_color_override("font_color", Color.GREEN)
 		else:

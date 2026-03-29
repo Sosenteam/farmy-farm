@@ -10,10 +10,6 @@ base_font = ExtResource("3_sc7dq")
 spacing_glyph = -1
 spacing_space = -11
 
-[sub_resource type="FontVariation" id="FontVariation_evbk1"]
-base_font = ExtResource("3_sc7dq")
-spacing_glyph = -3
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_button_normal"]
 texture = ExtResource("2_blqjs")
 texture_margin_left = 4.0
@@ -24,6 +20,17 @@ axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 region_rect = Rect2(0, 0, 32, 32)
 modulate_color = Color(0.713726, 0.713726, 0.713726, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_button_pressed"]
+texture = ExtResource("2_blqjs")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+region_rect = Rect2(0, 0, 32, 32)
+modulate_color = Color(0.3, 0.3, 0.3, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_button_hover"]
 texture = ExtResource("2_blqjs")
@@ -36,16 +43,9 @@ axis_stretch_vertical = 1
 region_rect = Rect2(0, 0, 32, 32)
 modulate_color = Color(0.5, 0.5, 0.5, 1)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_button_pressed"]
-texture = ExtResource("2_blqjs")
-texture_margin_left = 4.0
-texture_margin_top = 4.0
-texture_margin_right = 4.0
-texture_margin_bottom = 4.0
-axis_stretch_horizontal = 1
-axis_stretch_vertical = 1
-region_rect = Rect2(0, 0, 32, 32)
-modulate_color = Color(0.3, 0.3, 0.3, 1)
+[sub_resource type="FontVariation" id="FontVariation_evbk1"]
+base_font = ExtResource("3_sc7dq")
+spacing_glyph = -3
 
 [node name="Shop" type="CanvasLayer" unique_id=453794963]
 scale = Vector2(4, 4)
@@ -101,10 +101,10 @@ offset_bottom = 64.25
 theme_override_colors/font_color = Color(0.223529, 0.14902, 0.0941176, 1)
 theme_override_fonts/font = SubResource("FontVariation_nclu2")
 theme_override_font_sizes/font_size = 16
-theme_override_styles/focus = SubResource("StyleBoxTexture_button_hover")
-theme_override_styles/hover = SubResource("StyleBoxTexture_button_hover")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_button_pressed")
 theme_override_styles/normal = SubResource("StyleBoxTexture_button_normal")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_button_pressed")
+theme_override_styles/hover = SubResource("StyleBoxTexture_button_hover")
+theme_override_styles/focus = SubResource("StyleBoxTexture_button_hover")
 text = "($30)  Wheat  Seeds"
 
 [node name="CarrotButton" type="Button" parent="Shop/NinePatchRect" unique_id=1120059944]
@@ -116,10 +116,10 @@ offset_bottom = 97.25
 theme_override_colors/font_color = Color(0.223529, 0.14902, 0.0941176, 1)
 theme_override_fonts/font = SubResource("FontVariation_nclu2")
 theme_override_font_sizes/font_size = 16
-theme_override_styles/focus = SubResource("StyleBoxTexture_button_hover")
-theme_override_styles/hover = SubResource("StyleBoxTexture_button_hover")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_button_pressed")
 theme_override_styles/normal = SubResource("StyleBoxTexture_button_normal")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_button_pressed")
+theme_override_styles/hover = SubResource("StyleBoxTexture_button_hover")
+theme_override_styles/focus = SubResource("StyleBoxTexture_button_hover")
 text = "($20)  Carrot  Seeds"
 
 [node name="CornButton" type="Button" parent="Shop/NinePatchRect" unique_id=89919155]
@@ -131,10 +131,10 @@ offset_bottom = 130.25
 theme_override_colors/font_color = Color(0.223529, 0.14902, 0.0941176, 1)
 theme_override_fonts/font = SubResource("FontVariation_nclu2")
 theme_override_font_sizes/font_size = 16
-theme_override_styles/focus = SubResource("StyleBoxTexture_button_hover")
-theme_override_styles/hover = SubResource("StyleBoxTexture_button_hover")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_button_pressed")
 theme_override_styles/normal = SubResource("StyleBoxTexture_button_normal")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_button_pressed")
+theme_override_styles/hover = SubResource("StyleBoxTexture_button_hover")
+theme_override_styles/focus = SubResource("StyleBoxTexture_button_hover")
 text = "($35)   Corn  Seeds"
 
 [node name="PotatoButton" type="Button" parent="Shop/NinePatchRect" unique_id=67181969]
@@ -146,10 +146,10 @@ offset_bottom = 163.25
 theme_override_colors/font_color = Color(0.223529, 0.14902, 0.0941176, 1)
 theme_override_fonts/font = SubResource("FontVariation_nclu2")
 theme_override_font_sizes/font_size = 16
-theme_override_styles/focus = SubResource("StyleBoxTexture_button_hover")
-theme_override_styles/hover = SubResource("StyleBoxTexture_button_hover")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_button_pressed")
 theme_override_styles/normal = SubResource("StyleBoxTexture_button_normal")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_button_pressed")
+theme_override_styles/hover = SubResource("StyleBoxTexture_button_hover")
+theme_override_styles/focus = SubResource("StyleBoxTexture_button_hover")
 text = "($25)   Potato  Seeds"
 
 [node name="CloseButton" type="TextureButton" parent="Shop/NinePatchRect" unique_id=107290572]
@@ -180,10 +180,10 @@ offset_right = 121.5
 offset_bottom = 91.5
 theme_override_colors/font_color = Color(0.223529, 0.14902, 0.0941176, 1)
 theme_override_fonts/font = SubResource("FontVariation_evbk1")
-theme_override_styles/focus = SubResource("StyleBoxTexture_button_hover")
-theme_override_styles/hover = SubResource("StyleBoxTexture_button_hover")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_button_pressed")
 theme_override_styles/normal = SubResource("StyleBoxTexture_button_normal")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_button_pressed")
+theme_override_styles/hover = SubResource("StyleBoxTexture_button_hover")
+theme_override_styles/focus = SubResource("StyleBoxTexture_button_hover")
 text = "===
 ($250)
 ===

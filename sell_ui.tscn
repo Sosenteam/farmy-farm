@@ -140,7 +140,7 @@ offset_top = -27.5
 offset_right = 211.25
 offset_bottom = 2.5
 theme_override_fonts/font = ExtResource("4_uoikd")
-text = "HI I'M BACK OF TRUCK"
+text = "Sell Truck"
 
 [node name="Background3" type="NinePatchRect" parent="SellUI/Control" unique_id=152622615]
 layout_mode = 1

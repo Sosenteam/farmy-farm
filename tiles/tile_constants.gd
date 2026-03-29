@@ -58,12 +58,12 @@ const ticks_per_day:int = ticks_per_second * 60
 @export_group("Potato") #NEEDS TO BE DEFIENED SOMEONES!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 @export var potato_grow_speed = (1.0/1600.0) # NEED TO CHANGE - SHOULD BE BASED ON NPK AMNTS
 @export var potato_grow_stages = [0,0.33,0.66,1]
-@export var potato_n_per_yield = 62	
-@export var potato_p_per_yield = 8
-@export var potato_k_per_yield = 2
+@export var potato_n_per_yield = 20
+@export var potato_p_per_yield = 3
+@export var potato_k_per_yield = 30
 @export var potato_n_happy_amount = 10
 @export var potato_p_happy_amount = 1
 @export var potato_k_happy_amount = 13
-@export var potato_sell_price = 30
-@export var potato_seed_price = 15
+@export var potato_sell_price = 82
+@export var potato_seed_price = 25
 @export var potato_water_per_yield := 1.5

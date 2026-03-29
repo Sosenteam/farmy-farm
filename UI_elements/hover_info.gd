@@ -26,10 +26,9 @@ func _process(delta: float) -> void:
 			new_body += str("Sell Price: $",Global.hovered_item.item_data.crop_sell_price)
 			body.text = new_body
 		elif(Global.hovered_item.item_data is Item):
-			var new_body:String
-			position = get_global_mouse_position() + Vector2(-58/2,-18)
 			$Background.hide()
-			body.text = new_body
+			position = get_global_mouse_position() + Vector2(-58/2,-18)
+			body.text = ""
 func _on_hold_timer_timeout() -> void:
 	visible = true
 

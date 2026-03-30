@@ -56,7 +56,7 @@ const ITEMS_SHEET = preload("res://assets/items.png")
 @export var fish_n_add = 25
 @export var fish_p_add = 4
 @export var fish_k_add = 3
-@export var fish_price = 11
+@export var fish_price = 7
 
 @export_group("Bone")
 @export var bone_coords = Vector2i(0, 3)
@@ -64,7 +64,7 @@ const ITEMS_SHEET = preload("res://assets/items.png")
 @export var bone_n_add = 10
 @export var bone_p_add = 20
 @export var bone_k_add = 0
-@export var bone_price = 12
+@export var bone_price = 8
 
 @export_group("Seaweed")
 @export var seaweed_coords = Vector2i(1, 3)
@@ -72,7 +72,7 @@ const ITEMS_SHEET = preload("res://assets/items.png")
 @export var seaweed_n_add = 4
 @export var seaweed_p_add = 0
 @export var seaweed_k_add = 12
-@export var seaweed_price = 7
+@export var seaweed_price = 5
 
 
 @export_category("Machines")

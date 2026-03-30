@@ -104,6 +104,9 @@ func super_fail_quota():
 
 func fail_quota():
 	quota.lives-=1
+	quota.quotas_complete-=2
+	if quota.quotas_complete < 1:
+		quota.quotas_complete = 0
 	if(quota.lives <= 0):
 		super_fail_quota()
 	create_quota()
@@ -115,15 +118,15 @@ func win_quota():
 	create_quota()
 
 func manage_quota_time():
-	match quota.quotas_complete:
-		0 or 1:
-			quota.max_time=3840
-		2:
-			quota.max_time=2280
-		3 or 4:
-			quota.max_time=1920
-		_: 
-			quota.max_time=1440
+	var a = quota.quotas_complete
+	if (a == 0 || a == 1):
+		quota.max_time=3840
+	elif a == 2 || a == 3:
+		quota.max_time=2280
+	elif a == 4 || a== 5:
+		quota.max_time=1920
+	else: 
+		quota.max_time=1440
 		
 
 func check_if_broke(num:int):

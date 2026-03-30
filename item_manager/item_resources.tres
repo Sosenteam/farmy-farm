@@ -1,5 +1,6 @@
 [gd_resource type="Resource" format=3 uid="uid://bii5dojvpfppv"]
 
+[ext_resource type="Texture2D" uid="uid://cp2nnejd8jdp3" path="res://assets/items/sprinkler.png" id="2_ao0mr"]
 [ext_resource type="Script" uid="uid://bx42syormp3rp" path="res://item_manager/item_constants.gd" id="3_vh5rn"]
 
 [resource]

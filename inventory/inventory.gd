@@ -1,7 +1,7 @@
 extends Node
 
 var inventory = {"crops": [], "seeds": [], "machines": [], "fertilizer": []}
-var money:int = 10000
+var money:int = 250
 var quota = {
 	"crop":null,
 	"amount":0,
@@ -26,7 +26,13 @@ func _ready():
 	_update_inventory()
 	Global.on_tick.connect(on_tick)
 	create_quota()
+	add_starting_crops()
 
+func add_starting_crops():
+	add_item("seeds","wheat",5)
+	add_item("seeds","corn",5)
+	add_item("seeds","carrot",5)
+	add_item("seeds","potato",5)
 func on_tick():
 	quota.time_left -=1
 	quota.time_left_percent = float(quota.time_left)/float(quota.max_time)
@@ -93,6 +99,8 @@ func create_quota():
 
 func super_fail_quota():
 	money-=200
+	if Global.has_method("fail_game"):
+		Global.fail_game()
 
 func fail_quota():
 	quota.lives-=1
@@ -101,7 +109,7 @@ func fail_quota():
 	create_quota()
 
 func win_quota():
-	money+=100
+	money+=10
 	quota.quotas_complete+=1
 	quota.lives=3
 	create_quota()
@@ -109,7 +117,7 @@ func win_quota():
 func manage_quota_time():
 	match quota.quotas_complete:
 		0 or 1:
-			quota.max_time=10
+			quota.max_time=3840
 		2:
 			quota.max_time=2280
 		3 or 4:

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://pplano3pr864"
-path="res://.godot/imported/GrassBigTilemap.png-1af46d9c7e6d0f68f30157fe0f7144a1.ctex"
+uid="uid://byjj0xi3x7xry"
+path="res://.godot/imported/soil.png-a32d14e200bc8a2ce9d9c2555ad3acc0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/GrassBigTilemap.png"
-dest_files=["res://.godot/imported/GrassBigTilemap.png-1af46d9c7e6d0f68f30157fe0f7144a1.ctex"]
+source_file="res://assets/old_assets/soil.png"
+dest_files=["res://.godot/imported/soil.png-a32d14e200bc8a2ce9d9c2555ad3acc0.ctex"]
 
 [params]
 

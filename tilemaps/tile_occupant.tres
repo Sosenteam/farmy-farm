@@ -1,0 +1,78 @@
+[gd_resource type="TileSet" format=3 uid="uid://c5lvj7sg6yo7x"]
+
+[ext_resource type="Texture2D" uid="uid://4wrn3rccs4if" path="res://assets/plants/carrot.png" id="1_2r3ew"]
+[ext_resource type="Texture2D" uid="uid://s5b8s7kn7ku2" path="res://assets/plants/wheat.png" id="1_mphft"]
+[ext_resource type="Texture2D" uid="uid://cau7o1kef41cd" path="res://assets/plants/corn.png" id="3_mphft"]
+[ext_resource type="Texture2D" uid="uid://g7qmjt1ifphj" path="res://assets/plants/potato.png" id="4_jvcuk"]
+[ext_resource type="PackedScene" uid="uid://b3g3xg5s0cgmh" path="res://machine_scenes/sprinkler.tscn" id="4_v826q"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5riq7"]
+resource_name = "Wheat"
+texture = ExtResource("1_mphft")
+texture_region_size = Vector2i(16, 32)
+0:0/next_alternative_id = 2
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, 16)
+1:0/0 = 0
+1:0/0/texture_origin = Vector2i(0, 16)
+2:0/0 = 0
+2:0/0/texture_origin = Vector2i(0, 16)
+3:0/0 = 0
+3:0/0/texture_origin = Vector2i(0, 16)
+4:0/0 = 0
+4:0/0/texture_origin = Vector2i(0, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v826q"]
+resource_name = "Carrot"
+texture = ExtResource("1_2r3ew")
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, 7)
+1:0/0 = 0
+1:0/0/texture_origin = Vector2i(0, 7)
+2:0/0 = 0
+2:0/0/texture_origin = Vector2i(0, 7)
+3:0/0 = 0
+3:0/0/texture_origin = Vector2i(0, 7)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jvcuk"]
+resource_name = "Corn"
+texture = ExtResource("3_mphft")
+texture_region_size = Vector2i(16, 32)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, 15)
+1:0/0 = 0
+1:0/0/texture_origin = Vector2i(0, 15)
+2:0/0 = 0
+2:0/0/texture_origin = Vector2i(0, 15)
+3:0/0 = 0
+3:0/0/texture_origin = Vector2i(0, 15)
+4:0/0 = 0
+4:0/0/texture_origin = Vector2i(0, 15)
+5:0/0 = 0
+5:0/0/texture_origin = Vector2i(0, 15)
+6:0/0 = 0
+6:0/0/texture_origin = Vector2i(0, 15)
+7:0/0 = 0
+7:0/0/texture_origin = Vector2i(0, 15)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_og4fu"]
+texture = ExtResource("4_jvcuk")
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, 8)
+1:0/0 = 0
+1:0/0/texture_origin = Vector2i(0, 8)
+2:0/0 = 0
+2:0/0/texture_origin = Vector2i(0, 8)
+3:0/0 = 0
+3:0/0/texture_origin = Vector2i(0, 8)
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_jvcuk"]
+resource_name = "Machines"
+scenes/1/scene = ExtResource("4_v826q")
+
+[resource]
+sources/1 = SubResource("TileSetAtlasSource_v826q")
+sources/2 = SubResource("TileSetAtlasSource_jvcuk")
+sources/0 = SubResource("TileSetAtlasSource_5riq7")
+sources/999 = SubResource("TileSetScenesCollectionSource_jvcuk")
+sources/3 = SubResource("TileSetAtlasSource_og4fu")

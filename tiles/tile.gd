@@ -1,0 +1,30 @@
+class_name Tile
+
+var ground:Ground
+var occupant:Occupant
+var index: int
+
+func _init(new_ground = Dirt,new_occupant = null) -> void:
+	if(new_ground):
+		ground = new_ground.new()
+		ground.tile = self
+	if(new_occupant):
+		occupant = new_occupant.new()
+		occupant.tile = self
+	Global.on_tick.connect(tick)
+
+func tick() -> void:
+	ground.tick()
+	if(occupant):
+		occupant.tick()
+
+func set_occupant(new_occupant):
+	if(new_occupant):
+		occupant = new_occupant.new()
+		occupant.tile = self
+
+func delete_occupant():
+	occupant = null
+
+static var constants = preload("res://tiles/tiles_resource.tres")
+static var tiles = preload("res://tile_managing/tiles.tres")

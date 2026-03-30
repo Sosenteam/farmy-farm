@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://pplano3pr864"
-path="res://.godot/imported/GrassBigTilemap.png-1af46d9c7e6d0f68f30157fe0f7144a1.ctex"
+uid="uid://cp2nnejd8jdp3"
+path="res://.godot/imported/sprinkler.png-be1a8e3a7f6bf9193be84ac539c1615c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/GrassBigTilemap.png"
-dest_files=["res://.godot/imported/GrassBigTilemap.png-1af46d9c7e6d0f68f30157fe0f7144a1.ctex"]
+source_file="res://assets/items/sprinkler.png"
+dest_files=["res://.godot/imported/sprinkler.png-be1a8e3a7f6bf9193be84ac539c1615c.ctex"]
 
 [params]
 

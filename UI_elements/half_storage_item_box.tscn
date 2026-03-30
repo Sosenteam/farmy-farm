@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://bv4sy4m6ht2t"]
+
+[ext_resource type="Script" uid="uid://yobel2k3gxrc" path="res://UI_elements/half_storage_item_box.gd" id="1_s0ha3"]
+[ext_resource type="FontFile" uid="uid://cp7khvcr6ixv" path="res://assets/Font.ttf" id="2_533c5"]
+[ext_resource type="Texture2D" uid="uid://dbf2ncasdyqy3" path="res://assets/rect.png" id="3_psk2d"]
+
+[node name="HalfStorageItemBox" type="Control" unique_id=732174998]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_s0ha3")
+
+[node name="Box" type="Control" parent="." unique_id=1732288161]
+anchors_preset = 0
+offset_top = 18.0
+offset_right = 147.0
+offset_bottom = 41.0
+
+[node name="Label" type="Label" parent="Box" unique_id=1459838332]
+layout_mode = 0
+offset_left = 2.0
+offset_top = -17.5
+offset_right = 142.0
+offset_bottom = 5.5
+theme_override_fonts/font = ExtResource("2_533c5")
+theme_override_font_sizes/font_size = 12
+vertical_alignment = 1
+
+[node name="ItemBox" type="NinePatchRect" parent="Box" unique_id=1707134338]
+self_modulate = Color(0.71374464, 0.71374464, 0.71374464, 1)
+layout_mode = 0
+offset_left = 1.0
+offset_right = 146.0
+offset_bottom = 26.0
+texture = ExtResource("3_psk2d")
+region_rect = Rect2(0, 0, 32, 32)
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Box/ItemBox" unique_id=2003003074]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Box/ItemBox/ScrollContainer" unique_id=1385978774]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 2
+alignment = 1

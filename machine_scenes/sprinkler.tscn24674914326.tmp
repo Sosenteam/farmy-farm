@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://b3g3xg5s0cgmh"]
+
+[ext_resource type="Texture2D" uid="uid://cwlq2rdwcdnfn" path="res://assets/machines/sprinkler.png" id="1_22fqw"]
+[ext_resource type="Texture2D" uid="uid://ctdbx0tublsvq" path="res://assets/machines/sprinkler_water1.png" id="2_lleie"]
+[ext_resource type="Script" uid="uid://0xnbgkfngx0m" path="res://machine_scenes/machine_scene.gd" id="2_uyv73"]
+[ext_resource type="Texture2D" uid="uid://bh52w5328jpi2" path="res://assets/machines/sprinkler_water2.png" id="3_233iy"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uyv73"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_22fqw")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_lleie")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_233iy")
+}],
+"loop": true,
+"name": &"watering",
+"speed": 10.0
+}]
+
+[node name="Sprinkler" type="AnimatedSprite2D" unique_id=1109414348]
+process_mode = 4
+sprite_frames = SubResource("SpriteFrames_uyv73")
+animation = &"watering"
+script = ExtResource("2_uyv73")

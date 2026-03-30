@@ -1,0 +1,240 @@
+[gd_scene format=3 uid="uid://dxor2flf7t3dd"]
+
+[ext_resource type="Texture2D" uid="uid://dbf2ncasdyqy3" path="res://assets/rect.png" id="1_ulapv"]
+[ext_resource type="Script" uid="uid://dyokra4g4dst0" path="res://UI_elements/time_corner.gd" id="1_uw0kl"]
+[ext_resource type="FontFile" uid="uid://cp7khvcr6ixv" path="res://assets/Font.ttf" id="2_uw0kl"]
+[ext_resource type="Texture2D" uid="uid://b5hc72jtldvw7" path="res://assets/alec/barbg.png" id="4_6vey5"]
+[ext_resource type="Texture2D" uid="uid://7q5p3xe0gm4" path="res://assets/alec/barfg.png" id="5_bn067"]
+[ext_resource type="Texture2D" uid="uid://dv5xljsnh761p" path="res://assets/dots.png" id="6_bn067"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_drtdc"]
+atlas = ExtResource("6_bn067")
+region = Rect2(0, 0, 0, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yxie2"]
+atlas = ExtResource("6_bn067")
+region = Rect2(0, 14, 0, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dq75h"]
+atlas = ExtResource("6_bn067")
+region = Rect2(0, 7, 0, 7)
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=503905675]
+scale = Vector2(4, 4)
+transform = Transform2D(4, 0, 0, 4, 0, 0)
+script = ExtResource("1_uw0kl")
+
+[node name="Control" type="Control" parent="." unique_id=501971773]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 43.5
+offset_top = 16.5
+offset_right = 83.5
+offset_bottom = 56.5
+mouse_filter = 1
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Control" unique_id=799430136]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -1.0875
+anchor_top = -0.4125
+anchor_right = -1.0875
+anchor_bottom = 0.35375062
+offset_right = 50.0
+offset_bottom = 22.599976
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ulapv")
+region_rect = Rect2(0, 0, 32, 32)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="NinePatchRect3" type="NinePatchRect" parent="Control" unique_id=1360548696]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 9.6375
+anchor_top = -0.4125
+anchor_right = 9.6375
+anchor_bottom = -0.10874939
+offset_right = 50.0
+offset_bottom = 22.599976
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ulapv")
+region_rect = Rect2(0, 0, 32, 32)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Time" type="Label" parent="Control" unique_id=650608925]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 8.3972225
+anchor_top = -0.09701328
+anchor_right = 8.3972225
+anchor_bottom = 0.44998676
+offset_left = 48.11111
+offset_top = -1.6194687
+offset_right = 103.111115
+offset_bottom = 10.380562
+theme_override_colors/font_color = Color(0.22296365, 0.15070091, 0.09420124, 1)
+theme_override_fonts/font = ExtResource("2_uw0kl")
+theme_override_font_sizes/font_size = 6
+text = "8:00 AM"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Quota Bar" type="TextureProgressBar" parent="Control" unique_id=1641871412]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.18100001
+anchor_right = -0.18100001
+offset_left = -31.26
+offset_top = 28.5
+offset_right = 9.74
+offset_bottom = 34.5
+max_value = 1.0
+step = 0.01
+texture_under = ExtResource("4_6vey5")
+texture_progress = ExtResource("5_bn067")
+
+[node name="Quota Lives" type="TextureProgressBar" parent="Control" unique_id=691175545]
+layout_mode = 0
+offset_left = -38.75
+offset_top = 12.5
+offset_right = 3.25
+offset_bottom = 26.5
+max_value = 3.0
+value = 3.0
+texture_under = SubResource("AtlasTexture_drtdc")
+texture_over = SubResource("AtlasTexture_yxie2")
+texture_progress = SubResource("AtlasTexture_dq75h")
+
+[node name="Quote Title" type="Label" parent="Control" unique_id=2078947754]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -1.0594985
+anchor_top = 0.14673595
+anchor_right = -0.10649872
+anchor_bottom = 0.14673595
+offset_left = 13.879944
+offset_top = -1.6194382
+offset_right = 0.009918213
+offset_bottom = 10.380562
+theme_override_colors/font_color = Color(0.22296365, 0.15070091, 0.09420124, 1)
+theme_override_fonts/font = ExtResource("2_uw0kl")
+theme_override_font_sizes/font_size = 6
+text = "QUOTA"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Quote Data" type="Label" parent="Control" unique_id=839782932]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.9942497
+anchor_top = 0.44673592
+anchor_right = 0.15575027
+anchor_bottom = 0.44673592
+offset_left = 0.019989014
+offset_top = 3.0195637
+offset_right = -0.7300415
+offset_bottom = 13.380146
+theme_override_colors/font_color = Color(0.22296365, 0.15070091, 0.09420124, 1)
+theme_override_fonts/font = ExtResource("2_uw0kl")
+theme_override_font_sizes/font_size = 4
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="Control" unique_id=1664192158]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 9.6375
+anchor_top = -0.1375
+anchor_right = 9.6375
+anchor_bottom = -0.1375
+offset_left = -34.0
+offset_top = -11.0
+offset_right = 50.0
+offset_bottom = 9.0
+texture = ExtResource("1_ulapv")
+region_rect = Rect2(0, 0, 32, 32)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="NinePatchRect4" type="NinePatchRect" parent="Control" unique_id=1315299433]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 9.6375
+anchor_top = -0.1375
+anchor_right = 9.6375
+anchor_bottom = -0.1375
+offset_left = -428.5
+offset_top = -11.0
+offset_right = -344.5
+offset_bottom = 9.0
+texture = ExtResource("1_ulapv")
+region_rect = Rect2(0, 0, 32, 32)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="Date" type="Label" parent="Control" unique_id=173559039]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 9.66875
+anchor_top = -0.10625
+anchor_right = 9.66875
+anchor_bottom = -0.10625
+offset_left = -30.0
+offset_top = -8.0
+offset_right = 46.0
+offset_bottom = 7.0
+theme_override_colors/font_color = Color(0.22296365, 0.15070091, 0.09420124, 1)
+theme_override_fonts/font = ExtResource("2_uw0kl")
+theme_override_font_sizes/font_size = 8
+text = "March 4, 2026"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="CashMoney" type="Label" parent="Control" unique_id=1577005508]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.19375
+anchor_top = -0.125
+anchor_right = -0.19375
+anchor_bottom = -0.125
+offset_left = -30.0
+offset_top = -8.0
+offset_right = 46.0
+offset_bottom = 7.0
+theme_override_colors/font_color = Color(0.22296365, 0.15070091, 0.09420124, 1)
+theme_override_fonts/font = ExtResource("2_uw0kl")
+theme_override_font_sizes/font_size = 8
+text = "CASH MONEY"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true

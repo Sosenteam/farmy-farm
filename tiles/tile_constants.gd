@@ -56,7 +56,7 @@ const ticks_per_day:int = ticks_per_second * 60
 @export var corn_water_per_yield := 1.5
 
 @export_group("Potato") #NEEDS TO BE DEFIENED SOMEONES!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-@export var potato_grow_speed = (1.0/1200.0) # NEED TO CHANGE - SHOULD BE BASED ON NPK AMNTS
+@export var potato_grow_speed = (1.0/800.0) # NEED TO CHANGE - SHOULD BE BASED ON NPK AMNTS
 @export var potato_grow_stages = [0,0.33,0.66,1]
 @export var potato_n_per_yield = 20
 @export var potato_p_per_yield = 3
